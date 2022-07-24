@@ -1,0 +1,48 @@
+// NavBar css
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 60px;
+    background-color: #cca66e;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #664930;
+    border-radius: 5px;
+    h3{
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #332920;
+    }
+    h4{
+        font-size: 1rem;
+        font-weight: bold;
+        color: #332920;
+    }
+    li{
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        align-items: center;
+        color: #332920;
+    }
+    a{
+        color: #332920;
+        text-decoration: none;
+        background-color: #cca66e;
+        :hover{
+            color: #332920;
+            font-weight: bold;
+        }
+        :active{
+            color: #332920;
+            font-weight: bold;
+        }
+        :visited{
+            color: #332920;
+        }
+        :focus{
+            color: #332920;
+        }
+    }
+}
