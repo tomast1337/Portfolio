@@ -6,14 +6,14 @@ import FormaçãoPage from "./pages/FormaçãoPage";
 import ProjetosPage from "./pages/ProjetosPage";
 import ResumoPage from "./pages/ResumoPage";
 import Navbar from "./components/Navbar";
-
+import style from "./App.module.scss";
 
 
 const PageBody = (props: any) => {
     return (
         <>
             <Navbar />
-            <div className="container">
+            <div className={style.container}>
                 {props.children}
             </div>
         </>

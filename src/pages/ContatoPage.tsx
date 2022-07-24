@@ -1,5 +1,5 @@
 import * as React from "react";
-import style from "./ContatoPage.module.css";
+import style from "./ContatoPage.module.scss";
 
 const ContatoPage = () => {
     const links: { name: string, url: string, icon: string }[] = [
@@ -15,9 +15,9 @@ const ContatoPage = () => {
             icon: "fab fa-linkedin"
         }
     ];
-    
+
     return (
-        <>
+        <div className={style.container}>
             <h1>Contato</h1>
             <ul>
                 {links.map((link, index) => {
@@ -32,7 +32,7 @@ const ContatoPage = () => {
                 })}
             </ul>
 
-        </>
+        </div>
     );
 }
 

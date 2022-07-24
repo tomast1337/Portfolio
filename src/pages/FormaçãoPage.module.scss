@@ -1,0 +1,29 @@
+@use '../base-colors.scss' as *;
+.page {
+    h1 {
+        font-size: 3em;
+        text-align: center;
+        text-shadow: 2px 2px 4px #000000;
+        color: $dark2;
+    }
+
+    h2 {
+        font-size: 2em;
+        font-weight: bold;
+        text-decoration: underline;
+        padding-left: 1em;
+        color: $dark1;
+    }
+
+    p {
+        font-size: 1rem;
+        padding-left: 10%;
+        padding-right: 2em;
+        color: $dark2;
+    }
+
+    .bold {
+        font-weight: bold;
+        text-shadow: 1px 1px 2px #00000052;
+    }
+}

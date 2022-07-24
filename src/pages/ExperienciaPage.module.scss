@@ -1,0 +1,42 @@
+@use '../base-colors.scss' as *;
+.page{
+    h1{
+        font-size: 3.5rem;
+        text-align: center;
+        text-shadow: 2px 2px 4px #000000;
+        color: $dark2;
+    }
+    h3{
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-decoration: underline;
+        padding-left: 1em;
+        color: $dark1;
+    }
+    p{
+        $page-padding: 4em;
+        font-size: 1em;
+        text-align: justify;
+        text-justify: inter-word;
+        padding-left: $page-padding;
+        padding-right: $page-padding;
+        color: $dark1;
+    }
+    ul{
+        li{
+            font-size: .8em;
+            text-shadow: 1px 1px 2px #000000;
+        }
+        list-style-type: square;
+        li:nth-child(odd) {
+            color: $dark1;
+        }
+        li:nth-child(even) {
+            color: $dark2;
+        }
+    }
+    hr{
+        border: 1px solid $dark1;
+        margin: 1em 0;
+    }
+}

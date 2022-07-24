@@ -1,22 +1,22 @@
 import * as React from "react";
-import style from "./FormaçãoPage.module.css";
+import FormaçãoStyle from "./FormaçãoPage.module.scss";
 
 const FormaçãoPage = () => {
     return (
-        <>
-            Formação
-            Ensino Superior
-            Em andamento
-            (Bacharelado em Ciência da Computação) no CEFET/RJ
-            (2020 – 2024)
+        <div className={FormaçãoStyle.page}>
+            <h1>Formação</h1>
+            <h2>Ensino Superior</h2>
+            <p className={FormaçãoStyle.bold}>Em andamento</p>
+            <p>(Bacharelado em Ciência da Computação) no CEFET/RJ</p>
+            <p>Centro Federal de Educação Tecnológica</p>
+            <p className={FormaçãoStyle.bold}>(2020 – 2024)</p>
 
-            Médio Técnico
-            Completo
-            (ensino técnico em informática) na FAETEC
-            Escola Técnica Estatual República
-            (2016 – 2018)
-
-        </>
+            <h2> Médio Técnico</h2>
+            <p className={FormaçãoStyle.bold}>Completo</p>
+            <p>(ensino técnico em informática) na FAETEC</p>
+            <p>Escola Técnica Estatual República</p>
+            <p className={FormaçãoStyle.bold}> (2016 – 2018)</p>
+        </div>
     );
 }
 

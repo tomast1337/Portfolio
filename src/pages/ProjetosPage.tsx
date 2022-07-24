@@ -1,5 +1,5 @@
 import * as React from "react";
-import style from "./ProjetosPage.module.css";
+import style from "./ProjetosPage.module.scss";
 
 const ProjetosPage = () => {
     return (

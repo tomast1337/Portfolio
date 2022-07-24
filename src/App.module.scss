@@ -1,0 +1,27 @@
+@use './base-colors.scss' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=BenchNine:wght@300&family=Roboto:wght@900&family=Water+Brush&family=Yanone+Kaffeesatz:wght@300&display=swap');
+
+.container{
+    max-width: 960px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 1em;
+    background-color: $light1;
+    border-radius: 10px;
+    box-shadow: 0 0 2px $light2;
+    margin-top: 1em;
+    min-height: 80vh;
+    padding: 1em;
+    h1, h2, h3, h4, h5, h6{
+        font-family: 'BenchNine', sans-serif;
+
+    }
+    p{
+        font-family: 'Roboto', sans-serif;
+    }
+    
+}
+body{
+    background-color: $dark2;
+}
