@@ -1,8 +1,14 @@
 import * as React from "react";
 import style from "./ContatoPage.module.scss";
 
+interface Contato {
+    name: string;
+    url: string;
+    icon: string;
+}
+
 const ContatoPage = () => {
-    const links: { name: string, url: string, icon: string }[] = [
+    const links: Contato[] = [
         {
             name: "Github",
             url: "https://github.com/tomast1337",

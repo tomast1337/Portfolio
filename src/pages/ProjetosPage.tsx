@@ -1,8 +1,15 @@
 import * as React from "react";
 import style from "./ProjetosPage.module.scss";
 
+interface Projeto {
+    nome: string;
+    descricao: string; 
+    imagem: string;
+    link: string | null | undefined;
+}
+
 const ProjetosPage = () => {
-    const projetos: { nome: string, descricao: string, imagem: string,link: any}[] = [
+    const projetos: Projeto[] = [
             {
                 nome: "Projeto 1",
                 descricao: "Descrição do projeto 1",
