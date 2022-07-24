@@ -1,9 +1,16 @@
 import * as React from "react";
 import ShoutOutsStyle from "./ShoutOuts.module.scss";
 
+interface shoutOut {
+    nome: string;
+    link: string;
+    mensagem: string;
+    foto: string;
+  }
+
 const ShoutOutsPage = () => {
 
-    const shoutOuts: {}[] = [
+    const shoutOuts: shoutOut[] = [
         {
             nome: "Davi Campanaro",
             link: "https://github.com/DaveTheCamper",
