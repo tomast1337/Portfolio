@@ -12,6 +12,7 @@ const Navbar = () => {
             <li><Link to="/Experiencia"> Experiencia </Link></li>
             <li><Link to="/Formacao"> Formação </Link></li>
             <li><Link to="/Contato"> Contato </Link></li>
+            <li><Link to="/ShoutOuts"> ShoutOuts </Link></li>
         </div>
     );
 }

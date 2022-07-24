@@ -1,0 +1,86 @@
+@use '../base-colors.scss' as *;
+
+.page {
+    h1 {
+        font-size: 4em;
+        text-align: center;
+        text-shadow: 2px 2px 4px #000000;
+        color: $dark2;
+    }
+
+    .shoutOuts {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .shoutOut {
+        width: 25%;
+        height: 30%;
+        margin: 1%;
+        background-color: $dark1;
+        border-radius: 10px;
+        box-shadow: 2px 2px 4px #000000;
+        min-width: 300px;
+
+        &:hover {
+            box-shadow: 2px 2px 4px #000000;
+            transform: scale(1.2);
+            transition: transform 1s;
+        }
+
+        transition: transform 1s;
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .shoutOutInfo {
+            h2 {
+                font-size: 1.5em;
+                text-align: center;
+                text-shadow: 2px 2px 4px #000000;
+                color: $dark2;
+            }
+
+            p {
+                font-size: 1em;
+                text-align: center;
+                text-justify: inter-word;
+                padding: 1em;
+            }
+
+            a {
+                color: $dark2;
+                text-decoration: none;
+                font-size: 1em;
+                :hover {
+                    color: $dark2;
+                    font-weight: bold;
+                }
+
+                :active {
+                    color: $dark2;
+                    font-weight: bold;
+                }
+
+                :visited {
+                    color: $dark2;
+                }
+
+                :focus {
+                    color: $dark2;
+                }
+            }
+        }
+    }
+
+}

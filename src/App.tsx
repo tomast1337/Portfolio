@@ -7,6 +7,7 @@ import ProjetosPage from "./pages/ProjetosPage";
 import ResumoPage from "./pages/ResumoPage";
 import Navbar from "./components/Navbar";
 import style from "./App.module.scss";
+import ShoutOuts from "./pages/ShoutOuts";
 
 
 const PageBody = (props: any) => {
@@ -47,6 +48,11 @@ const App = () => {
                 <Route path="/Projetos" element={
                     <PageBody>
                         <ProjetosPage />
+                    </PageBody>
+                } />
+                <Route path="/ShoutOuts" element={
+                    <PageBody>
+                        <ShoutOuts />
                     </PageBody>
                 } />
             </Routes>
