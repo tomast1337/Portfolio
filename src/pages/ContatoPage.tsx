@@ -17,7 +17,7 @@ const ContatoPage = () => {
     ];
 
     return (
-        <div className={style.container}>
+        <div className={style.page}>
             <h1>Contato</h1>
             <ul>
                 {links.map((link, index) => {
