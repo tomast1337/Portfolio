@@ -3,6 +3,7 @@
 .container {
     max-width: 960px;
     width: 80%;
+    height: 100%;
     margin: 0 auto;
     padding: 1em;
     background-color: $light1;
@@ -11,7 +12,6 @@
     margin-top: 1em;
     min-height: 80vh;
     padding: 1em;
-
 }
 
 body {
