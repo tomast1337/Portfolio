@@ -1,6 +1,11 @@
 @use '../base-colors.scss' as *;
 
 .page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     h1 {
         font-size: 4em;
         text-align: center;
@@ -12,7 +17,7 @@
     $page-padding: 4em;
 
     p {
-        font-size: 1.5em;
+        font-size: medium;
         text-align: justify;
         text-justify: inter-word;
         padding-left: $page-padding;
@@ -27,7 +32,7 @@
     img {
         float: left;
         width: 50%;
-        max-width: 20em;
+        max-width: 10em;
         height: auto;
         margin: 0 2rem;
         border-radius: 10px;
