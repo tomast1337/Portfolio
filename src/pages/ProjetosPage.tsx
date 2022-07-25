@@ -37,7 +37,7 @@ const ProjetosPage = () => {
         },
         {
             nome: "Pizzaria On",
-            descricao: "Projeto full stack que implementa um site de delivery de pizza customizadas.",
+            descricao: "Projeto fullstack com ReactJs+Redux e Express que implementa um site de delivery de pizza customizadas.",
             imagem: "./src/imgs/pizzaon.jpg",
             link: "https://github.com/dsm-cefet-rj/ti-2022-1-grupo_8"
         },
