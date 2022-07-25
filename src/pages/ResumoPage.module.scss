@@ -3,8 +3,9 @@
     h1 {
         font-size: 4em;
         text-align: center;
-        text-shadow: 2px 2px 4px #000000;
+        text-shadow: 1px 1px 1px $dark1;
         color: $dark2;
+        font-family: $fontTitle;
     }
     $page-padding: 4em;
     p {
@@ -14,6 +15,7 @@
         padding-left: $page-padding;
         padding-right: $page-padding;
         color: $dark2;
+        font-family: $fontText;
     }
 
     // variable 
@@ -26,7 +28,7 @@
         height: auto;
         margin: 0 2rem;
         border-radius: 10px;
-
+        filter: grayscale(30%) contrast(1.5);
         &:hover {
             transform: rotateX($rotation*36);
             transition: transform 1s;

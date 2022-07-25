@@ -47,6 +47,9 @@ const ProjetosPage = () => {
                 link: "https://www.google.com"
             }
         ]
+        React.useEffect(() => {
+            document.title = "Projetos - Nicolas Vycas Nery";
+        });
     return (
         <>
             <div className={style.page}>

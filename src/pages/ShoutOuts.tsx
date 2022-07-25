@@ -33,7 +33,7 @@ const ShoutOutsPage = () => {
     ];
 
     React.useEffect(() => {
-        document.title = "ShoutOuts";
+        document.title = "ShoutOuts - Nicolas Vycas Nery";
     });
 
     return (

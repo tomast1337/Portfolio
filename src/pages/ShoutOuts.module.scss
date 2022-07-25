@@ -4,10 +4,19 @@
     h1 {
         font-size: 4em;
         text-align: center;
-        text-shadow: 2px 2px 4px #000000;
+        text-shadow: 2px 2px 4px $dark1;
         color: $dark2;
+        font-family: $fontTitle;
     }
-
+    p{
+        font-size: 1.5em;
+        text-align: justify;
+        text-justify: inter-word;
+        padding-left: 10%;
+        padding-right: 2em;
+        color: $dark2;
+        font-family: $fontText;
+    }
     .shoutOuts {
         display: flex;
         flex-direction: row;
@@ -24,11 +33,11 @@
         margin: 1%;
         background-color: $dark1;
         border-radius: 10px;
-        box-shadow: 2px 2px 4px #000000;
+        box-shadow: 2px 2px 4px $dark1;
         min-width: 300px;
 
         &:hover {
-            box-shadow: 2px 2px 4px #000000;
+            box-shadow: 2px 2px 4px $dark1;
             transform: scale(1.2);
             transition: transform 1s;
         }
@@ -47,8 +56,9 @@
             h2 {
                 font-size: 1.5em;
                 text-align: center;
-                text-shadow: 2px 2px 4px #000000;
-                color: $dark2;
+                color: $light4;
+                font-family: $fontBold;
+                font-weight: lighter;
             }
 
             p {
@@ -56,29 +66,33 @@
                 text-align: center;
                 text-justify: inter-word;
                 padding: 1em;
+                color: $light3;
+                font-family: $fontSans;
+            }
+        }
+        a {
+            color: $light3;
+            text-decoration: none;
+            font-size: 1em;
+            text-align: center;
+            text-justify: inter-word;
+            padding: 1em;
+            :hover {
+                color: $light3;
+                font-weight: bold;
             }
 
-            a {
-                color: $dark2;
-                text-decoration: none;
-                font-size: 1em;
-                :hover {
-                    color: $dark2;
-                    font-weight: bold;
-                }
+            :active {
+                color: $light3;
+                font-weight: bold;
+            }
 
-                :active {
-                    color: $dark2;
-                    font-weight: bold;
-                }
+            :visited {
+                color: $light3;
+            }
 
-                :visited {
-                    color: $dark2;
-                }
-
-                :focus {
-                    color: $dark2;
-                }
+            :focus {
+                color: $light3;
             }
         }
     }

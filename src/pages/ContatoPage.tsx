@@ -7,20 +7,34 @@ interface Contato {
     icon: string;
 }
 
+const ContatoElement = (props: React.PropsWithChildren<Contato>) => {
+    const contato: Contato = props.contato;
+    return (
+    <>
+        <a href={contato.url} target="_blank" rel="noopener noreferrer">
+            <img src={contato.icon} alt={contato.name} />
+        </a>
+    </>);
+}
+
 const ContatoPage = () => {
     const links: Contato[] = [
         {
             name: "Github",
             url: "https://github.com/tomast1337",
-            icon: "fab fa-github"
+            icon: "https://img.icons8.com/color/48/000000/github.png"
 
         },
         {
             name: "Linkedin",
             url: "https://www.linkedin.com/in/nicolas-vycas/",
-            icon: "fab fa-linkedin"
+            icon: "https://img.icons8.com/color/48/000000/linkedin.png"
         }
     ];
+
+    React.useEffect(() => {
+        document.title = "Contato - Nicolas Vycas Nery";
+    });
 
     return (
         <div className={style.page}>
@@ -29,10 +43,7 @@ const ContatoPage = () => {
                 {links.map((link, index) => {
                     return (
                         <li key={index}>
-                            <a href={link.url} target="_blank" rel="noopener noreferrer">
-                                <i className={link.icon}></i>
-                                {link.name}
-                            </a>
+                            <ContatoElement contato={link} />
                         </li>
                     );
                 })}

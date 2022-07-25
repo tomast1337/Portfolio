@@ -14,11 +14,13 @@
         font-size: 1.5rem;
         font-weight: bold;
         color: $dark2;
+        font-family: $fontText;
     }
     h4{
         font-size: 1rem;
         font-weight: bold;
         color: $dark2;
+        font-family: $fontMonoText;
     }
     li{
         display: flex;
@@ -26,6 +28,7 @@
         margin-right: 20px;
         align-items: center;
         color: $dark2;
+        font-family: $fontText;
     }
     a{
         color: $dark2;

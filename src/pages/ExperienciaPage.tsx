@@ -3,7 +3,9 @@ import styleExperiencia from "./ExperienciaPage.module.scss";
 
 const ExperienciaPage = () => {
 
-
+    React.useEffect(() => {
+        document.title = "Experiencia - Nicolas Vycas Nery";
+    });
 
     return (
         <>

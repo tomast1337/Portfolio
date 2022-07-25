@@ -3,8 +3,8 @@
     h1 {
         font-size: 3em;
         text-align: center;
-        text-shadow: 2px 2px 4px #000000;
         color: $dark2;
+        font-family: $fontTitle;
     }
 
     h2 {
@@ -13,6 +13,7 @@
         text-decoration: underline;
         padding-left: 1em;
         color: $dark1;
+        font-family: $fontMonoText;
     }
 
     p {
@@ -20,10 +21,12 @@
         padding-left: 10%;
         padding-right: 2em;
         color: $dark2;
+        font-family: $fontText;
     }
 
     .bold {
-        font-weight: bold;
-        text-shadow: 1px 1px 2px #00000052;
+        color: $dark2;
+        font-family: $fontMonoText;
+        font-size: 1.5em;
     }
 }

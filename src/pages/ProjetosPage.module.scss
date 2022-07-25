@@ -3,8 +3,8 @@
     h1{
         font-size: 3.5rem;
         text-align: center;
-        text-shadow: 2px 2px 4px #000000;
         color: $dark2;
+        font-family: $fontTitle;
     }
     .projetos{
         display: flex;
@@ -21,14 +21,20 @@
         margin: 1%;
         background-color: $dark1;
         border-radius: 10px;
-        box-shadow: 2px 2px 4px #000000;
+        box-shadow: 2px 2px 4px $dark1;
         min-width: 300px;
         &:hover{
-            box-shadow: 2px 2px 4px #000000;
+            box-shadow: 2px 2px 4px $dark1;
             transform: scale(1.2);
             transition: transform 1s;
         }
         transition: transform 1s;
+        a{
+            text-decoration: none;
+            color: $light3;
+            font-family: $fontBarcode;
+            font-size: 2em;
+        }
     }
     img{
         width: 100%;
@@ -38,17 +44,23 @@
         margin: 0 auto;
     }
     .projetoInfo{
-        color: $dark2;
+        h2{
+            font-family: $fontBold;
+            font-weight: lighter;
+        }
+        color: $light1;
         font-size: 1em;
         text-align: center;
         text-justify: inter-word;
         padding: 1em;
+        font-family: $fontSans;
     }
     .descricao{
-        color: $dark2;
+        color: $light1;
         font-size: 1em;
         text-align: center;
         text-justify: inter-word;
         padding: 1em;
+        font-family: $fontBarcode;
     }
 }

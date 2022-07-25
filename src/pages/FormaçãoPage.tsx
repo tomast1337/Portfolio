@@ -2,6 +2,9 @@ import * as React from "react";
 import FormaçãoStyle from "./FormaçãoPage.module.scss";
 
 const FormaçãoPage = () => {
+    React.useEffect(() => {
+        document.title = "Formação - Nicolas Vycas Nery";
+    });
     return (
         <div className={FormaçãoStyle.page}>
             <h1>Formação</h1>
@@ -11,7 +14,7 @@ const FormaçãoPage = () => {
             <p>Centro Federal de Educação Tecnológica</p>
             <p className={FormaçãoStyle.bold}>(2020 – 2024)</p>
 
-            <h2> Médio Técnico</h2>
+            <h2>Ensino Médio Técnico</h2>
             <p className={FormaçãoStyle.bold}>Completo</p>
             <p>(ensino técnico em informática) na FAETEC</p>
             <p>Escola Técnica Estatual República</p>
