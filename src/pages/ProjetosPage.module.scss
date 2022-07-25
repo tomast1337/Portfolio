@@ -36,13 +36,18 @@
             font-size: 2em;
         }
     }
-    img{
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        display: block;
-        margin: 0 auto;
+    .projetoImagem{
+        img{
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto;
+        }
     }
+    
     .projetoInfo{
         h2{
             font-family: $fontBold;
