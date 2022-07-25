@@ -28,6 +28,18 @@ const ShoutOutsPage = () => {
             link: "https://github.com/DiegoPaula",
             mensagem: "",
             foto: "https://avatars.githubusercontent.com/u/77380810?v=4"
+        },
+        {
+            nome: "Felipe Nieto",
+            link: "https://github.com/NietoCurcio",
+            mensagem: "",
+            foto: "https://avatars.githubusercontent.com/u/51931239?v=4"
+        },
+        {
+            nome: "Marcus Oliveira",
+            link: "https://github.com/mvgoliveira",
+            mensagem: "",
+            foto: "https://avatars.githubusercontent.com/u/53785487?v=4"
         }
 
     ];
