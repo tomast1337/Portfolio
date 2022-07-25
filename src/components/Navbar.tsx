@@ -6,6 +6,7 @@ const Navbar = () => {
 
     const [isOpen, setIsOpen] = React.useState(false);
 
+    const clickClose = () => setIsOpen(!isOpen);
 
     return (
         <>
@@ -16,7 +17,7 @@ const Navbar = () => {
                 </span>
                 <button
                     className={style.navbar_button}
-                    onClick={() => setIsOpen(!isOpen)}>
+                    onClick={clickClose}>
                     {isOpen ? "Sair" : "Menu"}
                 </button>
 
@@ -26,12 +27,12 @@ const Navbar = () => {
                     display: isOpen ? "flex" : "none"
                 }}>
                 <ul>
-                    <li><Link to="/"> Sobre </Link></li>
-                    <li><Link to="/Projetos"> Projetos </Link></li>
-                    <li><Link to="/Experiencia"> Experiencia </Link></li>
-                    <li><Link to="/Formacao"> Formação </Link></li>
-                    <li><Link to="/Contato"> Contato </Link></li>
-                    <li><Link to="/ShoutOuts"> ShoutOuts </Link></li>
+                    <li><Link onClick={clickClose} to="/"> Sobre </Link></li>
+                    <li><Link onClick={clickClose} to="/Projetos"> Projetos </Link></li>
+                    <li><Link onClick={clickClose} to="/Experiencia"> Experiencia </Link></li>
+                    <li><Link onClick={clickClose} to="/Formacao"> Formação </Link></li>
+                    <li><Link onClick={clickClose} to="/Contato"> Contato </Link></li>
+                    <li><Link onClick={clickClose} to="/ShoutOuts"> ShoutOuts </Link></li>
                 </ul>
             </div>
         </>
