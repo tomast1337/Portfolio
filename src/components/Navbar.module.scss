@@ -5,47 +5,51 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
-    height: 60px;
+    padding: 0 2rem;
+    height: fit-content;
     background-color: $light1;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     border: 1px solid $dark1;
     border-radius: 5px;
 
-    h3 {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: $dark2;
-        font-family: $fontText;
+    .navbar_brand {
+        h3 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: $dark2;
+            font-family: $fontText;
+            margin: 0;
+        }
+        h4 {
+            font-size: 1rem;
+            font-weight: bold;
+            color: $dark2;
+            font-family: $fontMonoText;
+            margin: 0;
+        }
     }
-
-    h4 {
-        font-size: 1rem;
-        font-weight: bold;
-        color: $dark2;
-        font-family: $fontMonoText;
-    }
-
     .navbar_button {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 60px;
-        height: 60px;
+        width: fit-content;
+        aspect-ratio: 1;
         border-radius: 50%;
         background-color: $dark1;
         color: $light1;
-        font-size: 1rem;
+        font-size: 1.5rem;
+        margin: 1px;
         font-weight: bold;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
-
+        font-family: $fontMonoText;
         &:hover,
         &:focus {
             background-color: $dark2;
             color: $light2;
         }
     }
+
+    transition: all 1s ease-in-out;
 }
 
 .navbarMenu {
@@ -82,7 +86,7 @@
                 text-decoration: none;
                 // make look like a button
                 border-radius: 5px;
-                transition: all 0.3s ease-in-out;
+                transition: all 0.2s ease-in-out;
                 font-weight: bold;
 
                 &:hover,

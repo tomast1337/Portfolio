@@ -10,12 +10,14 @@ const Navbar = () => {
     return (
         <>
             <div className={style.navbar}>
-                <h3>Nicolas Vycas Nery</h3>
-                <h4>Desenvolvedor de software</h4>
-                <button 
-                className={style.navbar_button}
-                onClick={() => setIsOpen(!isOpen)}>
-                    {isOpen ? "Fechar" : "Menu"}
+                <span className={style.navbar_brand}>
+                    <h3>Nicolas Vycas Nery</h3>
+                    <h4>Desenvolvedor de software</h4>
+                </span>
+                <button
+                    className={style.navbar_button}
+                    onClick={() => setIsOpen(!isOpen)}>
+                    {isOpen ? "Sair" : "Menu"}
                 </button>
 
             </div>
