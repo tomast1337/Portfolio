@@ -1,6 +1,7 @@
 @use '../base-colors.scss' as *;
+
 // NavBar css
-.navbar{
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -10,43 +11,99 @@
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     border: 1px solid $dark1;
     border-radius: 5px;
-    h3{
+
+    h3 {
         font-size: 1.5rem;
         font-weight: bold;
         color: $dark2;
         font-family: $fontText;
     }
-    h4{
+
+    h4 {
         font-size: 1rem;
         font-weight: bold;
         color: $dark2;
         font-family: $fontMonoText;
     }
-    li{
+
+    .navbar_button {
         display: flex;
         align-items: center;
-        margin-right: 20px;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: $dark1;
+        color: $light1;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover,
+        &:focus {
+            background-color: $dark2;
+            color: $light2;
+        }
+    }
+}
+
+.navbarMenu {
+    font-size: 10vh;
+    background-color: $light2;
+
+    //center the menu
+    position: absolute;
+    width: fit-content;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: fit-content;
+    z-index: 1;
+
+
+    border-radius: 5px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.503);
+
+    ul {
+        list-style: none outside none;
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        color: $dark2;
-        font-family: $fontText;
+        justify-content: center;
+        padding: 2rem;
+
+        li {
+            text-align: center;
+            font-family: $fontText;
+
+            a {
+                color: $dark1;
+                text-decoration: none;
+                // make look like a button
+                border-radius: 5px;
+                transition: all 0.3s ease-in-out;
+                font-weight: bold;
+
+                &:hover,
+                &:focus {
+                    background-color: $dark3;
+                    color: $light3  !important;
+                }
+
+                &:active {
+                    background-color: $dark4;
+                    color: $light4  !important;
+                }
+
+                &:visited {
+                    color: $dark2;
+                }
+            }
+        }
+
+        margin: 0;
     }
-    a{
-        color: $dark2;
-        text-decoration: none;
-        background-color: $light1;
-        :hover{
-            color: $dark2;
-            font-weight: bold;
-        }
-        :active{
-            color: $dark2;
-            font-weight: bold;
-        }
-        :visited{
-            color: $dark2;
-        }
-        :focus{
-            color: $dark2;
-        }
-    }
+
+
 }

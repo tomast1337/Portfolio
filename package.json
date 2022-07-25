@@ -1,32 +1,35 @@
 {
-  "name": "portifolio",
-  "version": "0.1.0",
-  "description": "",
-  "scripts": {
-    "start": "vite",
-    "build": "vite build",
-    "typecheck": "tsc --noEmit",
-    "typewatch": "tsc --noEmit --watch",
-    "lint": "eslint ./src/* --ext .ts",
-    "lint-and-fix": "eslint . --ext .ts --fix"
-  },
-  "license": "MIT",
-  "dependencies": {
-    "@types/react-router-dom": "^5.3.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^6.3.0",
-    "sass": "^1.54.0",
-    "scss": "^0.2.4"
-  },
-  "devDependencies": {
-    "@types/react": "^16.9.34",
-    "@types/react-dom": "^16.9.7",
-    "@typescript-eslint/eslint-plugin": "^5.30.7",
-    "@typescript-eslint/parser": "^5.30.7",
-    "babel-preset-nano-react-app": "^0.1.0",
-    "eslint": "^8.20.0",
-    "typescript": "^3.8.3",
-    "vite": "^2.6.7"
-  }
+    "name": "portifolio",
+    "version": "0.1.0",
+    "description": "",
+    "homepage": "https://nicolasvycas.github.io/",
+    "scripts": {
+        "start": "vite",
+        "build": "vite build",
+        "typecheck": "tsc --noEmit",
+        "typewatch": "tsc --noEmit --watch",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
+        "lint": "eslint ./src/* --ext .ts",
+        "lint-and-fix": "eslint . --ext .ts --fix"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "@types/react-router-dom": "^5.3.3",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-router-dom": "^6.3.0",
+        "sass": "^1.54.0",
+        "scss": "^0.2.4"
+    },
+    "devDependencies": {
+        "@types/react": "^16.9.34",
+        "@types/react-dom": "^16.9.7",
+        "@typescript-eslint/eslint-plugin": "^5.30.7",
+        "@typescript-eslint/parser": "^5.30.7",
+        "babel-preset-nano-react-app": "^0.1.0",
+        "eslint": "^8.20.0",
+        "typescript": "^3.8.3",
+        "vite": "^2.6.7"
+    }
 }
