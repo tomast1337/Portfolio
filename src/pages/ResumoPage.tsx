@@ -2,7 +2,7 @@ import * as React from "react";
 import ResumoStyle from "./ResumoPage.module.scss";
 
 const ResumoPage = () => {
-    
+
     React.useEffect(() => {
         document.title = "Resumo - Nicolas Vycas Nery";
     });

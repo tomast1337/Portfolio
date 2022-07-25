@@ -8,7 +8,8 @@
         color: $dark2;
         font-family: $fontTitle;
     }
-    p{
+
+    p {
         font-size: 1.5em;
         text-align: justify;
         text-justify: inter-word;
@@ -17,6 +18,7 @@
         color: $dark2;
         font-family: $fontText;
     }
+
     .shoutOuts {
         display: flex;
         flex-direction: row;
@@ -70,6 +72,7 @@
                 font-family: $fontSans;
             }
         }
+
         a {
             color: $light3;
             text-decoration: none;
@@ -77,6 +80,7 @@
             text-align: center;
             text-justify: inter-word;
             padding: 1em;
+
             :hover {
                 color: $light3;
                 font-weight: bold;

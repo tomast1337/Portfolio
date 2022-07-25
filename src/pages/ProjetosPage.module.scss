@@ -1,12 +1,14 @@
 @use '../base-colors.scss' as *;
-.page{
-    h1{
+
+.page {
+    h1 {
         font-size: 3.5rem;
         text-align: center;
         color: $dark2;
         font-family: $fontTitle;
     }
-    .projetos{
+
+    .projetos {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -15,7 +17,8 @@
         margin: 0 auto;
         padding: 0;
     }
-    .projeto{
+
+    .projeto {
         width: 25%;
         height: 30%;
         margin: 1%;
@@ -23,21 +26,25 @@
         border-radius: 10px;
         box-shadow: 2px 2px 4px $dark1;
         min-width: 300px;
-        &:hover{
+
+        &:hover {
             box-shadow: 2px 2px 4px $dark1;
             transform: scale(1.2);
             transition: transform 1s;
         }
+
         transition: transform 1s;
-        a{
+
+        a {
             text-decoration: none;
             color: $light3;
             font-family: $fontBarcode;
             font-size: 2em;
         }
     }
-    .projetoImagem{
-        img{
+
+    .projetoImagem {
+        img {
             width: 100%;
             aspect-ratio: 1/1;
             object-fit: cover;
@@ -47,12 +54,13 @@
             margin: 0 auto;
         }
     }
-    
-    .projetoInfo{
-        h2{
+
+    .projetoInfo {
+        h2 {
             font-family: $fontBold;
             font-weight: lighter;
         }
+
         color: $light1;
         font-size: 1em;
         text-align: center;
@@ -60,7 +68,8 @@
         padding: 1em;
         font-family: $fontSans;
     }
-    .descricao{
+
+    .descricao {
         color: $light1;
         font-size: 1em;
         text-align: center;

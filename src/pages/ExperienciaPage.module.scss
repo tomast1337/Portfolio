@@ -1,12 +1,14 @@
 @use '../base-colors.scss' as *;
-.page{
-    h1{
+
+.page {
+    h1 {
         font-size: 3rem;
         text-align: center;
         color: $dark2;
         font-family: $fontTitle;
     }
-    h3{
+
+    h3 {
         font-size: 1.2rem;
         font-weight: bold;
         text-decoration: underline;
@@ -14,7 +16,8 @@
         color: $dark1;
         font-family: $fontSans;
     }
-    p{
+
+    p {
         $page-padding: 4em;
         font-size: 1em;
         text-align: justify;
@@ -24,20 +27,26 @@
         color: $dark1;
         font-family: $fontSans;
     }
-    ul{
+
+    ul {
         font-family: $fontText;
-        li{
+
+        li {
             font-size: 1em;
         }
+
         list-style-type: square;
+
         li:nth-child(odd) {
             color: $dark1;
         }
+
         li:nth-child(even) {
             color: $dark2;
         }
     }
-    hr{
+
+    hr {
         border: 1px solid $dark1;
         margin: 1em 0;
     }

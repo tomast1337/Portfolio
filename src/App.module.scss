@@ -1,6 +1,6 @@
 @use './base-colors.scss' as *;
 
-.container{
+.container {
     max-width: 960px;
     width: 80%;
     margin: 0 auto;
@@ -11,8 +11,9 @@
     margin-top: 1em;
     min-height: 80vh;
     padding: 1em;
-    
+
 }
-body{
+
+body {
     background-color: $dark1;
 }

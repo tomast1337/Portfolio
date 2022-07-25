@@ -6,7 +6,7 @@ interface shoutOut {
     link: string;
     mensagem: string;
     foto: string;
-  }
+}
 
 const ShoutOutsPage = () => {
 

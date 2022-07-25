@@ -25,7 +25,6 @@ const ProjetoCard = (props: React.PropsWithChildren<Projeto>) => {
             </div>
         </div>
     );
-
 }
 
 const ProjetosPage = () => {

@@ -1,22 +1,25 @@
 @use '../base-colors.scss' as *;
-.page{
-    h1{
+
+.page {
+    h1 {
         font-size: 3.5rem;
         text-align: center;
         color: $dark2;
         font-family: $fontTitle;
     }
-    ul{
+
+    ul {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
         margin: 0;
         list-style-type: none;
-        img{
+
+        img {
             width: 48px;
             height: auto;
         }
     }
-    
+
 }

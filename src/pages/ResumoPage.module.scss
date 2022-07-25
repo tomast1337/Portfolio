@@ -1,4 +1,5 @@
 @use '../base-colors.scss' as *;
+
 .page {
     h1 {
         font-size: 4em;
@@ -7,7 +8,9 @@
         color: $dark2;
         font-family: $fontTitle;
     }
+
     $page-padding: 4em;
+
     p {
         font-size: 1.5em;
         text-align: justify;
@@ -29,6 +32,7 @@
         margin: 0 2rem;
         border-radius: 10px;
         filter: grayscale(30%) contrast(1.5);
+
         &:hover {
             transform: rotateX($rotation*36);
             transition: transform 1s;

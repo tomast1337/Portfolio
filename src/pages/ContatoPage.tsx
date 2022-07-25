@@ -10,11 +10,11 @@ interface Contato {
 const ContatoElement = (props: React.PropsWithChildren<Contato>) => {
     const contato: Contato = props.contato;
     return (
-    <>
-        <a href={contato.url} target="_blank" rel="noopener noreferrer">
-            <img src={contato.icon} alt={contato.name} />
-        </a>
-    </>);
+        <>
+            <a href={contato.url} target="_blank" rel="noopener noreferrer">
+                <img src={contato.icon} alt={contato.name} />
+            </a>
+        </>);
 }
 
 const ContatoPage = () => {
