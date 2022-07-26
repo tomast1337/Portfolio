@@ -31,9 +31,9 @@ const ProjetosPage = () => {
     const projetos: Projeto[] = [
         {
             nome: "More Sponges mod",
-            descricao: "Mod para Minecraft que adiciona mais esponjas ao jogo.",
+            descricao: "Mod para Minecraft em java que adiciona mais esponjas ao jogo.",
             imagem: "./src/imgs/moresponges.png",
-            link: "https://www.google.com"
+            link: "https://github.com/tomast1337/More-Sponges-Mod"
         },
         {
             nome: "Pizzaria On",
@@ -55,13 +55,13 @@ const ProjetosPage = () => {
         },
         {
             nome: "Minecraft Visualização Estrutura de Dados",
-            descricao: "Visualização de estrutura de dados do jogo Minecraft.",
+            descricao: "Plugin spigot em java que gera visualizações de estrutura de dados do jogo.",
             imagem: "./src/imgs/Minecraft Visualização Estrutura de Dados.png",
             link: "https://github.com/tomast1337/Minecraft-Visualizacao-Estrutura-de-Dados"
         },
         {
             nome: "Este projeto",
-            descricao: "Site pessoal feito em React.",
+            descricao: "Site pessoal feito em React e TypeScript.",
             imagem: "./src/imgs/Este projeto.png",
             link: "https://github.com/tomast1337/Minecraft-Visualizacao-Estrutura-de-Dados"
         }

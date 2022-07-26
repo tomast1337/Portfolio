@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 import ResumoStyle from "./ResumoPage.module.scss";
 
 const ResumoPage = () => {
@@ -21,7 +22,7 @@ const ResumoPage = () => {
                 Estou disposto a trabalhar em qualquer região do Brasil, ser for remoto, e presencial na cidade do Rio de Janeiro, meu tempo para universidade é inegociável, mas estou sempre disponível quando não estou estudando.
             </p>
             <p>
-                A cima a um botão "menu" onde se pode acessar outras paginas do meu portfólio, que tal começar pelos meus <a href="/Projetos">projetos</a>?
+                A cima a um botão "menu" onde se pode acessar outras paginas do meu portfólio, que tal começar pelos meus <Link to="/Projetos">projetos</Link>?
             </p>
         </div>
     )
