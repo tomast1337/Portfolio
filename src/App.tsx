@@ -6,15 +6,23 @@ import FormaçãoPage from "./pages/FormaçãoPage";
 import ProjetosPage from "./pages/ProjetosPage";
 import ResumoPage from "./pages/ResumoPage";
 import Navbar from "./components/Navbar";
-import style from "./App.module.scss";
+import styles from "./App.module.scss";
 import ShoutOuts from "./pages/ShoutOuts";
 
+const Overlay = (props: any) => {
+    return (
+        <div className={styles.overlay}>
+
+        </div>
+    )
+}
 
 const PageBody = (props: any) => {
     return (
         <>
+            <Overlay />
             <Navbar />
-            <div className={style.container}>
+            <div className={styles.container}>
                 {props.children}
             </div>
         </>
@@ -23,7 +31,7 @@ const PageBody = (props: any) => {
 
 const App = () => {
     return (
-        <BrowserRouter basename={ "/"}>
+        <BrowserRouter basename={"/"}>
             <Routes>
                 <Route path="/" element={
                     <PageBody>

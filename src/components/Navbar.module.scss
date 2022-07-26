@@ -86,9 +86,12 @@
     height: fit-content;
     z-index: 1;
 
-
-    border-radius: 5px;
+    border-radius: 25px;
     box-shadow: 0 0 100px rgba(0, 0, 0, 0.503);
+
+    @media (min-width: 1025px) {
+        width: 50%;
+    }
 
     ul {
         list-style: none outside none;
@@ -97,7 +100,10 @@
         align-items: center;
         justify-content: center;
         padding: 2rem;
+        
         width: 100%;
+        // desktop
+        
 
         li {
             text-align: center;
