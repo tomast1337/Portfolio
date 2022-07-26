@@ -19,7 +19,7 @@
     }
 
     .projeto {
-        width: 25%;
+        width: 80%;
         height: 30%;
         margin: 1%;
         background-color: $dark1;
@@ -27,9 +27,15 @@
         box-shadow: 2px 2px 4px $dark1;
         min-width: 300px;
 
+        // desktop
+        @media (min-width: 1025px) {
+            width: 10%;
+            height: 30%;
+        }
+
         &:hover {
             box-shadow: 2px 2px 4px $dark1;
-            transform: scale(1.2);
+            transform: scale(1.1);
             transition: transform 1s;
         }
 
@@ -59,19 +65,28 @@
         h2 {
             font-family: $fontBold;
             font-weight: lighter;
+            font-size: 3rem;
+
+            // desktop
+            @media (min-width: 1025px) {
+                font-size: 2em;
+            }
         }
 
         color: $light1;
-        font-size: 1em;
+        font-size: 2.5em;
         text-align: center;
         text-justify: inter-word;
         padding: 1em;
         font-family: $fontSans;
+        // desktop
+        @media (min-width: 1025px) {
+            font-size: 1rem;
+        }
     }
 
     .descricao {
         color: $light1;
-        font-size: 1em;
         text-align: center;
         text-justify: inter-word;
         padding: 1em;

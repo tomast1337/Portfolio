@@ -17,7 +17,12 @@
         list-style-type: none;
 
         img {
-            width: 48px;
+            // desktop
+            @media (min-width: 1025px) {
+                width: 6rem;
+                
+            }
+            width: 25vw;
             height: auto;
         }
     }

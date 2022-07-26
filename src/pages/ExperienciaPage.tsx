@@ -34,11 +34,8 @@ const ExperienciaPage = () => {
                     <ul>
                         <li>Estruturas lineares sequenciais (Array)</li>
                         <li>Algoritmos de ordenação</li>
-                        <li>Variável composta heterogênea</li>
-                        <li>Ponteiros</li>
-                        <li>Dinâmica linear st ruturas</li>
+                        <li>Variáveis composta heterogênea</li>
                         <li>Estruturas de dados não lineares, árvores</li>
-                        <li>Algoritmos de classificação</li>
                         <li>Busca binária</li>
                     </ul>
                     <h3>Março de 2022 - Atual</h3>

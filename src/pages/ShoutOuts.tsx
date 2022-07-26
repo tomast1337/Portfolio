@@ -24,7 +24,7 @@ const ShoutOutsPage = () => {
             foto: "https://avatars.githubusercontent.com/u/29354120?v=4"
         },
         {
-            nome: "Diego Paula",
+            nome: "Diego de Paula",
             link: "https://github.com/DiegoPaula",
             mensagem: "",
             foto: "https://avatars.githubusercontent.com/u/77380810?v=4"
@@ -62,8 +62,8 @@ const ShoutOutsPage = () => {
                                 <img src={shoutOut.foto} alt={shoutOut.nome} />
                                 <div className={ShoutOutsStyle.shoutOutInfo}>
                                     <h2>{shoutOut.nome}</h2>
-                                    <p>{shoutOut.mensagem}</p>
-                                    <a href={shoutOut.link}>GitHub</a>
+                                    {shoutOut.mensagem && <p>{shoutOut.mensagem}</p>}
+                                    <a href={shoutOut.link}>GitHub Profile</a>
                                 </div>
                             </div>
                         );

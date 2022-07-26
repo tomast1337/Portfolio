@@ -10,38 +10,60 @@
     background-color: $light1;
     border: 1px solid $dark1;
     border-radius: 5px;
+    height: 8vh;
 
     .navbar_brand {
         h3 {
-            font-size: 2rem;
+            font-size: 4em;
             font-weight: bold;
             color: $dark2;
             font-family: $fontText;
             margin: 0;
         }
+
         h4 {
-            font-size: 1rem;
+            font-size: 2rem;
             font-weight: bold;
             color: $dark2;
             font-family: $fontMonoText;
             margin: 0;
         }
+
+         // desktop
+         @media (min-width: 1025px) {
+            h3 {
+                font-size: 3.5rem;
+            }
+    
+            h4 {
+                font-size: 2rem;
+            }
+    
+        }
     }
+
     .navbar_button {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: fit-content;
+        height: 90%;
         aspect-ratio: 1;
         border-radius: 50%;
         background-color: $dark1;
         color: $light1;
-        font-size: 1.5rem;
+        font-size: 3em;
+
+        // desktop
+        @media (min-width: 1025px) {
+            font-size: 2rem;
+        }
+
         margin: 1px;
         font-weight: bold;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
         font-family: $fontMonoText;
+
         &:hover,
         &:focus {
             background-color: $dark2;
@@ -53,12 +75,11 @@
 }
 
 .navbarMenu {
-    font-size: 10vh;
+    font-size: 5vh;
     background-color: $light2;
 
     //center the menu
     position: absolute;
-    width: fit-content;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -76,6 +97,7 @@
         align-items: center;
         justify-content: center;
         padding: 2rem;
+        width: 100%;
 
         li {
             text-align: center;

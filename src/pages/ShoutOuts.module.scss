@@ -10,9 +10,8 @@
     }
 
     p {
-        font-size: 1.5em;
+        font-size: 2em;
         text-align: justify;
-        text-justify: inter-word;
         padding-left: 10%;
         padding-right: 2em;
         color: $dark2;
@@ -30,7 +29,7 @@
     }
 
     .shoutOut {
-        width: 25%;
+        width: 80%;
         height: 30%;
         margin: 1%;
         background-color: $dark1;
@@ -38,9 +37,14 @@
         box-shadow: 2px 2px 4px $dark1;
         min-width: 300px;
 
+        // desktop
+        @media (min-width: 1025px) {
+            width: 25%;
+        }
+
         &:hover {
             box-shadow: 2px 2px 4px $dark1;
-            transform: scale(1.2);
+            transform: scale(1.05);
             transition: transform 1s;
         }
 
@@ -56,11 +60,16 @@
 
         .shoutOutInfo {
             h2 {
-                font-size: 1.5em;
+                font-size: 3em;
                 text-align: center;
                 color: $light4;
                 font-family: $fontBold;
                 font-weight: lighter;
+
+                // desktop
+                @media (min-width: 1025px) {
+                    font-size: 1.5em;
+                }
             }
 
             p {
@@ -74,12 +83,13 @@
         }
 
         a {
-            color: $light3;
+            color: $light1;
+            font-family: $fontMonoText;
             text-decoration: none;
-            font-size: 1em;
-            text-align: center;
-            text-justify: inter-word;
-            padding: 1em;
+            font-size: 2rem;
+            position: relative;
+            margin: 0 auto;
+            transition: color 1s;
 
             :hover {
                 color: $light3;

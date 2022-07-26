@@ -17,13 +17,18 @@
     $page-padding: 4em;
 
     p {
-        font-size: 1.8em;
+        font-size: 2em;
         text-align: justify;
         text-justify: inter-word;
         padding-left: $page-padding;
         padding-right: $page-padding;
         color: $dark2;
         font-family: $fontText;
+        // desktop
+        @media (min-width: 1025px) {
+            font-size: 2em;
+    
+        }
     }
 
     // variable 
@@ -42,7 +47,6 @@
             transform: rotateX($rotation*36);
             transition: transform 1s;
         }
-
         transition: transform 1s;
     }
 }
