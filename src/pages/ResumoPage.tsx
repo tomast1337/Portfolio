@@ -19,7 +19,7 @@ const ResumoPage = () => {
                 Meu objetivo atual é mudar da área do meu estágio atual em ciência de dados no TCU, para um estágio ou emprego desenvolvedor de software que era meu objetivo inicial a 8 anos.
             </p>
             <p>
-                Estou disposto a trabalhar em qualquer região do Brasil, ser for remoto, e presencial na cidade do Rio de Janeiro, meu tempo para universidade é inegociável, mas estou sempre disponível quando não estou estudando.
+                Estou disposto a trabalhar em qualquer região do Brasil, ser for remoto, e presencial na cidade do Rio de Janeiro, claro se não atrapalhar meu tempo para a universidade e estudo.
             </p>
             <p>
                 A cima a um botão "menu" onde se pode acessar outras paginas do meu portfólio, que tal começar pelos meus <Link to="/Projetos">projetos</Link>?

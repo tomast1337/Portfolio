@@ -1,7 +1,7 @@
 import * as React from "react";
 import style from "./ProjetosPage.module.scss";
 
-interface Projeto {
+type Projeto = {
     nome: string;
     descricao: string;
     imagem: string;
@@ -63,7 +63,7 @@ const ProjetosPage = () => {
             nome: "Este projeto",
             descricao: "Site pessoal feito em React e TypeScript.",
             imagem: "./src/imgs/Este projeto.png",
-            link: "https://github.com/tomast1337/Minecraft-Visualizacao-Estrutura-de-Dados"
+            link: "https://github.com/tomast1337/Portf-lio"
         }
     ]
     React.useEffect(() => {
