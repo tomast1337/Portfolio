@@ -20,7 +20,6 @@ const Overlay = (props: any) => {
 const PageBody = (props: any) => {
     return (
         <>
-
             <Navbar />
             <div className={styles.container}>
                 {props.children}

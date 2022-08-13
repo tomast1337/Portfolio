@@ -13,7 +13,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         margin: 0 auto;
         padding: 0;
     }
@@ -30,7 +30,6 @@
         // desktop
         @media (min-width: 1025px) {
             width: 10%;
-            height: 30%;
         }
 
         &:hover {

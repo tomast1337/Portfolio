@@ -10,6 +10,10 @@ const Navbar = () => {
 
     const clickClose = () => setIsOpen(!isOpen);
 
+    React.useEffect(() => {
+        document.body.style.overflowX = "hidden";
+    }, [isOpen]);
+
     return (
         <>
             <div className={style.navbar}>
@@ -30,9 +34,15 @@ const Navbar = () => {
 
             </div>
             <div className={style.navbarMenu}
-                style={{
-                    display: isOpen ? "flex" : "none"
-                }}>
+            style={{
+                transform: isOpen ?
+                    "translateX(0)" : "translateX(125%)"
+            }}
+            // On hover
+            onMouseEnter={() => setIsOpen(true)}
+            onMouseLeave={() => setIsOpen(false)}
+            >
+
                 <ul>
                     <li><Link onClick={clickClose} to="/"> Sobre </Link></li>
                     <li><Link onClick={clickClose} to="/Projetos"> Projetos </Link></li>

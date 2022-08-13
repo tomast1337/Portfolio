@@ -1,5 +1,7 @@
 @use '../base-colors.scss' as *;
 
+$navbarHeight: 8vh;
+
 // NavBar css
 .navbar {
     display: flex;
@@ -10,13 +12,13 @@
     background-color: $dark1;
     border: 1px solid $dark1;
     border-radius: 5px;
-    height: 8vh;
+    height: $navbarHeight;
 
     .navbar_brand {
         border: 1px solid $light1;
         border-radius: 5px;
         padding: 0.5rem 1rem;
-        box-shadow: 0 0 8px $light3;
+        box-shadow: 0 0 1000px $light3;
 
         cursor: pointer;
 
@@ -64,7 +66,7 @@
         background-color: $light1;
         color: $dark1;
         font-size: 3em;
-
+        outline: 5px solid $light3;
         // desktop
         @media (min-width: 1025px) {
             font-size: 2rem;
@@ -87,36 +89,51 @@
 }
 
 .navbarMenu {
-    font-size: 5vh;
-    background-color: $light2;
-
-    //center the menu
+    transition: all 0.3s ease-in-out;
     position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+    
+    
+    width: fit-content;
     height: fit-content;
-    z-index: 1;
 
-    border-radius: 25px;
-    box-shadow: 0 0 100px rgba(0, 0, 0, 0.503);
-    width: 70%;
+    top: $navbarHeight * 1.5;
+    left: auto;
+    right: 8vw;
+    bottom: auto;
+    
+    padding: 1em;
+    
+    background-color: $light2;
+    border: 5px solid $dark1;
+    outline: 5px solid $light2;
+
+    border-radius: 50px;
+    box-shadow: 0 0 25px $light2;
+
+    z-index: 99;
+
+    font-size: 8rem;
+
+    // desktop
     @media (min-width: 1025px) {
-        width: 50%;
+        font-size: 3rem;
     }
 
     ul {
-        list-style: none outside none;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 2rem;
-
-        width: 100%;
-
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
         li {
+
+            padding: 10px;
+            width: 100%;
             text-align: center;
+            margin: 1px 0;
             font-family: $fontText;
 
             a {
@@ -143,8 +160,6 @@
                 }
             }
         }
-
-        margin: 0;
     }
 
 
