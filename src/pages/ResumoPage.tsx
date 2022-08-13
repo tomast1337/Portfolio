@@ -11,7 +11,7 @@ const ResumoPage = () => {
     return (
         <div className={ResumoStyle.page}>
             <h1>Resumo</h1>
-            <img src="/imgs/eu.jpg" alt="Eu" />
+            <img src="/imgs/eu.jpeg" alt="Eu" />
             <p>
                 Sou programador há 8 anos e estudo formalmente desde 2016. Estudei TI no ensino médio técnico da FAETEC com foco em desenvolvimento de software Java, linguagem na qual tenho mais prática e experiência. Atualmente estou cursando Ciência da Computação no CEFET/RJ.
             </p>

@@ -61,7 +61,7 @@ const ProjetosPage = () => {
         },
         {
             nome: "Minecraft Visualização Estrutura de Dados",
-            descricao: "Plugin spigot em java que gera visualizações de estrutura de dados do jogo.",
+            descricao: "Plugin spigot em java que gera visualizações de estrutura de dados dentro do jogo.",
             imagem: "/imgs/Minecraft Visualização Estrutura de Dados.png",
             link: "https://github.com/tomast1337/Minecraft-Visualizacao-Estrutura-de-Dados"
         },

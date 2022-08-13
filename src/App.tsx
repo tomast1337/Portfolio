@@ -20,7 +20,7 @@ const Overlay = (props: any) => {
 const PageBody = (props: any) => {
     return (
         <>
-            
+
             <Navbar />
             <div className={styles.container}>
                 {props.children}
@@ -31,7 +31,8 @@ const PageBody = (props: any) => {
 
 const App = () => {
     return (
-        <BrowserRouter basename={"/"}>
+
+        <BrowserRouter>
             <Routes>
                 <Route path="/" element={
                     <PageBody>
@@ -64,7 +65,9 @@ const App = () => {
                     </PageBody>
                 } />
             </Routes>
-        </BrowserRouter>
+
+
+        </BrowserRouter >
 
     )
 }
