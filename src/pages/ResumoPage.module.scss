@@ -31,8 +31,6 @@
         }
     }
 
-    // variable 
-    $rotation: -10deg;
 
     img {
         float: left;
@@ -41,12 +39,6 @@
         height: auto;
         margin: 0 2rem;
         border-radius: 10px;
-        filter: grayscale(30%) contrast(1.5);
-
-        &:hover {
-            transform: rotateX($rotation*36);
-            transition: transform 2s;
-        }
-        transition: transform 1s;
+        filter: grayscale(0%) contrast(1.5);
     }
 }

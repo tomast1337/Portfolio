@@ -1,6 +1,6 @@
 @use './base-colors.scss' as *;
 
-.overlay{
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -17,18 +17,27 @@
 
 .container {
     background-color: $light1;
-    border-radius: 10px;
-    box-shadow: 0 0 2px $light2;
-    width: 95%;
+    width: 90%;
     height: fit-content;
     margin: 0 auto;
     padding: 1em;
     margin-top: 1em;
     min-height: 80vh;
+
+    border: 5px solid $dark1;
+    outline: 5px solid $light1;
+
+    border-radius: 50px;
+
+    box-shadow: 0 0 20px $light1;
+
+
+
+
     // desktop
     @media (min-width: 1025px) {
         width: 80%;
-        
+
     }
 }
 

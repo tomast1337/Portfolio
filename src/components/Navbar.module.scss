@@ -5,18 +5,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    padding: 10px 2rem;
     height: fit-content;
-    background-color: $light1;
+    background-color: $dark1;
     border: 1px solid $dark1;
     border-radius: 5px;
     height: 8vh;
 
     .navbar_brand {
+        border: 1px solid $light1;
+        border-radius: 5px;
+        padding: 0.5rem 1rem;
+        box-shadow: 0 0 8px $light3;
+
+        cursor: pointer;
+
         h3 {
             font-size: 4em;
             font-weight: bold;
-            color: $dark2;
+            color: $light1;
             font-family: $fontText;
             margin: 0;
         }
@@ -24,21 +31,26 @@
         h4 {
             font-size: 2rem;
             font-weight: bold;
-            color: $dark2;
+            color: $light2;
             font-family: $fontMonoText;
             margin: 0;
         }
+        transition: all 0.3s ease-in-out;
+        //Transitions
+        &:hover {
+            border-radius: 10px;
+        }
 
-         // desktop
-         @media (min-width: 1025px) {
+        // desktop
+        @media (min-width: 1025px) {
             h3 {
                 font-size: 3.5rem;
             }
-    
+
             h4 {
                 font-size: 2rem;
             }
-    
+
         }
     }
 
@@ -49,15 +61,15 @@
         height: 90%;
         aspect-ratio: 1;
         border-radius: 50%;
-        background-color: $dark1;
-        color: $light1;
+        background-color: $light1;
+        color: $dark1;
         font-size: 3em;
 
         // desktop
         @media (min-width: 1025px) {
             font-size: 2rem;
         }
-
+        box-shadow: 0 0 20px $light2;
         margin: 1px;
         font-weight: bold;
         cursor: pointer;
@@ -66,8 +78,8 @@
 
         &:hover,
         &:focus {
-            background-color: $dark2;
-            color: $light2;
+            background-color: $light2;
+            color: $dark2;
         }
     }
 
@@ -88,7 +100,7 @@
 
     border-radius: 25px;
     box-shadow: 0 0 100px rgba(0, 0, 0, 0.503);
-
+    width: 70%;
     @media (min-width: 1025px) {
         width: 50%;
     }
@@ -100,10 +112,8 @@
         align-items: center;
         justify-content: center;
         padding: 2rem;
-        
+
         width: 100%;
-        // desktop
-        
 
         li {
             text-align: center;

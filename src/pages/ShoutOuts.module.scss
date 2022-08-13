@@ -9,6 +9,7 @@
         font-family: $fontTitle;
     }
 
+
     p {
         font-size: 2em;
         text-align: justify;
@@ -34,6 +35,8 @@
         margin: 1%;
         background-color: $dark1;
         border-radius: 10px;
+        border: 2px solid $light1;
+        outline: 5px solid $dark1;
         box-shadow: 2px 2px 4px $dark1;
         min-width: 300px;
 

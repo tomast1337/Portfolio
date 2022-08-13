@@ -1,17 +1,24 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import style from "./Navbar.module.scss";
 
 const Navbar = () => {
 
     const [isOpen, setIsOpen] = React.useState(false);
 
+    const navigate = useNavigate();
+
     const clickClose = () => setIsOpen(!isOpen);
 
     return (
         <>
             <div className={style.navbar}>
-                <span className={style.navbar_brand}>
+                <span className={style.navbar_brand}
+                    onClick={
+                        () => {
+                            navigate("/");
+                        }}
+                >
                     <h3>Nicolas Vycas Nery</h3>
                     <h4>Desenvolvedor de software</h4>
                 </span>
