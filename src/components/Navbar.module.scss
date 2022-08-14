@@ -37,7 +37,9 @@ $navbarHeight: 8vh;
             font-family: $fontMonoText;
             margin: 0;
         }
+
         transition: all 0.3s ease-in-out;
+
         //Transitions
         &:hover {
             border-radius: 10px;
@@ -67,10 +69,12 @@ $navbarHeight: 8vh;
         color: $dark1;
         font-size: 3em;
         outline: 5px solid $light3;
+
         // desktop
         @media (min-width: 1025px) {
             font-size: 2rem;
         }
+
         box-shadow: 0 0 20px $light2;
         margin: 1px;
         font-weight: bold;
@@ -88,21 +92,36 @@ $navbarHeight: 8vh;
     transition: all 1s ease-in-out;
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(25%);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 .navbarMenu {
     transition: all 0.3s ease-in-out;
+    display: flex;
     position: absolute;
-    
-    
+    top: $navbarHeight + 4vh;
+    left: 0;
+    right: 0;
+    margin: auto;
+
     width: fit-content;
     height: fit-content;
 
-    top: $navbarHeight * 1.5;
-    left: auto;
-    right: 8vw;
-    bottom: auto;
-    
+    display: block;
     padding: 1em;
-    
+
     background-color: $light2;
     border: 5px solid $dark1;
     outline: 5px solid $light2;
@@ -113,6 +132,8 @@ $navbarHeight: 8vh;
     z-index: 99;
 
     font-size: 8rem;
+
+    transition: all 0.3s ease-in-out;
 
     // desktop
     @media (min-width: 1025px) {
@@ -127,7 +148,7 @@ $navbarHeight: 8vh;
         list-style: none;
         padding: 0;
         margin: 0;
-        
+
         li {
 
             padding: 10px;
@@ -136,7 +157,7 @@ $navbarHeight: 8vh;
             margin: 1px 0;
             font-family: $fontText;
 
-            a {
+            a ,button{
                 color: $dark1;
                 text-decoration: none;
                 // make look like a button

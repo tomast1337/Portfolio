@@ -94,9 +94,11 @@ const ProjetosPage = () => {
             <div className={style.page}>
                 <h1>Projetos</h1>
                 <div className={style.projetos}>
-                    {projetos.sort(() => Math.random() - 0.5).map(projeto => (
-                        <ProjetoCard projeto={projeto} />
-                    ))}
+                    {
+                        projetos.sort(() => Math.random() - 0.5).map((projeto: Projeto, index: number) => {
+                            return <ProjetoCard projeto={projeto} key={index} />;
+                        })
+                    }
                 </div>
             </div>
         </>

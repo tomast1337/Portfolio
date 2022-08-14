@@ -34,15 +34,10 @@ const Navbar = () => {
 
             </div>
             <div className={style.navbarMenu}
-            style={{
-                transform: isOpen ?
-                    "translateX(0)" : "translateX(125%)"
-            }}
-            // On hover
-            onMouseEnter={() => setIsOpen(true)}
-            onMouseLeave={() => setIsOpen(false)}
-            >
-
+                style={{
+                    display: isOpen ? "flex" : "none",
+                    animation: isOpen ? `${style.fadeIn} .3s ease-in-out` : "none"
+                }}>
                 <ul>
                     <li><Link onClick={clickClose} to="/"> Sobre </Link></li>
                     <li><Link onClick={clickClose} to="/Projetos"> Projetos </Link></li>
