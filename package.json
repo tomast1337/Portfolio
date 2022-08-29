@@ -2,7 +2,7 @@
     "name": "portifolio",
     "version": "0.1.0",
     "description": "",
-    "homepage": "https://nicolasvycas.github.io/",
+    "homepage": "https://tomast1337.github.io/",
     "scripts": {
         "start": "vite",
         "build": "vite build",
