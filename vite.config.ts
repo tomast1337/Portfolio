@@ -1,7 +1,7 @@
 module.exports = {     
     root: './',     
     build: {       
-       outDir: 'dist',
+       outDir: 'build',
             },     
     publicDir: 'assets'   
  } 
