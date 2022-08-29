@@ -14,32 +14,43 @@ $navbarHeight: 8vh;
     border-radius: 5px;
     height: $navbarHeight;
 
+    
+
     .navbar_brand {
+        animation: fadeIn 1s ;
+        @keyframes TextAnimation {
+            0% {
+                opacity: 0;
+                transform: translateY(25%)  rotate(180deg)  scale(0.5);
+                fill: $light1;
+            }
+        
+            50% {
+                transform: translateY(0) ,scale(1.1)
+            }
+        
+            100% {
+                transform: translateY(0) rotate(0deg) scale(1);
+                opacity: 1;
+                fill: $light4;
+            }
+        }
+
+        margin-top: 5em;
         border: 1px solid $light1;
-        border-radius: 5px;
-        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        padding: 10px;
+        padding-bottom: -50em;
         box-shadow: 0 0 1000px $light3;
-
-        cursor: pointer;
-
-        h3 {
-            font-size: 4em;
-            font-weight: bold;
-            color: $light1;
-            font-family: $fontText;
-            margin: 0;
+        path{
+            fill: $light4;
+            box-shadow: 0 0 1000px $light3;
+            animation: TextAnimation 1.5s ;
         }
-
-        h4 {
-            font-size: 2rem;
-            font-weight: bold;
-            color: $light2;
-            font-family: $fontMonoText;
-            margin: 0;
+        svg{
+            width: 20em;
+            height: auto;
         }
-
-        transition: all 0.3s ease-in-out;
-
         //Transitions
         &:hover {
             border-radius: 10px;
@@ -47,13 +58,6 @@ $navbarHeight: 8vh;
 
         // desktop
         @media (min-width: 1025px) {
-            h3 {
-                font-size: 3.5rem;
-            }
-
-            h4 {
-                font-size: 2rem;
-            }
 
         }
     }
@@ -62,13 +66,15 @@ $navbarHeight: 8vh;
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 90%;
-        aspect-ratio: 1;
-        border-radius: 50%;
+        height: 100%;
+        width: fit-content;
+        border-radius: 5%;
         background-color: $light1;
         color: $dark1;
         font-size: 3em;
         outline: 5px solid $light3;
+
+        animation: fadeIn 1s ;
 
         // desktop
         @media (min-width: 1025px) {
