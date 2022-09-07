@@ -12,36 +12,29 @@ const ShoutOutsPage = () => {
 
     const shoutOuts: shoutOut[] = [
         {
-            nome: "Davi Campanaro",
-            link: "https://github.com/DaveTheCamper",
-            mensagem: "",
-            foto: "https://avatars.githubusercontent.com/u/44680026?v=4"
+            nome: "Davi Campanaro",link: "https://github.com/DaveTheCamper",
+            mensagem: "",foto: "https://avatars.githubusercontent.com/u/44680026?v=4"
         },
         {
-            nome: "Bernardo Costa",
-            link: "https://github.com/Bentroen",
-            mensagem: "",
-            foto: "https://avatars.githubusercontent.com/u/29354120?v=4"
+            nome: "Cristhiane da Cruz",link: "https://github.com/barroscruzc",
+            mensagem: "",foto: "https://avatars.githubusercontent.com/u/93226440?v=4"
         },
         {
-            nome: "Diego de Paula",
-            link: "https://github.com/DiegoPaula",
-            mensagem: "",
-            foto: "https://avatars.githubusercontent.com/u/77380810?v=4"
+            nome: "Bernardo Costa",link: "https://github.com/Bentroen",
+            mensagem: "",foto: "https://avatars.githubusercontent.com/u/29354120?v=4"
         },
         {
-            nome: "Felipe Nieto",
-            link: "https://github.com/NietoCurcio",
-            mensagem: "",
-            foto: "https://avatars.githubusercontent.com/u/51931239?v=4"
+            nome: "Diego de Paula",link: "https://github.com/DiegoPaula",
+            mensagem: "",foto: "https://avatars.githubusercontent.com/u/77380810?v=4"
         },
         {
-            nome: "Marcus Oliveira",
-            link: "https://github.com/mvgoliveira",
-            mensagem: "",
-            foto: "https://avatars.githubusercontent.com/u/53785487?v=4"
+            nome: "Felipe Nieto",link: "https://github.com/NietoCurcio",
+            mensagem: "",foto: "https://avatars.githubusercontent.com/u/51931239?v=4"
+        },
+        {
+            nome: "Marcus Oliveira",link: "https://github.com/mvgoliveira",
+            mensagem: "",foto: "https://avatars.githubusercontent.com/u/53785487?v=4"
         }
-
     ];
 
     React.useEffect(() => {
