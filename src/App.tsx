@@ -1,5 +1,5 @@
 import * as React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import ContatoPage from "./pages/ContatoPage";
 import ExperienciaPage from "./pages/ExperienciaPage";
 import FormaçãoPage from "./pages/FormaçãoPage";
@@ -31,7 +31,7 @@ const PageBody = (props: any) => {
 const App = () => {
     return (
 
-        <BrowserRouter>
+        <HashRouter>
             <Routes>
                 <Route path="/" element={
                     <PageBody>
@@ -66,7 +66,7 @@ const App = () => {
             </Routes>
 
 
-        </BrowserRouter >
+        </HashRouter >
 
     )
 }
