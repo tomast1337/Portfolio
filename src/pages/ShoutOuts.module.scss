@@ -41,7 +41,7 @@
         min-width: 300px;
 
         // desktop
-        @media (min-width: 1025px) {
+        @media (min-width: $forDesktop) {
             width: 25%;
         }
 
@@ -70,7 +70,7 @@
                 font-weight: lighter;
 
                 // desktop
-                @media (min-width: 1025px) {
+                @media (min-width: $forDesktop) {
                     font-size: 1.5em;
                 }
             }

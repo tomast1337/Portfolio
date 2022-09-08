@@ -33,9 +33,8 @@
     background-color: $light1;
     width: 90vw;
     height: fit-content;
-    margin: 0 auto;
+    margin: 1em auto;
     padding: 1em;
-    margin-top: 5em;
     min-height: 80vh;
 
     border: 5px solid $dark1;
@@ -50,9 +49,8 @@
     animation: fadeIn 2s;
    
     // desktop
-    @media (min-width: 1025px) {
-        width: 80vw;
-
+    @media (min-width: $forDesktop) {
+        width: $forDesktop;
     }
 }
 

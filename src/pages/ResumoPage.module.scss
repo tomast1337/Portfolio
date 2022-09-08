@@ -25,7 +25,7 @@
         color: $dark2;
         font-family: $fontText;
         // desktop
-        @media (min-width: 1025px) {
+        @media (min-width: $forDesktop) {
             font-size: 2em;
     
         }

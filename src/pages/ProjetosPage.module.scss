@@ -12,39 +12,27 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
-        align-items: flex-start;
+        justify-content: stretch;
+        align-items: center;
+        align-content: center;
         margin: 0 auto;
         padding: 0;
+
     }
 
     .projeto {
         width: 40%;
-        height: 30%;
-        margin: 1%;
+        align-self: stretch;
+        margin: 1rem auto;
         background-color: $dark1;
         border-radius: 10px;
         box-shadow: 2px 2px 4px $dark1;
         min-width: 300px;
-
-        // desktop
-        @media (min-width: 1025px) {
-            width: 10%;
-        }
-
-        &:hover {
-            box-shadow: 2px 2px 4px $dark1;
-            transform: scale(1.01);
-            transition: transform 1s;
-        }
-
         transition: transform 1s;
 
-        a {
-            text-decoration: none;
-            color: $light3;
-            font-family: $fontBarcode;
-            font-size: 3em;
+        // desktop
+        @media (min-width: $forDesktop) {
+            width: 10%;
         }
     }
 
@@ -61,34 +49,46 @@
     }
 
     .projetoInfo {
-        h2 {
-            font-family: $fontBold;
-            font-weight: lighter;
-            font-size: 3rem;
-
-            // desktop
-            @media (min-width: 1025px) {
-                font-size: 2em;
-            }
-        }
-
+        padding: 1em;
         color: $light1;
         font-size: 1.5em;
         text-align: center;
         text-justify: inter-word;
-        padding: 1em;
         font-family: $fontSans;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: space-between;
+
         // desktop
-        @media (min-width: 1025px) {
+        @media (min-width: $forDesktop) {
             font-size: 1rem;
         }
-    }
 
-    .descricao {
-        color: $light1;
-        text-align: center;
-        text-justify: inter-word;
-        padding: 1em;
-        font-family: $fontBarcode;
+        h2 {
+            font-family: $fontBold;
+            font-weight: lighter;
+            font-size: 3rem;
+            margin: 0 auto;
+            // desktop
+            @media (min-width: $forDesktop) {
+                font-size: 2em;
+            }
+
+        }
+
+        p{
+            margin: 1em auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: $light3;
+            font-family: $fontBarcode;
+            font-size: 3em;
+
+        }
+
     }
 }

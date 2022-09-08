@@ -1,83 +1,76 @@
 @use '../base-colors.scss' as *;
 
+@keyframes TextAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(25%) rotate(180deg) scale(0.5);
+    }
+
+    50% {
+        transform: translateY(0), scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+}
+
 $navbarHeight: 8vh;
 
 // NavBar css
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 10px 2rem;
     height: fit-content;
-    background-color: $dark1;
-    border: 1px solid $dark1;
-    border-radius: 5px;
-    height: $navbarHeight;
-
-    
+    height: fit-content;
 
     .navbar_brand {
-        animation: fadeIn 1s ;
-        @keyframes TextAnimation {
-            0% {
-                opacity: 0;
-                transform: translateY(25%)  rotate(180deg)  scale(0.5);
-                fill: $light1;
-            }
-        
-            50% {
-                transform: translateY(0) ,scale(1.1)
-            }
-        
-            100% {
-                transform: translateY(0) rotate(0deg) scale(1);
-                opacity: 1;
-                fill: $light4;
+        animation: fadeIn 1s;
+        padding: 10px;
+        margin: 0 1rem;
+
+        path {
+            fill: $dark1;
+            box-shadow: 0 0 1000px $light3;
+            animation: TextAnimation 1.5s;
+        }
+
+        svg {
+            width: 40rem;
+            height: auto;
+
+            // desktop
+            @media (min-width: $forDesktop) {
+                width: 25rem;
             }
         }
 
-        margin-top: 5em;
-        border: 1px solid $light1;
-        border-radius: 25px;
-        padding: 10px;
-        padding-bottom: -50em;
-        box-shadow: 0 0 1000px $light3;
-        path{
-            fill: $light4;
-            box-shadow: 0 0 1000px $light3;
-            animation: TextAnimation 1.5s ;
-        }
-        svg{
-            width: 20em;
-            height: auto;
-        }
         //Transitions
         &:hover {
             border-radius: 10px;
         }
 
-        // desktop
-        @media (min-width: 1025px) {
 
-        }
     }
 
     .navbar_button {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 100%;
+        height: fit-content;
         width: fit-content;
         border-radius: 5%;
         background-color: $light1;
         color: $dark1;
-        font-size: 3em;
+        font-size: 5em;
         outline: 5px solid $light3;
 
-        animation: fadeIn 1s ;
+        animation: fadeIn 1s;
 
         // desktop
-        @media (min-width: 1025px) {
+        @media (min-width: $forDesktop) {
             font-size: 2rem;
         }
 
@@ -137,12 +130,12 @@ $navbarHeight: 8vh;
 
     z-index: 99;
 
-    font-size: 8rem;
+    font-size: 5rem;
 
     transition: all 0.3s ease-in-out;
 
     // desktop
-    @media (min-width: 1025px) {
+    @media (min-width: $forDesktop) {
         font-size: 3rem;
     }
 
@@ -163,7 +156,8 @@ $navbarHeight: 8vh;
             margin: 1px 0;
             font-family: $fontText;
 
-            a ,button{
+            a,
+            button {
                 color: $dark1;
                 text-decoration: none;
                 // make look like a button

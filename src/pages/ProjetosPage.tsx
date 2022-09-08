@@ -5,7 +5,7 @@ type Projeto = {
     nome: string;
     descricao: string;
     imagem: string;
-    link: string | null | undefined;
+    link: string;
 }
 
 const ProjetoCard = (props: { projeto: Projeto }) => {
@@ -18,10 +18,7 @@ const ProjetoCard = (props: { projeto: Projeto }) => {
             <div className={style.projetoInfo}>
                 <h2>{projeto.nome}</h2>
                 <p>{projeto.descricao}</p>
-                {
-                    projeto.link &&
-                    <a href={projeto.link}>{"Ver Projeto"}</a>
-                }
+                <a href={projeto.link}>{"Ver Projeto"}</a>
             </div>
         </div>
     );
