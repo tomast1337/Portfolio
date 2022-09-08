@@ -40,10 +40,9 @@ $navbarHeight: 8vh;
         svg {
             width: 40rem;
             height: auto;
-
             // desktop
             @media (min-width: $forDesktop) {
-                width: 25rem;
+                width: 40rem;
             }
         }
 

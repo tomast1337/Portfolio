@@ -111,7 +111,7 @@ const ProjetosPage = () => {
         descricao: (<p>
             Aplicação em <span>ReactJs</span> que gera logotipos.
         </p>),
-        imagem: "https://user-images.githubusercontent.com/93226440/186889300-6e542fe0-1797-47d6-8e52-9115290d8684.png",
+        imagem: "https://github.com/tomast1337/black-metal-logo-generator/blob/main/images/3.png?raw=true",
         link: "https://github.com/tomast1337/black-metal-logo-generator",
     }, {
         nome: "Tabela Periódica",
@@ -119,7 +119,7 @@ const ProjetosPage = () => {
             Fiz o porte dese projeto de Cristhiane da Cruz para <span>ReactJs</span>
             com <span>Typescript</span> e <span>Scss</span>.
         </p>),
-        imagem: "https://github.com/tomast1337/black-metal-logo-generator/blob/main/images/3.png?raw=true",
+        imagem: "https://user-images.githubusercontent.com/93226440/186889300-6e542fe0-1797-47d6-8e52-9115290d8684.png",
         link: "https://github.com/barroscruzc/tabelaPeriodica",
     }];
 
