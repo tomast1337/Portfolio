@@ -74,6 +74,11 @@ const ProjetosPage = () => {
         imagem: "/imgs/Este projeto.png",
         link: "https://github.com/tomast1337/Portf-lio"
     },{
+        nome: "CSGO Sticker Finder",
+        descricao: "Aplicação em React feita com Typescript e com dados processados com python, pandas e scipy que permitir achar stickers de csgo por cor.",
+        imagem: "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0HdUuqkw9aDAhJ8KhNbv7SiFANhxP33fTxQ69n4x4SJxaPxMO2GkjoD7JIo3LmYpon23wTirkU4MjvxLdCXdw47YQnZqE_-n7kIntsXFw/260fx260f",
+        link: "https://github.com/tomast1337/Csgo-Sticker-color-Picker",
+    },{
         nome: "Black Metal Logo Generator",
         descricao: "Aplicação em React que gera logotipos.",
         imagem: "https://user-images.githubusercontent.com/93226440/186889300-6e542fe0-1797-47d6-8e52-9115290d8684.png",
