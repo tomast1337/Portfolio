@@ -62,28 +62,28 @@ const ProjetosPage = () => {
         descricao: "Fiz um frontend para esse projeto de Cristhiane da Cruz com ReactJs, typescript e CSS. Também contribui para o backend fito com Spring.",
         imagem: "https://user-images.githubusercontent.com/93226440/187004819-cc08ccfc-fb4d-4a26-a11f-6d4df29142aa.png",
         link: "https://github.com/barroscruzc/petshop"
-    }];
-    const projetosPequenos: Projeto[] = [{
+    }, {
+        nome: "CSGO Sticker Finder",
+        descricao: "Aplicação em React feita com Typescript e com dados processados com python, pandas e scipy que permitir achar stickers de csgo por cor.",
+        imagem: "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0HdUuqkw9aDAhJ8KhNbv7SiFANhxP33fTxQ69n4x4SJxaPxMO2GkjoD7JIo3LmYpon23wTirkU4MjvxLdCXdw47YQnZqE_-n7kIntsXFw/260fx260f",
+        link: "https://sticker-picker.vercel.app/",
+    }, {
         nome: "More Sponges mod",
         descricao: "Mod para Minecraft em java que adiciona mais esponjas ao jogo.",
         imagem: "/imgs/moresponges.png",
         link: "https://github.com/tomast1337/More-Sponges-Mod"
-    },{
+    }, {
         nome: "Este projeto",
         descricao: "Site pessoal feito em React e TypeScript.",
         imagem: "/imgs/Este projeto.png",
         link: "https://github.com/tomast1337/Portf-lio"
-    },{
-        nome: "CSGO Sticker Finder",
-        descricao: "Aplicação em React feita com Typescript e com dados processados com python, pandas e scipy que permitir achar stickers de csgo por cor.",
-        imagem: "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0HdUuqkw9aDAhJ8KhNbv7SiFANhxP33fTxQ69n4x4SJxaPxMO2GkjoD7JIo3LmYpon23wTirkU4MjvxLdCXdw47YQnZqE_-n7kIntsXFw/260fx260f",
-        link: "https://github.com/tomast1337/Csgo-Sticker-color-Picker",
-    },{
+    }];
+    const projetosPequenos: Projeto[] = [{
         nome: "Black Metal Logo Generator",
         descricao: "Aplicação em React que gera logotipos.",
         imagem: "https://user-images.githubusercontent.com/93226440/186889300-6e542fe0-1797-47d6-8e52-9115290d8684.png",
         link: "https://github.com/tomast1337/black-metal-logo-generator",
-    },{
+    }, {
         nome: "Tabela Periódica",
         descricao: "Fiz o porte dese projeto de Cristhiane da Cruz para React com Typescript e Scss.",
         imagem: "https://github.com/tomast1337/black-metal-logo-generator/blob/main/images/3.png?raw=true",
