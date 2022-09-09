@@ -7,16 +7,15 @@
         color: $dark2;
         font-family: $fontTitle;
     }
-
     ul {
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: center;
-        margin: 0;
+        justify-content: space-between;
+        width: 50%;
+        margin: 0 auto;
         list-style-type: none;
-
-        img {
+        svg {
             // desktop
             @media (min-width: $forDesktop) {
                 width: 6rem;
@@ -26,5 +25,10 @@
             height: auto;
         }
     }
-
+    .github{
+        fill: $dark2;
+    }
+    .linkedin{
+        fill: $dark2;
+    }
 }
