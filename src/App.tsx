@@ -1,14 +1,14 @@
 import * as React from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
-import ContatoPage from "./pages/ContatoPage";
-import ExperienciaPage from "./pages/ExperienciaPage";
-import FormaçãoPage from "./pages/FormaçãoPage";
-import ProjetosPage from "./pages/ProjetosPage";
-import ResumoPage from "./pages/ResumoPage";
+import {
+    ContatoPage,
+    ExperienciaPage,
+    FormaçãoPage,
+    ProjetosPage, ResumoPage, ShoutOuts, Curriculo
+} from "./pages";
+
 import Navbar from "./components/Navbar";
 import styles from "./App.module.scss";
-import ShoutOuts from "./pages/ShoutOuts";
-import Curriculo from "./pages/Curriculo";
 
 const Overlay = (props: any) => {
     return (
