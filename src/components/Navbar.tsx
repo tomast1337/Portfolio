@@ -17,7 +17,7 @@ const Navbar = () => {
     return (
         <>
             <div className={style.navbar}>
-                <span className={style.navbar_brand}
+                <div className={style.navbar_brand}
                     onClick={
                         () => {
                             navigate("/");
@@ -169,27 +169,18 @@ const Navbar = () => {
                             </g>
                         </g>
                     </svg>
-                </span>
-                <button
-                    className={style.navbar_button}
-                    onClick={clickClose}>
-                    {isOpen ? "Sair" : "Menu"}
-                </button>
-
-            </div>
-            <div className={style.navbarMenu}
-                style={{
-                    display: isOpen ? "flex" : "none",
-                    animation: isOpen ? `${style.fadeIn} .3s ease-in-out` : "none"
-                }}>
-                <ul>
-                    <li><Link onClick={clickClose} to="/"> Sobre </Link></li>
-                    <li><Link onClick={clickClose} to="/Projetos"> Projetos </Link></li>
-                    <li><Link onClick={clickClose} to="/Experiencia"> Experiencia </Link></li>
-                    <li><Link onClick={clickClose} to="/Formacao"> Formação </Link></li>
-                    <li><Link onClick={clickClose} to="/Contato"> Contato </Link></li>
-                    <li><Link onClick={clickClose} to="/ShoutOuts"> ShoutOuts </Link></li>
-                </ul>
+                </div>
+                <div className={style.navbarMenu}>
+                    <ul>
+                        <li><Link onClick={clickClose} to="/"> Sobre </Link></li>
+                        <li><Link onClick={clickClose} to="/Projetos"> Projetos </Link></li>
+                        <li><Link onClick={clickClose} to="/Experiencia"> Experiencia </Link></li>
+                        <li><Link onClick={clickClose} to="/Formacao"> Formação </Link></li>
+                        <li><Link onClick={clickClose} to="/Contato"> Contato </Link></li>
+                        <li><Link onClick={clickClose} to="/ShoutOuts"> ShoutOuts </Link></li>
+                        <li><Link onClick={clickClose} to="/Curriculo"> Currículo </Link></li>
+                    </ul>
+                </div>
             </div>
         </>
     );

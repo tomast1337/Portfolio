@@ -8,6 +8,7 @@ import ResumoPage from "./pages/ResumoPage";
 import Navbar from "./components/Navbar";
 import styles from "./App.module.scss";
 import ShoutOuts from "./pages/ShoutOuts";
+import Curriculo from "./pages/Curriculo";
 
 const Overlay = (props: any) => {
     return (
@@ -61,6 +62,21 @@ const App = () => {
                 <Route path="/ShoutOuts" element={
                     <PageBody>
                         <ShoutOuts />
+                    </PageBody>
+                } />
+                <Route path="/Curriculo" element={
+                    <Curriculo />
+                } />
+                <Route path="*" element={
+                    <PageBody>
+                        <h1
+                            style={{
+                                textAlign: "center",
+                                marginTop: "20vh",
+                                fontSize: "5rem"
+                            }}>
+                            404
+                        </h1>
                     </PageBody>
                 } />
             </Routes>

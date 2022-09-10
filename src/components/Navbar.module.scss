@@ -22,6 +22,7 @@ $navbarHeight: 8vh;
 .navbar {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     height: fit-content;
     height: fit-content;
@@ -40,6 +41,7 @@ $navbarHeight: 8vh;
         svg {
             width: 40rem;
             height: auto;
+
             // desktop
             @media (min-width: $forDesktop) {
                 width: 40rem;
@@ -52,39 +54,6 @@ $navbarHeight: 8vh;
         }
 
 
-    }
-
-    .navbar_button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: fit-content;
-        width: fit-content;
-        border-radius: 5%;
-        background-color: $light1;
-        color: $dark1;
-        font-size: 5em;
-        outline: 5px solid $light3;
-
-        animation: fadeIn 1s;
-
-        // desktop
-        @media (min-width: $forDesktop) {
-            font-size: 2rem;
-        }
-
-        box-shadow: 0 0 20px $light2;
-        margin: 1px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-        font-family: $fontMonoText;
-
-        &:hover,
-        &:focus {
-            background-color: $light2;
-            color: $dark2;
-        }
     }
 
     transition: all 1s ease-in-out;
@@ -107,40 +76,13 @@ $navbarHeight: 8vh;
 
 .navbarMenu {
     transition: all 0.3s ease-in-out;
-    display: flex;
-    position: absolute;
-    top: $navbarHeight + 4vh;
-    left: 0;
-    right: 0;
-    margin: auto;
-
-    width: fit-content;
+    margin: auto 0;
+    width: 100%;
     height: fit-content;
-
-    display: block;
-    padding: 1em;
-
-    background-color: $light2;
-    border: 5px solid $dark1;
-    outline: 5px solid $light2;
-
-    border-radius: 50px;
-    box-shadow: 0 0 25px $light2;
-
-    z-index: 99;
-
-    font-size: 5rem;
-
-    transition: all 0.3s ease-in-out;
-
-    // desktop
-    @media (min-width: $forDesktop) {
-        font-size: 3rem;
-    }
 
     ul {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
         list-style: none;
@@ -148,12 +90,17 @@ $navbarHeight: 8vh;
         margin: 0;
 
         li {
-
             padding: 10px;
             width: 100%;
             text-align: center;
             margin: 1px 0;
             font-family: $fontText;
+            font-size: 5rem;
+
+            // desktop
+            @media (min-width: $forDesktop) {
+                font-size: 2rem;
+            }
 
             a,
             button {
