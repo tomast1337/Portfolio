@@ -22,7 +22,7 @@ const ResumoPage = () => {
                 Estou disposto a trabalhar em qualquer região do Brasil, ser for remoto, e presencial na cidade do Rio de Janeiro, claro se não atrapalhar meu tempo para a universidade e estudo.
             </p>
             <p>
-                A cima a um botão "menu" onde se pode acessar outras paginas do meu portfólio, que tal começar pelos meus <Link to="/Projetos">projetos</Link>?
+                A cima a uma lista de links onde se pode acessar outras paginas do meu portfólio, que tal começar pelos meus <Link to="/Projetos">projetos</Link>?
             </p>
         </div>
     )
