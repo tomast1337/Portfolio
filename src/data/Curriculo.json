@@ -2,7 +2,7 @@
     "Nome": "Nicolas Vycas Nery",
     "Posição": "Desenvolvedor FullStack",
     "Local": "Rio de Janeiro, RJ - Brasil",
-    "Resumo": "Sou programador há 8 anos e estudo formalmente desde 2016. Estudei TI no ensino médio técnico da FAETEC com foco em desenvolvimento de software Java, linguagem na qual tenho mais prática e experiência. Atualmente estou cursando Ciência da Computação no CEFET/RJ. \n\n Meu objetivo atual é mudar da área do meu estágio atual em ciência de dados no TCU, para um estágio ou emprego desenvolvedor de software que era meu objetivo inicial a 8 anos.",
+    "Resumo": "Sou programador há 8 anos e estudo formalmente desde 2016. Estudei TI no ensino médio técnico da FAETEC com foco em desenvolvimento de software Java, linguagem na qual tenho mais prática e experiência. Atualmente estou cursando Ciência da Computação no CEFET/RJ. \n\nMeu objetivo atual é mudar da área do meu estágio atual em ciência de dados no TCU, para um estágio ou emprego desenvolvedor de software que era meu objetivo inicial a 8 anos. \n\n Tenho  conhecimento e experiência em Java, Python, SQL, HTML, CSS, TypeScript, Git, SQL, MongoDB e metodologias ágeis.",
     "Formação": [
         {
             "Tipo": "Graduação",
@@ -18,7 +18,7 @@
         }
     ],
     "Experiencia Profissional": [{
-        "Nome": "Estagiário de Data Science no Tribunal de Contas da União:",
+        "Nome": "Estagiário em Ciência de Dados",
         "Empresa": "TCU",
         "Data Início": "Agosto de 2021",
         "Data Fim": "Atual",
@@ -26,7 +26,7 @@
     }],
     "Experiência Voluntária": [
         {
-            "Nome": "Monitor da disciplina Estrutura de Dados Monitor no CEFET/RJ",
+            "Nome": "Monitor da disciplina Estrutura de Dados",
             "Empresa": "CEFET/RJ",
             "Data Início": "Março de 2022",
             "Data Fim": "Atual",
