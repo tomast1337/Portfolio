@@ -55,6 +55,7 @@ export default () => {
                                     <div key={index} className={style.experiencia}>
                                         <h3>{item["Nome"]}</h3>
                                         <h3>{item["Empresa"]}</h3>
+                                        <p>{item["Descrição"]}</p>
                                         <p>{item["Data Início"]} - {item["Data Fim"]}</p>
                                     </div>
                                 );
@@ -69,6 +70,7 @@ export default () => {
                                     <div key={index} className={style.experiencia}>
                                         <h3>{item["Nome"]}</h3>
                                         <h3>{item["Empresa"]}</h3>
+                                        <p>{item["Descrição"]}</p>
                                         <p>{item["Data Início"]} - {item["Data Fim"]}</p>
                                     </div>
                                 );
