@@ -31,13 +31,23 @@
 .curriculo {
     background-color: white;
     padding: 1rem;
-    width: 100%;
+    width: 90%;
     height: 100%;
+    margin: 0 auto;
     position: relative;
-
+    border-radius: 1rem;
+    transition: all 0.3s ease-in-out;
+    
     @media print {
         padding: 0;
+        border-radius: 0;
+        width: 100%;
     }
+    //desktop
+    @media (min-width: 1024px) {
+        width: 70%;
+    }
+    
 }
 
 .header {

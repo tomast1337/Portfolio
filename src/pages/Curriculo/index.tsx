@@ -85,8 +85,6 @@ export default () => {
                             })
                         }
                         <h2>Links</h2>
-
-
                         <a href={"http://" + Dados["GitHub"]}>
                             <img
                             src="/github.svg"
@@ -95,7 +93,6 @@ export default () => {
                             />
                             {Dados["GitHub"]}
                         </a>
-
 
                         <a href={"http://" + Dados["LinkedIn"]}>
                             <img
@@ -135,7 +132,7 @@ export default () => {
                     <p>
                         Escrito em
                         <span>
-                            {new Date().toLocaleDateString()} {new Date().toLocaleTimeString()}
+                            {`${new Date().toLocaleDateString()} as ${new Date().toLocaleTimeString()}`}
                         </span>
                     </p>
                 </div>
