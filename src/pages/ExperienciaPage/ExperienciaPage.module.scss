@@ -1,6 +1,7 @@
 @use '../../base-colors.scss' as *;
 
 .page {
+    padding: 0 3rem;
     h1 {
         font-size: 3rem;
         text-align: center;
@@ -12,14 +13,14 @@
         font-size: 1.2rem;
         font-weight: bold;
         text-decoration: underline;
-        padding-left: 1em;
+        padding-left: 1rem;
         color: $dark1;
         font-family: $fontSans;
     }
 
     p {
         $page-padding: 4em;
-        font-size: 1em;
+        font-size: 1rem;
         text-align: justify;
         text-justify: inter-word;
         padding-left: $page-padding;
