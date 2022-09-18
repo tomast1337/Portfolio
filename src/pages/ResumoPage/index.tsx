@@ -22,7 +22,7 @@ const ResumoPage = () => {
                 Meu objetivo atual é mudar da área do meu estágio atual em ciência de dados no TCU, para um estágio ou emprego desenvolvedor de software que era meu objetivo inicial a 8 anos.
             </p>
             <p>
-                Atualmente tenho interesse emprego e, ou estagio, aqui no Rio de Janeiro, mas se for remoto posso trabalhar para qualquer lugar.
+                Atualmente tenho interesse em emprego e, ou estagio, aqui no Rio de Janeiro, mas se for remoto posso trabalhar para qualquer lugar.
             </p>
             <p>
                 Meu tempo na faculdade é negociável e pode se ajustar a posição, me formo no segundo semestre de 2024.
