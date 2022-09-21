@@ -12,7 +12,7 @@ const FormaçãoPage = () => {
             <p className={FormaçãoStyle.bold}>Em andamento</p>
             <p>(Bacharelado em Ciência da Computação) no CEFET/RJ</p>
             <p>Centro Federal de Educação Tecnológica</p>
-            <p className={FormaçãoStyle.bold}>(2020 – 2024)</p>
+            <p className={FormaçãoStyle.bold}>(2020 – 2023)</p>
 
             <h2>Ensino Médio Técnico</h2>
             <p className={FormaçãoStyle.bold}>Completo</p>

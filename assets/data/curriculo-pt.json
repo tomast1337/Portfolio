@@ -8,7 +8,7 @@
             "Tipo": "Graduação",
             "Instituição": "CEFET/RJ",
             "Curso": "Bacharelado Ciência da Computação",
-            "Data": "2020 - 2024 (em andamento)"
+            "Data": "2020 - 2023 (em andamento)"
         },
         {
             "Tipo": "Ensino Medio Técnico",
@@ -19,7 +19,7 @@
     ],
     "Experiencia Profissional": [{
         "Nome": "Estagiário em Ciência de Dados",
-        "Empresa": "TCU",
+        "Empresa": "Tribunal de Contas da União",
         "Data Início": "Agosto de 2021",
         "Data Fim": "Atual",
         "Descrição": "Prestando assistência em data mining e gestão de dados estruturados usando as seguintes ferramentas/tecnologias: Pandas, Matplotlib, Seaborn, Numpy, SQL, Excel, Power BI"
