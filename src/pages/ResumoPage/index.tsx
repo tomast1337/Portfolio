@@ -24,7 +24,7 @@ const ResumoPage = () => {
         o problema.
       </p>
       <p>
-        Sou entusiasta de tecnologias FOSS e de código aberto, e usuário de Arch
+        Sou entusiasta de tecnologias FOSS, e usuário de Arch
         Linux desde 2019, e Linux des de 2016.
       </p>
       <p>
