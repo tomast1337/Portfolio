@@ -1,33 +1,40 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import ResumoStyle from "./ResumoPage.module.scss";
+import { AppContext } from "../../context/AppContext";
+import {
+  CenteredImage,
+  Header,
+  Paragraph,
+  Page,
+} from "../../components/Commom";
 
 const ResumoPage = () => {
   React.useEffect(() => {
     document.title = "Resumo - Nicolas Vycas Nery";
   });
+  const { isDarkMode } = React.useContext(AppContext);
 
   return (
-    <div className={ResumoStyle.page}>
-      <h1>Resumo</h1>
-      <img src="/imgs/eu.jpeg" alt="Eu" />
-      <p>
+    <Page>
+      <Header isDarkMode={isDarkMode}>Resumo</Header>
+      <CenteredImage src="/imgs/eu.jpeg" alt="Eu" />
+      <Paragraph>
         Sou Nicolas, sou programador há 8 anos, estudo formalmente
         desenvolvimento de software desde 2016. Estudei TI no ensino médio
         técnico da FAETEC com foco em desenvolvimento de software Java,
         linguagem na qual tenho mais prática e experiência. Atualmente estou
         cursando Ciência da Computação no CEFET/RJ.
-      </p>
-      <p>
+      </Paragraph>
+      <Paragraph>
         Tenho interesse em desenvolvimento fullstack. Não existe stack ou
         negocio desinteressante, o que importa é a solução que vou entregar para
         o problema.
-      </p>
-      <p>
-        Sou entusiasta de tecnologias FOSS, e usuário de Arch
-        Linux desde 2019, e Linux des de 2016.
-      </p>
-      <p>
+      </Paragraph>
+      <Paragraph>
+        Sou entusiasta de tecnologias FOSS, e usuário de Arch Linux desde 2019,
+        e Linux des de 2016.
+      </Paragraph>
+      <Paragraph>
         Atualmente sou estagiário no{" "}
         <strong>Tribunal de contas da União</strong> na area de Cientista de
         Dados, onde trabalho com Python, PowerBI, SQL e outras tecnologias. E
@@ -35,17 +42,17 @@ const ResumoPage = () => {
         <a href="https://www.linkedin.com/company/betabit-dev/">BetaBit</a>,
         onde trabalho com React, NestJS, NodeJS, Typescript, PostgreSQL, AWS e
         outras tecnologias.
-      </p>
-      <p>
+      </Paragraph>
+      <Paragraph>
         A cima a uma lista de links onde se pode acessar outras paginas do meu
         portfólio, que tal começar pelos meus{" "}
         <Link to="/Projetos">projetos</Link>?
-      </p>
-      <p>
+      </Paragraph>
+      <Paragraph>
         Caso queira entrar em contato comigo, minha preferencia e que seja pelo{" "}
         <a href="https://www.linkedin.com/in/nicolas-vycas/">LinkedIn</a>.
-      </p>
-    </div>
+      </Paragraph>
+    </Page>
   );
 };
 
