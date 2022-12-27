@@ -1,10 +1,11 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
-import { colors, forDesktop } from "../styles/colors";
+import { colors, forDesktop, fonts } from "../styles/colors";
 import { AppContext } from "../context/AppContext";
 import { SVGLogo } from "./SVGLogo";
 import { TextAnimation } from "../styles/animations";
+import { Ruler } from "./Commom";
 
 const NavbarBody = styled.div`
   display: flex;
@@ -70,7 +71,7 @@ const NavbarMenu = styled.div`
       width: 100%;
       text-align: center;
       margin: 1px 0;
-      font-family: $fontText;
+      font-family: ${fonts.fontText};
       font-size: 1rem;
 
       ${forDesktop(
@@ -124,7 +125,10 @@ const Navbar = () => {
     <>
       <NavbarBody isDarkMode={isDarkMode}>
         <NavbarBrand isDarkMode={isDarkMode}>
-          <SVGLogo />
+          <SVGLogo
+            color={((isDarkMode) =>
+              isDarkMode ? colors.dark1 : colors.light1)(isDarkMode)}
+          />
         </NavbarBrand>
         <NavbarMenu isDarkMode={isDarkMode}>
           <ul>
@@ -173,6 +177,7 @@ const Navbar = () => {
           </ul>
         </NavbarMenu>
       </NavbarBody>
+      <Ruler />
     </>
   );
 };
