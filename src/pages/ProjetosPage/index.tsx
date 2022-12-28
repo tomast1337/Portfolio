@@ -123,7 +123,7 @@ const ProjetosPage = () => {
       descricao: (
         <p>
           TCC do meu técnico em informática da FAETEC de 2018. Controle de uma
-          loja de roupas, feito com <span>Java</span>, <span>Java Swing</span>e{" "}
+          loja de roupas, feito com <span>Java</span>, <span>Java Swing</span> e{" "}
           <span>MySQL</span>.
         </p>
       ),

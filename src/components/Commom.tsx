@@ -47,7 +47,7 @@ export const Page = styled.div`
 `;
 
 export const Header = styled.h1`
-  font-size: 3.5rem;
+  font-size: 3rem;
   text-align: ${(props: any) => props.float || "center"};
   color: ${(props: any) =>
     props.theme.isDarkMode ? colors.dark1 : colors.light1};
@@ -77,7 +77,7 @@ export const SubSubHeader = styled.h3`
 `;
 
 export const Paragraph = styled.p`
-  font-size: 2em;
+  font-size: 1.5em;
   text-align: justify;
   text-justify: inter-word;
   padding-left: 1em;
@@ -87,7 +87,7 @@ export const Paragraph = styled.p`
   font-family: ${fonts.fontText};
   ${forDesktop(
     css`
-      font-size: 2rem;
+      font-size: 1.5rem;
     `
   )}
 
@@ -96,6 +96,12 @@ export const Paragraph = styled.p`
       props.theme.isDarkMode ? colors.dark1 : colors.light1};
     text-decoration: underline;
     font-weight: bold;
+  }
+
+  span {
+    color: ${(props: any) =>
+      props.theme.isDarkMode ? colors.dark3 : colors.light3};
+    font-weight: 500;
   }
 `;
 
@@ -120,14 +126,14 @@ export const UnOrderedList = styled.ul`
   li {
     font-size: ${(props: UnOrderedListProps) => props.fontSize || "2em"};
     padding-left: 10%;
-    padding-right: 2em;
+    padding-right: 1.5em;
     color: ${(props: any) =>
       props.theme.isDarkMode ? colors.dark1 : colors.light1};
 
     font-family: ${fonts.fontText};
     ${forDesktop(
       css`
-        font-size: 2rem;
+        font-size: 1.5rem;
       `
     )}
   }

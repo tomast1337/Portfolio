@@ -2,6 +2,7 @@ import * as React from "react";
 import Container from "../components/Container";
 import Navbar from "../components/Navbar";
 import { ThemeContext } from "styled-components";
+import styled, { css } from "styled-components";
 
 const PageBody = (props: { children: React.ReactNode }) => {
   const { isDarkMode } = React.useContext(ThemeContext) as AppThemeContextType;
@@ -13,14 +14,23 @@ const PageBody = (props: { children: React.ReactNode }) => {
     }
   }, [isDarkMode]);
   document.body.style.backgroundSize = "cover";
-    document.body.style.backgroundRepeat = "no-repeat";
-    document.body.style.backgroundAttachment = "fixed";
+  document.body.style.backgroundRepeat = "no-repeat";
+  document.body.style.backgroundAttachment = "fixed";
+
+  const CentreOuterCSS = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  `;
   return (
     <>
-      <Container>
-        <Navbar />
-        {props.children}
-      </Container>
+      <CentreOuterCSS>
+        <Container>
+          <Navbar />
+          {props.children}
+        </Container>
+      </CentreOuterCSS>
     </>
   );
 };
