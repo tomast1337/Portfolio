@@ -48,32 +48,32 @@ export const Page = styled.div`
 
 export const Header = styled.h1`
   font-size: 3.5rem;
-  text-align: ${(props: HeaderProps) => props.float || "center"};
-  color: ${(props: HeaderProps) =>
-    props.isDarkMode ? colors.dark1 : colors.light1};
+  text-align: ${(props: any) => props.float || "center"};
+  color: ${(props: any) =>
+    props.theme.isDarkMode ? colors.dark1 : colors.light1};
   font-family: ${fonts.fontTitle};
 `;
 
 export const SubHeader = styled.h2`
   font-size: 2em;
-  text-align: ${(props: HeaderProps) => props.float || "center"};
+  text-align: ${(props: any) => props.float || "center"};
   font-weight: bold;
   text-decoration: underline;
   padding-left: 1em;
-  color: ${(props: HeaderProps) =>
-    props.isDarkMode ? colors.dark1 : colors.light1};
+  color: ${(props: any) =>
+    props.theme.isDarkMode ? colors.dark1 : colors.light1};
   font-family: ${fonts.fontText};
 `;
 
 export const SubSubHeader = styled.h3`
-    font-size: 1.5em;
-    text-align: ${(props: HeaderProps) => props.float || "center"};
-    font-weight: bold;
-    text-decoration: underline;
-    padding-left: 1em;
-    color: ${(props: HeaderProps) =>
-        props.isDarkMode ? colors.dark1 : colors.light1};
-    font-family: ${fonts.fontText};
+  font-size: 1.5em;
+  text-align: ${(props: any) => props.float || "center"};
+  font-weight: bold;
+  text-decoration: underline;
+  padding-left: 1em;
+  color: ${(props: any) =>
+    props.theme.isDarkMode ? colors.dark1 : colors.light1};
+  font-family: ${fonts.fontText};
 `;
 
 export const Paragraph = styled.p`
@@ -83,7 +83,7 @@ export const Paragraph = styled.p`
   padding-left: 1em;
   padding-right: 1em;
   color: ${(props: CommonProps) =>
-    props.isDarkMode ? colors.dark1 : colors.light1};
+    props.theme.isDarkMode ? colors.dark1 : colors.light1};
   font-family: ${fonts.fontText};
   ${forDesktop(
     css`
@@ -103,19 +103,19 @@ export const CenteredImage = styled.img`
 `;
 
 type UnOrderedListProps = CommonProps & {
-    fontSize?: string,
-}
+  fontSize?: string;
+};
 
 export const UnOrderedList = styled.ul`
-// no decoration
-    list-style-type: none;
+  // no decoration
+  list-style-type: none;
 
   li {
     font-size: ${(props: UnOrderedListProps) => props.fontSize || "2em"};
     padding-left: 10%;
     padding-right: 2em;
     color: ${(props: UnOrderedListProps) =>
-      props.isDarkMode ? colors.dark1 : colors.light1};
+      props.theme.isDarkMode ? colors.dark1 : colors.light1};
 
     font-family: ${fonts.fontText};
     ${forDesktop(
@@ -127,8 +127,8 @@ export const UnOrderedList = styled.ul`
 `;
 
 export const Ruler = styled.hr`
-border: 1px solid ${
-    (props: CommonProps) => (props.isDarkMode ? colors.dark1 : colors.light1)
-};
-margin: 1em 0;
+  border: 1px solid
+    ${(props: CommonProps) =>
+      props.theme.isDarkMode ? colors.dark1 : colors.light1};
+  margin: 1em 0;
 `;

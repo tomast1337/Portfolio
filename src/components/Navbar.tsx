@@ -1,11 +1,11 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import styled, { css } from "styled-components";
+import styled, { css, ThemeContext } from "styled-components";
 import { colors, forDesktop, fonts } from "../styles/colors";
-import { AppContext } from "../context/AppContext";
 import { SVGLogo } from "./SVGLogo";
 import { TextAnimation } from "../styles/animations";
 import { Ruler } from "./Commom";
+import { AppThemeContextType } from "../context/AppContext";
 
 const NavbarBody = styled.div`
   display: flex;
@@ -17,10 +17,6 @@ const NavbarBody = styled.div`
   transition: all 1s ease-in-out;
 `;
 
-type NavbarBrandProps = {
-  isDarkMode: boolean;
-};
-
 const NavbarBrand = styled.div`
   animation: fadeIn 1s;
   padding: 10px;
@@ -29,8 +25,14 @@ const NavbarBrand = styled.div`
   path {
     fill: $dark1;
     box-shadow: 0 0 1000px
-      ${(props: NavbarBrandProps) =>
-        props.isDarkMode ? colors.dark1 : colors.light1};
+      ${(props: any) => {
+        console.log(props);
+        if (props.theme.isDarkMode) {
+          return colors.dark1;
+        } else {
+          return colors.light1;
+        }
+      }};
     animation: ${TextAnimation} 1.5s;
   }
 
@@ -82,8 +84,8 @@ const NavbarMenu = styled.div`
 
       a,
       button {
-        color: ${(props: NavbarBrandProps) =>
-          props.isDarkMode ? colors.dark1 : colors.light1};
+        color: ${(props: any) =>
+          props.theme.isDarkMode ? colors.dark1 : colors.light1};
         text-decoration: none;
         // make look like a button
         border-radius: 5px;
@@ -92,22 +94,27 @@ const NavbarMenu = styled.div`
 
         &:hover,
         &:focus {
-          background-color: ${(props: NavbarBrandProps) =>
-            props.isDarkMode ? colors.dark1 : colors.light1};
-          color: ${(props: NavbarBrandProps) =>
-            props.isDarkMode ? colors.light1 : colors.dark1} !important;
+          background-color: ${(props: any) =>
+            props.theme.isDarkMode ? colors.dark1 : colors.light1};
+          color: ${(props: any) =>
+            props.theme.isDarkMode ? colors.light1 : colors.dark1} !important;
         }
 
         &:active {
-          background-color: ${(props: NavbarBrandProps) =>
-            props.isDarkMode ? colors.dark1 : colors.light1};
+          background-color: ${(props: any) =>
+            props.theme.isDarkMode ? colors.dark1 : colors.light1};
           color: $light4 !important;
         }
 
         &:visited {
-          color: ${(props: NavbarBrandProps) =>
-            props.isDarkMode ? colors.dark1 : colors.light1};
+          color: ${(props: any) =>
+            props.theme.isDarkMode ? colors.dark1 : colors.light1};
         }
+      }
+      button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
       }
     }
   }
@@ -115,7 +122,7 @@ const NavbarMenu = styled.div`
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const { isDarkMode: isDarkMode } = React.useContext(AppContext);
+  const themeContext = React.useContext(ThemeContext) as AppThemeContextType;
   const clickClose = () => setIsOpen(!isOpen);
   React.useEffect(() => {
     document.body.style.overflowX = "hidden";
@@ -123,14 +130,16 @@ const Navbar = () => {
 
   return (
     <>
-      <NavbarBody isDarkMode={isDarkMode}>
-        <NavbarBrand isDarkMode={isDarkMode}>
+      <NavbarBody>
+        <NavbarBrand>
           <SVGLogo
             color={((isDarkMode) =>
-              isDarkMode ? colors.dark1 : colors.light1)(isDarkMode)}
+              isDarkMode ? colors.dark1 : colors.light1)(
+              themeContext.isDarkMode
+            )}
           />
         </NavbarBrand>
-        <NavbarMenu isDarkMode={isDarkMode}>
+        <NavbarMenu>
           <ul>
             <li>
               <Link onClick={clickClose} to="/">
@@ -173,6 +182,15 @@ const Navbar = () => {
                 {" "}
                 Currículo{" "}
               </Link>
+            </li>
+            <li>
+              <button
+                onClick={() => {
+                  themeContext.setIsDarkMode(!themeContext.isDarkMode);
+                }}
+              >
+                {themeContext.isDarkMode ? "Light Mode" : "Dark Mode"}
+              </button>
             </li>
           </ul>
         </NavbarMenu>

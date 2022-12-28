@@ -1,24 +1,19 @@
 import * as React from "react";
+import { ThemeProvider } from "styled-components";
 
-type AppContextType = {
+export type AppThemeContextType = {
   isDarkMode: boolean;
-  toggleDarkMode: () => void;
+  setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
 };
-
-const AppContext = React.createContext({} as AppContextType);
 
 const AppProvider = (props: { children: React.ReactNode }) => {
   const [isDarkMode, setIsDarkMode] = React.useState(false);
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
   return (
-    <AppContext.Provider value={{ isDarkMode: isDarkMode, toggleDarkMode }}>
+    <ThemeProvider theme={{ isDarkMode, setIsDarkMode } as AppThemeContextType}>
       {props.children}
-    </AppContext.Provider>
+    </ThemeProvider>
   );
 };
 
-export { AppContext, AppProvider };
+export { AppProvider };

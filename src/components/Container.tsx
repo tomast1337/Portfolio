@@ -1,14 +1,10 @@
 import styled, { css } from "styled-components";
 import { colors, forDesktop } from "../styles/colors";
 
-type ContainerProps = {
-  isDarkMode: boolean;
-};
-
 const Container = styled.div`
   background-color: rgba(
-    ${(props: ContainerProps) =>
-      props.isDarkMode ? colors.dark1 : colors.light1},
+    ${(props: any) =>
+      props.theme.isDarkMode ? colors.dark1 : colors.light1},
     0.2
   );
   backdrop-filter: blur(16px) saturate(180%);
@@ -21,17 +17,17 @@ const Container = styled.div`
   min-height: 90vh;
 
   border: 5px solid
-    ${(props: ContainerProps) =>
-      props.isDarkMode ? colors.dark1 : colors.light1};
+    ${(props: any) =>
+      props.theme.isDarkMode ? colors.dark1 : colors.light1};
   outline: 5px solid
-    ${(props: ContainerProps) =>
-      props.isDarkMode ? colors.dark1 : colors.light1};
+    ${(props: any) =>
+      props.theme.isDarkMode ? colors.dark1 : colors.light1};
 
   border-radius: 50px;
 
   box-shadow: 0 0 20px
-    ${(props: ContainerProps) =>
-      props.isDarkMode ? colors.dark1 : colors.light1};
+    ${(props: any) =>
+      props.theme.isDarkMode ? colors.dark1 : colors.light1};
 
   transition: all 0.3s ease-in-out;
   animation: fadeIn 2s;

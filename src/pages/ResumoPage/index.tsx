@@ -12,11 +12,10 @@ const ResumoPage = () => {
   React.useEffect(() => {
     document.title = "Resumo - Nicolas Vycas Nery";
   });
-  const { isDarkMode } = React.useContext(AppContext);
 
   return (
     <Page>
-      <Header isDarkMode={isDarkMode}>Resumo</Header>
+      <Header>Resumo</Header>
       <CenteredImage src="/imgs/eu.jpeg" alt="Eu" />
       <Paragraph>
         Sou Nicolas, sou programador há 8 anos, estudo formalmente
