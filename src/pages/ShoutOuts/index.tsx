@@ -1,6 +1,15 @@
 import * as React from "react";
-import ShoutOutsStyle from "./ShoutOuts.module.scss";
+import {
+  Card,
+  CardContainer,
+  CardLeft,
+  CardRight,
+  Header,
+  Page,
+  Paragraph,
+} from "../../components/Commom";
 
+import styled, { css } from "styled-components";
 interface shoutOut {
   nome: string;
   link: string;
@@ -58,30 +67,44 @@ const ShoutOutsPage = () => {
     document.title = "ShoutOuts - Nicolas Vycas Nery";
   });
 
+  const Image = styled.img`
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    display: inline;
+    margin: 0 auto;
+  `;
+
   return (
-    <div className={ShoutOutsStyle.page}>
-      <h1>Shout-outs</h1>
-      <p>
+    <Page>
+      <Header>Shout-outs</Header>
+      <Paragraph>
         Pagina dedicada a programadores e profissionais que conheci durante os
         meus anos de estudo e aprecio o trabalho deles.
-      </p>
-      <div className={ShoutOutsStyle.shoutOuts}>
+      </Paragraph>
+      <CardContainer>
         {shoutOuts
           .sort(() => Math.random() - 0.5)
           .map((shoutOut, index) => {
             return (
-              <div className={ShoutOutsStyle.shoutOut} key={index}>
-                <img src={shoutOut.foto} alt={shoutOut.nome} />
-                <div className={ShoutOutsStyle.shoutOutInfo}>
-                  <h2>{shoutOut.nome}</h2>
-                  {shoutOut.mensagem && <p>{shoutOut.mensagem}</p>}
-                  <a href={shoutOut.link}>Link</a>
-                </div>
-              </div>
+              <Card key={index}>
+                <CardLeft>
+                  <Image src={shoutOut.foto} alt={shoutOut.nome} />
+                </CardLeft>
+                <CardRight>
+                  <Paragraph>{shoutOut.nome}</Paragraph>
+                  {shoutOut.mensagem && (
+                    <Paragraph>{shoutOut.mensagem}</Paragraph>
+                  )}
+                  <Paragraph>
+                    <a href={shoutOut.link}>Link</a>
+                  </Paragraph>
+                </CardRight>
+              </Card>
             );
           })}
-      </div>
-    </div>
+      </CardContainer>
+    </Page>
   );
 };
 
