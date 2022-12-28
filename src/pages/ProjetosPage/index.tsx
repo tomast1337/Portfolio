@@ -7,8 +7,9 @@ import {
   Header,
   Page,
 } from "../../components/Commom";
-import styled, { css } from "styled-components";
-import { fonts } from "../../styles/colors";
+import styled, { css, ThemeContext } from "styled-components";
+import { colors, fonts } from "../../styles/colors";
+import { AppThemeContextType } from "../../context/AppContext";
 type Projeto = {
   nome: string;
   descricao: React.ReactElement<any, any>;
@@ -17,6 +18,7 @@ type Projeto = {
 };
 
 const ProjetoCard = (props: { projeto: Projeto }) => {
+  const { isDarkMode } = React.useContext(ThemeContext) as AppThemeContextType;
   const Image = styled.img`
     width: auto;
     height: 100%;
@@ -45,15 +47,18 @@ const ProjetoCard = (props: { projeto: Projeto }) => {
       font-weight: 300;
       transition: 0.2s;
       font-family: ${fonts.fontBarcode};
-      color: #ff0000;
+      color: ${(props: any) => {
+        if (isDarkMode) {
+          return colors.dark1;
+        } else {
+          return colors.light1;
+        }
+      }};
       &:hover {
-        color: #ff0000;
+        color: ${isDarkMode ? colors.dark4 : colors.light4};
       }
       &:active {
-        color: #ff0000;
-      }
-      &:visited {
-        color: #ff0000;
+        color: ${isDarkMode ? colors.dark1 : colors.light1};
       }
     }
 
@@ -64,7 +69,7 @@ const ProjetoCard = (props: { projeto: Projeto }) => {
     }
 
     span {
-      color: #ff0000;
+      color: ${isDarkMode ? colors.dark4 : colors.light4};
     }
   `;
 

@@ -48,7 +48,7 @@ const ResumoPage = () => {
         <Link to="/Projetos">projetos</Link>?
       </Paragraph>
       <Paragraph>
-        Caso queira entrar em contato comigo, minha preferencia e que seja pelo{" "}
+        Caso queira entrar em contato comigo, minha preferencia é que seja pelo{" "}
         <a href="https://www.linkedin.com/in/nicolas-vycas/">LinkedIn</a>.
       </Paragraph>
     </Page>
