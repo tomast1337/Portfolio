@@ -33,7 +33,7 @@ const NavbarBrand = styled.div`
           return colors.light1;
         }
       }};
-    animation: ${TextAnimation} 1.5s;
+    //animation: ${TextAnimation} 1.5s;
   }
 
   svg {
