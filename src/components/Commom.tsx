@@ -90,6 +90,13 @@ export const Paragraph = styled.p`
       font-size: 2rem;
     `
   )}
+
+  a {
+    color: ${(props: any) =>
+      props.theme.isDarkMode ? colors.dark1 : colors.light1};
+    text-decoration: underline;
+    font-weight: bold;
+  }
 `;
 
 // images
@@ -114,7 +121,7 @@ export const UnOrderedList = styled.ul`
     font-size: ${(props: UnOrderedListProps) => props.fontSize || "2em"};
     padding-left: 10%;
     padding-right: 2em;
-    color: ${(props: UnOrderedListProps) =>
+    color: ${(props: any) =>
       props.theme.isDarkMode ? colors.dark1 : colors.light1};
 
     font-family: ${fonts.fontText};
@@ -128,7 +135,52 @@ export const UnOrderedList = styled.ul`
 
 export const Ruler = styled.hr`
   border: 1px solid
-    ${(props: CommonProps) =>
-      props.theme.isDarkMode ? colors.dark1 : colors.light1};
+    ${(props: any) => (props.theme.isDarkMode ? colors.dark1 : colors.light1)};
   margin: 1em 0;
+`;
+
+export const CardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0;
+`;
+
+export const Card = styled.div`
+  width: 80%;
+  height: 200px;
+  margin: 1%;
+  background-color: ${(props: any) =>
+    props.theme.isDarkMode ? colors.light1 : colors.dark1};
+  border-radius: 10px;
+  border: 5px solid
+    ${(props: any) => (props.theme.isDarkMode ? colors.dark1 : colors.light1)};
+  outline: 5px solid
+    ${(props: any) => (props.theme.isDarkMode ? colors.light1 : colors.dark1)};
+  box-shadow: 2px 2px 4px 2px
+    ${(props: any) => (props.theme.isDarkMode ? colors.light1 : colors.dark1)};
+  min-width: 300px;
+  color: ${(props: any) =>
+    props.theme.isDarkMode ? colors.dark1 : colors.light1};
+  font-family: ${fonts.fontText};
+  ${forDesktop(
+    css`
+      font-size: 2rem;
+    `
+  )}
+`;
+
+export const CardLeft = styled.div`
+  width: 50%;
+  height: 100%;
+  float: left;
+`;
+
+export const CardRight = styled.div`
+  width: 50%;
+  height: 100%;
+  float: right;
 `;
