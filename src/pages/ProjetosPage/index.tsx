@@ -6,6 +6,7 @@ import {
   CardRight,
   Header,
   Page,
+  Ruler,
 } from "../../components/Commom";
 import styled, { css, ThemeContext } from "styled-components";
 import { colors, fonts } from "../../styles/colors";
@@ -245,6 +246,7 @@ const ProjetosPage = () => {
               return <ProjetoCard projeto={projeto} key={index} />;
             })}
         </CardContainer>
+        <Ruler />
         <Header>Projetos Médios</Header>
         <CardContainer>
           {projetosMedios
@@ -253,6 +255,7 @@ const ProjetosPage = () => {
               return <ProjetoCard projeto={projeto} key={index} />;
             })}
         </CardContainer>
+        <Ruler />
         <Header>Projetos Pequenos</Header>
         <CardContainer>
           {projetosPequenos

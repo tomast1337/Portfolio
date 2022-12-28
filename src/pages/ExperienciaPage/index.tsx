@@ -92,7 +92,7 @@ const ExperienciaPage = () => {
     <>
       <Page>
         <div>
-          <Header>Experiencia Profissional</Header>
+          <Header>Experiência Profissional</Header>
           {profissional.map((experiencia) => (
             <ExperienciaElem experiencia={experiencia} />
           ))}

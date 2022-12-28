@@ -2,6 +2,7 @@ import * as React from "react";
 import {
   Header,
   Page,
+  Ruler,
   SubHeader,
   UnOrderedList,
 } from "../../components/Commom";
@@ -24,7 +25,7 @@ const FormaçãoPage = () => {
           <strong>(2020 – 2023)</strong>
         </li>
       </UnOrderedList>
-
+      <Ruler />
       <SubHeader float="left">Ensino Médio Técnico</SubHeader>
       <UnOrderedList>
         <li>
