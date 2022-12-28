@@ -74,7 +74,7 @@ const NavbarMenu = styled.div`
       text-align: center;
       margin: 1px 0;
       font-family: ${fonts.fontText};
-      font-size: 1rem;
+      font-size: 1.8rem;
 
       ${forDesktop(
         css`
