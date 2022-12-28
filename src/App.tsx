@@ -1,91 +1,92 @@
 import * as React from "react";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import {
     ContatoPage,
+    Curriculo,
     ExperienciaPage,
     FormaçãoPage,
-    ProjetosPage, ResumoPage, ShoutOuts, Curriculo
+    ProjetosPage,
+    ResumoPage,
+    ShoutOuts
 } from "./pages";
 
-import Navbar from "./components/Navbar";
-import styles from "./App.module.scss";
-
-const Overlay = (props: any) => {
-    return (
-        <div className={styles.overlay}>
-
-        </div>
-    )
-}
-
-const PageBody = (props: any) => {
-    return (
-        <>
-            <div className={styles.container}>
-                <Navbar />
-                {props.children}
-            </div>
-        </>
-    )
-}
+import PageBody from "./components/PageBody";
+import { AppProvider } from "./context/AppContext";
 
 const App = () => {
-    return (
-
-        <HashRouter>
-            <Routes>
-                <Route path="/" element={
-                    <PageBody>
-                        <ResumoPage />
-                    </PageBody>
-                } />
-                <Route path="/Contato" element={
-                    <PageBody>
-                        <ContatoPage />
-                    </PageBody>
-                } />
-                <Route path="/Experiencia" element={
-                    <PageBody>
-                        <ExperienciaPage />
-                    </PageBody>
-                } />
-                <Route path="/Formacao" element={
-                    <PageBody>
-                        <FormaçãoPage />
-                    </PageBody>
-                } />
-                <Route path="/Projetos" element={
-                    <PageBody>
-                        <ProjetosPage />
-                    </PageBody>
-                } />
-                <Route path="/ShoutOuts" element={
-                    <PageBody>
-                        <ShoutOuts />
-                    </PageBody>
-                } />
-                <Route path="/Curriculo" element={
-                    <Curriculo />
-                } />
-                <Route path="*" element={
-                    <PageBody>
-                        <h1
-                            style={{
-                                textAlign: "center",
-                                marginTop: "20vh",
-                                fontSize: "5rem"
-                            }}>
-                            404
-                        </h1>
-                    </PageBody>
-                } />
-            </Routes>
-
-
-        </HashRouter >
-
-    )
-}
-
+  return (
+    <AppProvider>
+      <HashRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <PageBody>
+                <ResumoPage />
+              </PageBody>
+            }
+          />
+          <Route
+            path="/Contato"
+            element={
+              <PageBody>
+                <ContatoPage />
+              </PageBody>
+            }
+          />
+          <Route
+            path="/Experiencia"
+            element={
+              <PageBody>
+                <ExperienciaPage />
+              </PageBody>
+            }
+          />
+          <Route
+            path="/Formacao"
+            element={
+              <PageBody>
+                <FormaçãoPage />
+              </PageBody>
+            }
+          />
+          <Route
+            path="/Projetos"
+            element={
+              <PageBody>
+                <ProjetosPage />
+              </PageBody>
+            }
+          />
+          <Route
+            path="/ShoutOuts"
+            element={
+              <PageBody>
+                <ShoutOuts />
+              </PageBody>
+            }
+          />
+          <Route path="/Curriculo" element={<Curriculo />} />
+          <Route
+            path="*"
+            element={
+              <PageBody>
+                <h1
+                  style={{
+                    textAlign: "center",
+                    marginTop: "20vh",
+                    fontSize: "5rem",
+                  }}
+                >
+                  404
+                </h1>
+              </PageBody>
+            }
+          />
+        </Routes>
+      </HashRouter>
+    </AppProvider>
+  );
+};
 
 export default App;
