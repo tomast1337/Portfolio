@@ -77,7 +77,7 @@ export const SubSubHeader = styled.h3`
 `;
 
 export const Paragraph = styled.p`
-  font-size: 1.5em;
+  font-size: .9em;
   text-align: justify;
   text-justify: inter-word;
   padding-left: 1em;
@@ -87,7 +87,7 @@ export const Paragraph = styled.p`
   font-family: ${fonts.fontText};
   ${forDesktop(
     css`
-      font-size: 1.5rem;
+      font-size: .9rem;
     `
   )}
 
@@ -108,7 +108,7 @@ export const Paragraph = styled.p`
 // images
 export const CenteredImage = styled.img`
   float: left;
-  width: 50%;
+  width: 30%;
   max-width: 30em;
   height: auto;
   margin: 0 2rem;
@@ -142,6 +142,9 @@ export const UnOrderedList = styled.ul`
 export const Ruler = styled.hr`
   border: 1px solid
     ${(props: any) => (props.theme.isDarkMode ? colors.dark1 : colors.light1)};
+  box-shadow: 2px 2px 4px 2px
+    ${(props: any) => (props.theme.isDarkMode ? colors.dark1 : colors.light1)};
+
   margin: 1em 0;
 `;
 

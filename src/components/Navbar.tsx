@@ -1,9 +1,9 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled, { css, ThemeContext } from "styled-components";
 import { colors, forDesktop, fonts } from "../styles/colors";
 import { SVGLogo } from "./SVGLogo";
-import { TextAnimation } from "../styles/animations";
+import { SmallBounce, TextAnimation } from "../styles/animations";
 import { Ruler } from "./Commom";
 import { AppThemeContextType } from "../context/AppContext";
 
@@ -37,7 +37,7 @@ const NavbarBrand = styled.div`
   }
 
   svg {
-    width: 40rem;
+    width: 25rem;
     height: auto;
 
     ${forDesktop(
@@ -70,55 +70,59 @@ const NavbarMenu = styled.div`
 
     li {
       padding: 10px;
-      width: 100%;
       text-align: center;
-      margin: 1px 0;
       font-family: ${fonts.fontText};
       font-size: 1.8rem;
-
-      ${forDesktop(
-        css`
-          font-size: 2rem;
-        `
-      )}
-
-      a,
-      button {
-        color: ${(props: any) =>
-          props.theme.isDarkMode ? colors.dark1 : colors.light1};
-        text-decoration: none;
-        // make look like a button
-        border-radius: 5px;
-        transition: all 0.2s ease-in-out;
-        font-weight: bold;
-
-        &:hover,
-        &:focus {
-          background-color: ${(props: any) =>
-            props.theme.isDarkMode ? colors.dark1 : colors.light1};
-          color: ${(props: any) =>
-            props.theme.isDarkMode ? colors.light1 : colors.dark1} !important;
-        }
-
-        &:active {
-          background-color: ${(props: any) =>
-            props.theme.isDarkMode ? colors.dark1 : colors.light1};
-          color: $light4 !important;
-        }
-
-        &:visited {
-          color: ${(props: any) =>
-            props.theme.isDarkMode ? colors.dark1 : colors.light1};
-        }
-      }
-      button {
-        border: none;
-        background-color: transparent;
-        cursor: pointer;
-      }
     }
   }
 `;
+
+const MenuButton = (props: { onClick: () => void; text: string }) => {
+  const animationDuration = "500";
+
+  const Button = styled.button`
+    color: ${(props: any) =>
+      props.theme.isDarkMode ? colors.dark1 : colors.light1};
+    text-decoration: none;
+    // make look like a button
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    font-weight: bold;
+
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover {
+      background-color: ${(props: any) =>
+        props.theme.isDarkMode ? colors.dark1 : colors.light1};
+      color: ${(props: any) =>
+        props.theme.isDarkMode ? colors.light1 : colors.dark1} !important;
+    }
+
+    &:active {
+      animation: ${SmallBounce} ${animationDuration}sec ease-in-out;
+    }
+
+    font-size: 1.5rem;
+    text-decoration: underline;
+
+    ${forDesktop(
+      css`
+        font-size: 1.8rem;
+      `
+    )}
+  `;
+  return (
+    <Button
+      onClick={async () => {
+        props.onClick();
+      }}
+    >
+      {props.text}
+    </Button>
+  );
+};
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -127,6 +131,13 @@ const Navbar = () => {
   React.useEffect(() => {
     document.body.style.overflowX = "hidden";
   }, [isOpen]);
+
+  const navigate = useNavigate();
+
+  const to = (path: string) => {
+    navigate(path);
+    setIsOpen(false);
+  };
 
   return (
     <>
@@ -142,55 +153,38 @@ const Navbar = () => {
         <NavbarMenu>
           <ul>
             <li>
-              <Link onClick={clickClose} to="/">
-                {" "}
-                Sobre{" "}
-              </Link>
+              <MenuButton onClick={() => to("/")} text="Sobre" />
             </li>
             <li>
-              <Link onClick={clickClose} to="/Projetos">
-                {" "}
-                Projetos{" "}
-              </Link>
+              <MenuButton onClick={() => to("/Projetos")} text="Projetos" />
             </li>
             <li>
-              <Link onClick={clickClose} to="/Experiencia">
-                {" "}
-                Experiencia{" "}
-              </Link>
+              <MenuButton
+                onClick={() => to("/Experiencia")}
+                text="Experiencia"
+              />
             </li>
             <li>
-              <Link onClick={clickClose} to="/Formacao">
-                {" "}
-                Formação{" "}
-              </Link>
+              <MenuButton onClick={() => to("/Formacao")} text="Formação" />
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <MenuButton onClick={() => to("/Contato")} text="Contato" />
             </li>
             <li>
-              <Link onClick={clickClose} to="/Contato">
-                {" "}
-                Contato{" "}
-              </Link>
+              <MenuButton onClick={() => to("/ShoutOuts")} text="ShoutOuts" />
             </li>
             <li>
-              <Link onClick={clickClose} to="/ShoutOuts">
-                {" "}
-                ShoutOuts{" "}
-              </Link>
+              <MenuButton onClick={() => to("/Curriculo")} text="Currículo" />
             </li>
             <li>
-              <Link onClick={clickClose} to="/Curriculo">
-                {" "}
-                Currículo{" "}
-              </Link>
-            </li>
-            <li>
-              <button
-                onClick={() => {
-                  themeContext.setIsDarkMode(!themeContext.isDarkMode);
-                }}
-              >
-                {themeContext.isDarkMode ? "Light Mode" : "Dark Mode"}
-              </button>
+              <MenuButton
+                onClick={() =>
+                  themeContext.setIsDarkMode(!themeContext.isDarkMode)
+                }
+                text={themeContext.isDarkMode ? "Light Mode" : "Dark Mode"}
+              />
             </li>
           </ul>
         </NavbarMenu>

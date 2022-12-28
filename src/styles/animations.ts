@@ -1,6 +1,5 @@
 import { keyframes } from "styled-components";
-
-const TextAnimation = keyframes`
+export const TextAnimation = keyframes`
 0% {
     opacity: 0;
     transform: translateY(25%) rotate(180deg) scale(0.5);
@@ -16,7 +15,7 @@ const TextAnimation = keyframes`
 }
 `;
 
-const fadeIn = keyframes`
+export const fadeIn = keyframes`
 0% {
     opacity: 0;
 }
@@ -25,7 +24,19 @@ const fadeIn = keyframes`
 }
 `;
 
-const fadeOut = keyframes`
+export const SmallBounce = keyframes`
+0% {
+    transform: translateY(0);
+}
+50% {
+    transform: translateY(-5px);
+}
+100% {
+    transform: translateY(0);
+}
+`;
+
+export const fadeOut = keyframes`
 0% {
     opacity: 1;
 }
@@ -33,5 +44,3 @@ const fadeOut = keyframes`
     opacity: 0;
 }
 `;
-
-export { TextAnimation, fadeIn, fadeOut}
