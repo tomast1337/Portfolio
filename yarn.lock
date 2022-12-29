@@ -405,6 +405,14 @@
   resolved "https://registry.yarnpkg.com/@types/history/-/history-4.7.11.tgz#56588b17ae8f50c53983a524fc3cc47437969d64"
   integrity sha512-qjDJRrmvBMiTx+jyLxvLfJU7UznFuokDv4f3WRuriHKERccVpFU+8XMQUAbDzoiJCsmexxRExQeMwwCdamSKDA==
 
+"@types/hoist-non-react-statics@*":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
+  integrity sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==
+  dependencies:
+    "@types/react" "*"
+    hoist-non-react-statics "^3.3.0"
+
 "@types/json-schema@^7.0.9":
   version "7.0.11"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.11.tgz#d421b6c527a3037f7c84433fd2c4229e016863d3"
@@ -471,6 +479,27 @@
   version "7.3.13"
   resolved "https://registry.yarnpkg.com/@types/semver/-/semver-7.3.13.tgz#da4bfd73f49bd541d28920ab0e2bf0ee80f71c91"
   integrity sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw==
+
+"@types/styled-components@^5.1.26":
+  version "5.1.26"
+  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-5.1.26.tgz#5627e6812ee96d755028a98dae61d28e57c233af"
+  integrity sha512-KuKJ9Z6xb93uJiIyxo/+ksS7yLjS1KzG6iv5i78dhVg/X3u5t1H7juRWqVmodIdz6wGVaIApo1u01kmFRdJHVw==
+  dependencies:
+    "@types/hoist-non-react-statics" "*"
+    "@types/react" "*"
+    csstype "^3.0.2"
+
+"@types/three@^0.147.0":
+  version "0.147.0"
+  resolved "https://registry.yarnpkg.com/@types/three/-/three-0.147.0.tgz#b49a765344a0949ee99fc9bd5381fb55655200e2"
+  integrity sha512-IW1P10dhUym3B6wamVqohCYS/BqzT4XYNhRCI8NLfm6mXPrgfm70G6d2E15OdbBmXNdd5yewYWtL/+aClljNvA==
+  dependencies:
+    "@types/webxr" "*"
+
+"@types/webxr@*":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@types/webxr/-/webxr-0.5.0.tgz#aae1cef3210d88fd4204f8c33385a0bbc4da07c9"
+  integrity sha512-IUMDPSXnYIbEO2IereEFcgcqfDREOgmbGqtrMpVPpACTU6pltYLwHgVkrnYv0XhWEcjio9sYEfIEzgn3c7nDqA==
 
 "@typescript-eslint/eslint-plugin@^5.30.7":
   version "5.47.1"
@@ -1364,7 +1393,7 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
-hoist-non-react-statics@^3.0.0:
+hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.3.0:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
   integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
@@ -1974,6 +2003,11 @@ text-table@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==
+
+three@^0.148.0:
+  version "0.148.0"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.148.0.tgz#b6f62f9c84227f8d51c151bf17b67984ded8e4d7"
+  integrity sha512-8uzVV+qhTPi0bOFs/3te3RW6hb3urL8jYEl6irjCWo/l6sr8MPNMcClFev/MMYeIxr0gmDcoXTy/8LXh/LXkfw==
 
 to-fast-properties@^2.0.0:
   version "2.0.0"
