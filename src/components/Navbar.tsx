@@ -109,7 +109,7 @@ const MenuButton = (props: { onClick: () => void; text: string }) => {
 
     ${forDesktop(
       css`
-        font-size: 1.8rem;
+        font-size: 1.5rem;
       `
     )}
   `;
@@ -183,7 +183,7 @@ const Navbar = () => {
                 onClick={() =>
                   themeContext.setIsDarkMode(!themeContext.isDarkMode)
                 }
-                text={themeContext.isDarkMode ? "Light Mode" : "Dark Mode"}
+                text={themeContext.isDarkMode ? "Modo Escuro" : "Modo Claro"}
               />
             </li>
           </ul>

@@ -87,7 +87,7 @@ export const Paragraph = styled.p`
   font-family: ${fonts.fontText};
   ${forDesktop(
     css`
-      font-size: .9rem;
+      font-size: 1rem;
     `
   )}
 
@@ -140,12 +140,12 @@ export const UnOrderedList = styled.ul`
 `;
 
 export const Ruler = styled.hr`
-  border: 1px solid
+  border-top: .5px solid
     ${(props: any) => (props.theme.isDarkMode ? colors.dark1 : colors.light1)};
-  box-shadow: 2px 2px 4px 2px
+  box-shadow: 1px 1px 1px 1px
     ${(props: any) => (props.theme.isDarkMode ? colors.dark1 : colors.light1)};
-
-  margin: 1em 0;
+  margin: auto;
+  width: 90%;
 `;
 
 export const CardContainer = styled.div`
