@@ -26,7 +26,6 @@ const NavbarBrand = styled.div`
     fill: $dark1;
     box-shadow: 0 0 1000px
       ${(props: any) => {
-        console.log(props);
         if (props.theme.isDarkMode) {
           return colors.dark1;
         } else {

@@ -3,6 +3,7 @@ import Container from "../components/Container";
 import Navbar from "../components/Navbar";
 import { ThemeContext } from "styled-components";
 import styled, { css } from "styled-components";
+import CanvasBG from "./CanvasBG";
 
 const PageBody = (props: { children: React.ReactNode }) => {
   const { isDarkMode } = React.useContext(ThemeContext) as AppThemeContextType;
@@ -25,6 +26,7 @@ const PageBody = (props: { children: React.ReactNode }) => {
   `;
   return (
     <>
+      <CanvasBG />
       <CentreOuterCSS>
         <Container>
           <Navbar />
