@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import { css, FlattenSimpleInterpolation } from "styled-components";
 
 export const fontUrl =
   "https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&family=Monofett&family=Orbitron&family=Press+Start+2P&family=Share+Tech&family=Share+Tech+Mono&display=swap";
@@ -53,7 +53,7 @@ export const fontFaces = css`
   @import url(${fontUrl});
 `;
 
-export const forDesktop = (css: string) => `
+export const forDesktop = (css: FlattenSimpleInterpolation) => `
     @media (min-width: 1024px) {
         ${css}
     }
