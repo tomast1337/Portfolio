@@ -4,9 +4,9 @@ import { colors, forDesktop } from "../styles/colors";
 const Container = styled.div`
   background-color: rgba(
     ${(props: any) => (props.theme.isDarkMode ? colors.dark1 : colors.light1)},
-    0.2
+    0.5
   );
-  backdrop-filter: blur(16px) saturate(180%);
+  backdrop-filter: blur(5px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
 
   width: 90vw;

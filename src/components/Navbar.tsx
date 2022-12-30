@@ -149,6 +149,7 @@ const Navbar = () => {
             )}
           />
         </NavbarBrand>
+        <Ruler />
         <NavbarMenu>
           <ul>
             <li>
@@ -177,7 +178,8 @@ const Navbar = () => {
             <li>
               <MenuButton onClick={() => to("/Curriculo")} text="Currículo" />
             </li>
-            <li>
+            {/*
+                <li>
               <MenuButton
                 onClick={() =>
                   themeContext.setIsDarkMode(!themeContext.isDarkMode)
@@ -185,6 +187,7 @@ const Navbar = () => {
                 text={themeContext.isDarkMode ? "Modo Escuro" : "Modo Claro"}
               />
             </li>
+                */}
           </ul>
         </NavbarMenu>
       </NavbarBody>
