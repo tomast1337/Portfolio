@@ -43,6 +43,9 @@ const ResumoPage = () => {
         outras tecnologias.
       </Paragraph>
       <Paragraph>
+        Sou fluente em inglês e estou atualmente estudando holandês.
+      </Paragraph>
+      <Paragraph>
         Acima, há uma lista de links para outras páginas do meu portfólio.
         Talvez você queira começar pelos meus{" "}
         <Link to="/Projetos">projetos</Link>.
