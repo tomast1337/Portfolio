@@ -1,13 +1,14 @@
 import * as React from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import {
-    ContatoPage,
-    Curriculo,
-    ExperienciaPage,
-    FormaçãoPage,
-    ProjetosPage,
-    ResumoPage,
-    ShoutOuts
+  ContatoPage,
+  CurriculoPage,
+  CurriculoPrintPage,
+  ExperienciaPage,
+  FormaçãoPage,
+  ProjetosPage,
+  ResumoPage,
+  ShoutOuts,
 } from "./pages";
 
 import PageBody from "./components/PageBody";
@@ -66,7 +67,15 @@ const App = () => {
               </PageBody>
             }
           />
-          <Route path="/Curriculo" element={<Curriculo />} />
+          <Route
+            path="/Curriculo"
+            element={
+              <PageBody>
+                <CurriculoPage />
+              </PageBody>
+            }
+          />
+          <Route path="/Curriculo-print" element={<CurriculoPrintPage />} />
           <Route
             path="*"
             element={

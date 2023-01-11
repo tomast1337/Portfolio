@@ -1,28 +1,28 @@
-type Formacao = {
+export type FormacaoType = {
     "Tipo": string,
     "Instituição": string,
     "Curso": string,
     "Data": string,
 }
-type Experiencia = {
+export type ExperienciaType = {
     "Nome": string,
     "Empresa": string,
     "Data Início": string,
     "Data Fim": string,
     "Descrição": string,
 }
-type Curriculo = {
+export type CurriculoType = {
     "Nome": string,
     "Posição": string,
     "Local": string,
     "Resumo": string,
-    "Formação": Formacao[],
-    "Experiencia Profissional": Experiencia[],
-    "Experiência Voluntária": Experiencia[],
+    "Formação": FormacaoType[],
+    "Experiencia Profissional": ExperienciaType[],
+    "Experiência Voluntária": ExperienciaType[],
     "Idiomas": string[],
     "Portfolio": string,
     "GitHub": string,
     "LinkedIn": string,
-} 
+}
 
-export { Formacao, Experiencia, Curriculo }
+export type LaguagesType = "pt"| "en";

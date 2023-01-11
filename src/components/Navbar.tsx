@@ -26,7 +26,6 @@ const NavbarBrand = styled.div`
     fill: $dark1;
     box-shadow: 0 0 1000px
       ${(props: any) => {
-        console.log(props);
         if (props.theme.isDarkMode) {
           return colors.dark1;
         } else {
@@ -150,6 +149,7 @@ const Navbar = () => {
             )}
           />
         </NavbarBrand>
+        <Ruler />
         <NavbarMenu>
           <ul>
             <li>
@@ -178,7 +178,8 @@ const Navbar = () => {
             <li>
               <MenuButton onClick={() => to("/Curriculo")} text="Currículo" />
             </li>
-            <li>
+            {/*
+                <li>
               <MenuButton
                 onClick={() =>
                   themeContext.setIsDarkMode(!themeContext.isDarkMode)
@@ -186,6 +187,7 @@ const Navbar = () => {
                 text={themeContext.isDarkMode ? "Modo Escuro" : "Modo Claro"}
               />
             </li>
+                */}
           </ul>
         </NavbarMenu>
       </NavbarBody>

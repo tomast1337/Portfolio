@@ -79,8 +79,8 @@ const ExperienciaPage = () => {
         </SubSubHeader>
         <Paragraph>{props.experiencia.descrição}</Paragraph>
         <UnOrderedList fontSize="1em">
-          {props.experiencia.competências.map((competência) => {
-            return <li>{competência}</li>;
+          {props.experiencia.competências.map((competência,index) => {
+            return <li key={index}>{competência}</li>;
           })}
         </UnOrderedList>
         <SubSubHeader>{props.experiencia.período}</SubSubHeader>
@@ -93,15 +93,15 @@ const ExperienciaPage = () => {
       <Page>
         <div>
           <Header>Experiência Profissional</Header>
-          {profissional.map((experiencia) => (
-            <ExperienciaElem experiencia={experiencia} />
+          {profissional.map((experiencia,index) => (
+            <ExperienciaElem key={index} experiencia={experiencia} />
           ))}
         </div>
         <Ruler />
         <div>
           <Header>Experiência Voluntária</Header>
-          {voluntario.map((experiencia) => (
-            <ExperienciaElem experiencia={experiencia} />
+          {voluntario.map((experiencia,index) => (
+            <ExperienciaElem key={index} experiencia={experiencia} />
           ))}
         </div>
       </Page>
