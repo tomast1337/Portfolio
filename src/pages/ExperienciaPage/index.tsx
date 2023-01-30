@@ -53,6 +53,14 @@ const ExperienciaPage = () => {
         "TypeScript",
       ],
     },
+    {
+      cargo: "Iniciação Científica",
+      empresa: "CEFET/RJ",
+      período: "Novembro de 2022 - Atual",
+      descrição:
+        "Auxiliando na criação de um jogo com foco em interface para deficientes visuais usando as seguintes tecnologias:",
+      competências: ["Unity", "Python", "C#"],
+    },
   ] as Experiencia[];
   const voluntario = [
     {
@@ -69,21 +77,39 @@ const ExperienciaPage = () => {
         "Busca binária",
       ],
     },
+    {
+      cargo: "Trainee no Ramo Estudantil IEEE CEFET/RJ",
+      empresa: "Ramo Estudantil IEEE CEFET/RJ",
+      período: "Novembro de 2022 - Janeiro de 2023",
+      descrição:
+        "Construí um bot para o discord usando a api do discord que gera avisos de datas de aniversários de membros do servidor, usando as seguintes tecnologias:",
+      competências: [
+        "Python",
+        "OpenAI gpt-3 api",
+        "Google Tenor api",
+        "Discord api",
+      ],
+    },
   ] as Experiencia[];
 
   const ExperienciaElem = (props: { experiencia: Experiencia }) => {
     return (
       <>
-        <SubSubHeader>
-          {props.experiencia.cargo} - {props.experiencia.empresa}
-        </SubSubHeader>
-        <Paragraph>{props.experiencia.descrição}</Paragraph>
-        <UnOrderedList fontSize="1em">
-          {props.experiencia.competências.map((competência,index) => {
-            return <li key={index}>{competência}</li>;
-          })}
-        </UnOrderedList>
-        <SubSubHeader>{props.experiencia.período}</SubSubHeader>
+        <div style={{
+            width: "90%",
+            margin: "auto",
+        }}>
+          <SubSubHeader>
+            {props.experiencia.cargo} - {props.experiencia.empresa}
+          </SubSubHeader>
+          <Paragraph>{props.experiencia.descrição}</Paragraph>
+          <UnOrderedList fontSize="1em">
+            {props.experiencia.competências.map((competência, index) => {
+              return <li key={index}>{competência}</li>;
+            })}
+          </UnOrderedList>
+          <SubSubHeader>{props.experiencia.período}</SubSubHeader>
+        </div>
       </>
     );
   };
@@ -93,14 +119,14 @@ const ExperienciaPage = () => {
       <Page>
         <div>
           <Header>Experiência Profissional</Header>
-          {profissional.map((experiencia,index) => (
+          {profissional.map((experiencia, index) => (
             <ExperienciaElem key={index} experiencia={experiencia} />
           ))}
         </div>
         <Ruler />
         <div>
           <Header>Experiência Voluntária</Header>
-          {voluntario.map((experiencia,index) => (
+          {voluntario.map((experiencia, index) => (
             <ExperienciaElem key={index} experiencia={experiencia} />
           ))}
         </div>
