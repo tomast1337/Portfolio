@@ -5,7 +5,7 @@ import { colors, forDesktop, fonts } from "../styles/colors";
 import { SVGLogo } from "./SVGLogo";
 import { SmallBounce, TextAnimation } from "../styles/animations";
 import { Ruler } from "./Commom";
-import { AppThemeContextType } from "../context/AppContext";
+import { AppContextType } from "../context/AppContext";
 
 const NavbarBody = styled.div`
   justify-content: left;

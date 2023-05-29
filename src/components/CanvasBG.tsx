@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as THREE from "three";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
+import { useAppContext } from "../context/AppContext";
 class Render {
   private scene: THREE.Scene;
   private camera: THREE.PerspectiveCamera;
@@ -24,7 +25,9 @@ class Render {
     this.mainGroup = new THREE.Group();
   }
 
-  public async loadScene() {
+  public async loadScene(
+    setHasLoaded: React.Dispatch<React.SetStateAction<boolean>>
+  ) {
     this.scene.background = new THREE.Color("0x45b3e0");
 
     //const axishelp = new THREE.AxesHelper(5);
@@ -77,6 +80,9 @@ class Render {
             //const line = new THREE.LineSegments(wireframe);
             //child.add(line);
           }
+          setTimeout(() => {
+            setHasLoaded(true);
+          }, 1000);
         });
         // add the object to the scene
         this.scene.add(object);
@@ -155,7 +161,7 @@ class Render {
 
 const CanvasBG = () => {
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
-
+  const { hasLoaded, setHasLoaded } = useAppContext();
   const [audio, setAudio] = React.useState<HTMLAudioElement | null>(null);
   const [render, setRender] = React.useState<Render | null>(null);
 
@@ -163,7 +169,7 @@ const CanvasBG = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const render = new Render(canvas);
-    await render.loadScene();
+    await render.loadScene(setHasLoaded);
 
     //const audio = new Audio("./audio/ambient.mp3");
     //audio.loop = true;

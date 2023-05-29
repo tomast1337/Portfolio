@@ -1,20 +1,47 @@
 import * as React from "react";
-import { ThemeProvider } from "styled-components";
 import { fontUrl } from "../styles/colors";
 
-export type AppThemeContextType = {
-  isDarkMode: boolean;
-  setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+export type AppContextType = {
+  hasLoaded: boolean;
+  setHasLoaded: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const AppProvider = (props: { children: React.ReactNode }) => {
-  const [isDarkMode, setIsDarkMode] = React.useState(false);
+export const AppContext = React.createContext<AppContextType>(
+  {} as AppContextType
+);
+
+export const useAppContext = () => {
+  const context = React.useContext(AppContext);
+
+  if (!context) {
+    throw new Error("useAppContext must be used within an AppProvider");
+  }
+
+  return context;
+};
+
+const AppProvider = ({ children }: { children: React.ReactNode }) => {
+  const [hasLoaded, setHasLoaded] = React.useState(false);
+  React.useEffect(() => {
+    console.log("hasLoaded", hasLoaded);
+    if (hasLoaded) {
+        document.body.style.overflow = "auto";
+    } else {
+        document.body.style.overflow = "hidden";
+    }
+    }, [hasLoaded]);
+  
   return (
-    <ThemeProvider theme={{ isDarkMode, setIsDarkMode } as AppThemeContextType}>
+    <AppContext.Provider
+      value={{
+        hasLoaded,
+        setHasLoaded,
+      }}
+    >
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link href={fontUrl} rel="stylesheet" />
-      {props.children}
-    </ThemeProvider>
+      {children}
+    </AppContext.Provider>
   );
 };
 
