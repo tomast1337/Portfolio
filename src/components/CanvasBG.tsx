@@ -26,7 +26,7 @@ class Render {
   }
 
   public async loadScene(
-    setHasLoaded: React.Dispatch<React.SetStateAction<boolean>>
+    updateLoadPercent: (min: number, max: number, current: number) => void
   ) {
     this.scene.background = new THREE.Color("0x45b3e0");
 
@@ -80,9 +80,6 @@ class Render {
             //const line = new THREE.LineSegments(wireframe);
             //child.add(line);
           }
-          setTimeout(() => {
-            setHasLoaded(true);
-          }, 1000);
         });
         // add the object to the scene
         this.scene.add(object);
@@ -90,6 +87,7 @@ class Render {
       },
       (event: ProgressEvent) => {
         //console.log(`Loading: ${event.loaded} / ${event.total}`);
+        updateLoadPercent(0, event.total, event.loaded);
       },
       (event: ErrorEvent) => {
         //console.log(`Error: ${event.message}`);
@@ -161,7 +159,7 @@ class Render {
 
 const CanvasBG = () => {
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
-  const { hasLoaded, setHasLoaded } = useAppContext();
+  const { hasLoaded, setHasLoaded , updateLoadPercent } = useAppContext();
   const [audio, setAudio] = React.useState<HTMLAudioElement | null>(null);
   const [render, setRender] = React.useState<Render | null>(null);
 
@@ -169,7 +167,7 @@ const CanvasBG = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const render = new Render(canvas);
-    await render.loadScene(setHasLoaded);
+    await render.loadScene(updateLoadPercent);
 
     //const audio = new Audio("./audio/ambient.mp3");
     //audio.loop = true;

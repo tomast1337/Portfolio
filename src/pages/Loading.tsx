@@ -1,8 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
 import { useAppContext } from "../context/AppContext";
-import { Header } from "../components/Commom";
-
 const LoadingAnimation = styled.div`
   width: 50px;
   height: auto;
@@ -20,7 +18,7 @@ const LoadingAnimation = styled.div`
 `;
 
 export const Loading = () => {
-  const { hasLoaded } = useAppContext();
+  const { hasLoaded, loadPercent } = useAppContext();
   React.useEffect(() => {
     // scroll to top
     window.scrollTo(0, 0);
@@ -54,7 +52,7 @@ export const Loading = () => {
           marginTop: "1rem",
         }}
       >
-        Loading...
+        Loading... {Math.round(loadPercent * 100)}%
       </h1>
       <LoadingAnimation />
       <img
