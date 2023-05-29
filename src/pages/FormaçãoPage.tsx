@@ -5,7 +5,7 @@ import {
   Ruler,
   SubHeader,
   UnOrderedList,
-} from "../../components/Commom";
+} from "../components/Commom";
 
 const FormaçãoPage = () => {
   React.useEffect(() => {

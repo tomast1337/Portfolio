@@ -5,7 +5,7 @@ import {
   Header,
   Page,
   Paragraph,
-} from "../../components/Commom";
+} from "../components/Commom";
 
 const ResumoPage = () => {
   React.useEffect(() => {

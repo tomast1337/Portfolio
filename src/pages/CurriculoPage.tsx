@@ -1,11 +1,11 @@
 import * as React from "react";
 import styled from "styled-components";
-import { Header, Page } from "../../components/Commom";
-import { Curriculo } from "../../components/Curriculo";
-import English from "../../data/curriculoEN";
-import Portuguese from "../../data/curriculoPT";
-import { CurriculoType, LaguagesType } from "../../data/types";
-import { colors } from "../../styles/colors";
+import { Header, Page } from "../components/Commom";
+import { Curriculo } from "../components/Curriculo";
+import English from "../data/curriculoEN";
+import Portuguese from "../data/curriculoPT";
+import { CurriculoType, LaguagesType } from "../data/types";
+import { colors } from "../styles/colors";
 
 const ControlsDiv = styled.div`
   display: flex;
@@ -255,9 +255,7 @@ export default () => {
   }, [language]);
   return (
     <Page>
-      <Header>
-        {language === "pt" ? "Currículo" : "Curriculum"}
-      </Header>
+      <Header>{language === "pt" ? "Currículo" : "Curriculum"}</Header>
       <ControlsDiv>
         <button onClick={Print}>
           {language === "pt" ? "Imprimir" : "Print"}

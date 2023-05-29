@@ -8,7 +8,7 @@ import {
     Header,
     Page,
     Paragraph,
-} from "../../components/Commom";
+} from "../components/Commom";
 
 interface shoutOut {
   nome: string;

@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
-import { Header, Page } from "../../components/Commom";
-import { colors, forDesktop } from "../../styles/colors";
+import { Header, Page } from "../components/Commom";
+import { colors, forDesktop } from "../styles/colors";
 
 interface Contato {
   name: string;

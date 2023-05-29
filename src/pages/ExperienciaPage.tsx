@@ -6,7 +6,7 @@ import {
     Ruler,
     SubSubHeader,
     UnOrderedList,
-} from "../../components/Commom";
+} from "../components/Commom";
 const ExperienciaPage = () => {
   React.useEffect(() => {
     document.title = "Experiencia - Nicolas Vycas Nery";

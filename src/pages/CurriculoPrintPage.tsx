@@ -1,11 +1,9 @@
 import * as React from "react";
-import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
-import { Curriculo } from "../../components/Curriculo";
-import { Page } from "../../components/Commom";
-import { CurriculoType, LaguagesType } from "../../data/types";
-import English from "../../data/curriculoEN";
-import Portuguese from "../../data/curriculoPT";
+import { Page } from "../components/Commom";
+import { Curriculo } from "../components/Curriculo";
+import English from "../data/curriculoEN";
+import Portuguese from "../data/curriculoPT";
+import { CurriculoType, LaguagesType } from "../data/types";
 
 export default () => {
   const [language, setLanguage] = React.useState<LaguagesType>("pt");

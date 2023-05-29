@@ -1,18 +1,16 @@
 import * as React from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
-import {
-  ContatoPage,
-  CurriculoPage,
-  CurriculoPrintPage,
-  ExperienciaPage,
-  FormaçãoPage,
-  ProjetosPage,
-  ResumoPage,
-  ShoutOuts,
-} from "./pages";
 
 import PageBody from "./components/PageBody";
 import { AppProvider } from "./context/AppContext";
+import ResumoPage from "./pages/ResumoPage";
+import ContatoPage from "./pages/ContatoPage";
+import ExperienciaPage from "./pages/ExperienciaPage";
+import FormaçãoPage from "./pages/FormaçãoPage";
+import ProjetosPage from "./pages/ProjetosPage";
+import ShoutOuts from "./pages/ShoutOuts";
+import CurriculoPage from "./pages/CurriculoPage";
+import CurriculoPrintPage from "./pages/CurriculoPrintPage";
 
 const App = () => {
   return (

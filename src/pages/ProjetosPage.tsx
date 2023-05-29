@@ -9,8 +9,8 @@ import {
     Header,
     Page,
     Ruler,
-} from "../../components/Commom";
-import { colors, fonts } from "../../styles/colors";
+} from "../components/Commom";
+import { colors, fonts } from "../styles/colors";
 type Projeto = {
   nome: string;
   descricao: React.ReactElement<any, any>;
