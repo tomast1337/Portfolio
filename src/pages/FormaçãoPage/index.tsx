@@ -14,7 +14,7 @@ const FormaçãoPage = () => {
   return (
     <Page>
       <Header>Formação</Header>
-      <SubHeader float="left">Ensino Superior</SubHeader>
+      <SubHeader>Ensino Superior</SubHeader>
       <UnOrderedList>
         <li>
           <strong>Em andamento</strong>
@@ -26,7 +26,7 @@ const FormaçãoPage = () => {
         </li>
       </UnOrderedList>
       <Ruler />
-      <SubHeader float="left">Ensino Médio Técnico</SubHeader>
+      <SubHeader>Ensino Médio Técnico</SubHeader>
       <UnOrderedList>
         <li>
           <strong>Completo</strong>

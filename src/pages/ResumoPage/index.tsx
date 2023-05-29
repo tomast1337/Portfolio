@@ -46,11 +46,6 @@ const ResumoPage = () => {
         Sou fluente em inglês e estou atualmente estudando holandês.
       </Paragraph>
       <Paragraph>
-        Acima, há uma lista de links para outras páginas do meu portfólio.
-        Talvez você queira começar pelos meus{" "}
-        <Link to="/Projetos">projetos</Link>.
-      </Paragraph>
-      <Paragraph>
         Caso queira entrar em contato comigo, minha preferência é pelo{" "}
         <a href="https://www.linkedin.com/in/nicolas-vycas/">LinkedIn</a>.
       </Paragraph>

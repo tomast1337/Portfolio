@@ -1,154 +1,207 @@
 import * as React from "react";
-import { AppThemeContextType } from "../context/AppContext";
-import { colors } from "../styles/colors";
-import { ThemeContext } from "styled-components";
+import * as THREE from "three";
+import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
+class Render {
+  private scene: THREE.Scene;
+  private camera: THREE.PerspectiveCamera;
+  private renderer: THREE.WebGLRenderer;
+  private canvas: HTMLCanvasElement;
 
-const CanvasBG = () => {
-  const { isDarkMode } = React.useContext(ThemeContext) as AppThemeContextType;
+  private mainGroup: THREE.Group;
 
-  React.useEffect(() => {
-    const canvas = document.getElementById("canvas") as HTMLCanvasElement;
-    const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
-    canvas.width = window.innerWidth as number;
-    canvas.height = window.innerHeight as number;
-    let particlesArray: any;
+  constructor(canvas: HTMLCanvasElement) {
+    this.canvas = canvas;
+    this.scene = new THREE.Scene();
+    this.camera = new THREE.PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    );
+    this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas });
+    this.onWindowResize();
+    this.registerEventListeners();
+    this.mainGroup = new THREE.Group();
+  }
 
-    // get mouse position
-    let mouse = {
-      x: null,
-      y: null,
-      radius: (canvas.height / 80) * (canvas.width / 80),
+  public async loadScene() {
+    this.scene.background = new THREE.Color("0x45b3e0");
+
+    //const axishelp = new THREE.AxesHelper(5);
+    //this.scene.add(axishelp);
+
+    // load the sky texture /imgs/textures/skydome.png
+    const t = await new THREE.TextureLoader().loadAsync(
+      "./imgs/textures/skydome.png"
+    );
+    // add a blue sphere sky dome
+    const geometry = new THREE.SphereGeometry(5, 16, 16);
+    const material = new THREE.MeshBasicMaterial({
+      map: t,
+      side: THREE.BackSide,
+    });
+    const sphere = new THREE.Mesh(geometry, material);
+    this.scene.add(sphere);
+
+    // add sunlight
+    const light = new THREE.DirectionalLight(0xffda99, 1);
+    light.position.set(0, 1, 1);
+    this.scene.add(light);
+
+    // global light
+    const ambientLight = new THREE.AmbientLight(0x45b3e0, 0.5);
+    this.scene.add(ambientLight);
+
+    const loader = new FBXLoader();
+    loader.load(
+      "./models/sao_paulo.fbx",
+      (object: THREE.Group) => {
+        this.mainGroup = object;
+        object.position.set(0, 0, 0);
+        object.scale.set(0.02, 0.02, 0.02);
+        //object.castShadow = true;
+        //object.receiveShadow = true;
+        //list the materials
+        object.traverse((child) => {
+          if (child instanceof THREE.Mesh) {
+            console.log(child.material);
+            // remove the texture filter to avoid blurring
+            const material = child.material as THREE.MeshPhongMaterial;
+            material.map!.minFilter = THREE.LinearFilter;
+
+            // add a shadow
+            child.castShadow = true;
+            child.receiveShadow = true;
+
+            // add a wireframe
+            //const wireframe = new THREE.WireframeGeometry(child.geometry);
+            //const line = new THREE.LineSegments(wireframe);
+            //child.add(line);
+          }
+        });
+        // add the object to the scene
+        this.scene.add(object);
+        // remove the texture filter to avoid blurring
+      },
+      (event: ProgressEvent) => {
+        console.log(`Loading: ${event.loaded} / ${event.total}`);
+      },
+      (event: ErrorEvent) => {
+        console.log(`Error: ${event.message}`);
+      }
+    );
+  }
+
+  private onWindowResize() {
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.camera.aspect = window.innerWidth / window.innerHeight;
+    this.camera.updateProjectionMatrix();
+  }
+
+  private registerEventListeners() {
+    window.addEventListener(
+      "resize",
+      () => {
+        this.onWindowResize();
+      },
+      false
+    );
+  }
+
+  public render() {
+    const rotateCamera = () => {
+      const now = Date.now();
+      this.camera.position.x = Math.sin(now / 10000) * 2;
+      this.camera.position.z = Math.cos(now / 10000) * 2;
+      this.camera.position.y = 1;
+      this.camera.lookAt(0, 0, Math.sin(now / 10000) * 2);
     };
 
-    window.addEventListener("mousemove", function (event) {
-      mouse.x = event.x;
-      mouse.y = event.y;
-    });
+    const audioUpdate = () => {
+      // update the this.setMainGroupScaleZ() based on the audio
+      //const bufferLength = analyser.frequencyBinCount;
+      //const dataArray = new Uint8Array(bufferLength);
+      //analyser.getByteFrequencyData(dataArray);
+      //const lowEndAverage =
+      //  dataArray.slice(0, 5).reduce((a, b) => a + b, 0) / 5;
+      //const scale = lowEndAverage / 255;
+      //this.setMainGroupScaleZ(scale);
+      const now = Date.now();
+      const scale =
+        Math.random() * 0.01 +
+        Math.sin(5 + now / 100) * 0.1 +
+        Math.sin(3 + now / 1000) * 1 +
+        Math.sin(4 + now / 10000) * 0;
+      this.setMainGroupScaleZ(Math.abs(scale));
+      //get curret time
+    };
 
-    // create particle
-    class Particle {
-      x: number;
-      y: number;
-      size: number;
-      baseX: number;
-      baseY: number;
-      density: number;
-      constructor(x: number, y: number) {
-        this.x = x;
-        this.y = y;
-        this.size = Math.random() * 5 + 1;
-        this.baseX = this.x;
-        this.baseY = this.y;
-        this.density = Math.random() * 40 + 5;
-      }
-      draw() {
-        ctx.fillStyle = isDarkMode ? colors.dark1 : colors.light1;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.closePath();
-        ctx.fill();
-      }
-      update() {
-        let dx = mouse.x - this.x;
-        let dy = mouse.y - this.y;
-        let distance = Math.sqrt(dx * dx + dy * dy);
-        let forceDirectionX = dx / distance;
-        let forceDirectionY = dy / distance;
-        let maxDistance = mouse.radius;
-        let force = (maxDistance - distance) / maxDistance;
-        let directionX = forceDirectionX * force * this.density;
-        let directionY = forceDirectionY * force * this.density;
-
-        if (distance < mouse.radius) {
-          this.x -= directionX;
-          this.y -= directionY;
-        } else {
-          if (this.x !== this.baseX) {
-            let dx = this.x - this.baseX;
-            this.x -= dx / 10;
-          }
-          if (this.y !== this.baseY) {
-            let dy = this.y - this.baseY;
-            this.y -= dy / 10;
-          }
-        }
-      }
-    }
-
-    // create particle array
-    function init() {
-      particlesArray = [];
-      let numberOfParticles = (canvas.height * canvas.width) / 9000;
-      for (let i = 0; i < numberOfParticles; i++) {
-        let x = Math.random() * canvas.width;
-        let y = Math.random() * canvas.height;
-        particlesArray.push(new Particle(x, y));
-      }
-    }
-
-    // check if particles are close enough to draw line between them
-    function connect() {
-      let opacityValue = 1;
-      for (let a = 0; a < particlesArray.length; a++) {
-        for (let b = a; b < particlesArray.length; b++) {
-          let distance =
-            (particlesArray[a].x - particlesArray[b].x) *
-              (particlesArray[a].x - particlesArray[b].x) +
-            (particlesArray[a].y - particlesArray[b].y) *
-              (particlesArray[a].y - particlesArray[b].y);
-          if (distance < (canvas.width / 7) * (canvas.height / 7)) {
-            opacityValue = 1 - distance / 20000;
-            const alphaHex = Math.round(opacityValue * 255).toString(16);
-
-            ctx.strokeStyle = `${
-                isDarkMode ? colors.dark1 : colors.light1
-            }${alphaHex}`;
-
-            ctx.strokeStyle = "rgba(255,255,255,+opacityValue)";
-
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-            ctx.stroke();
-          }
-        }
-      }
-    }
-
-    // animation loop
-    function animate() {
+    const animate = () => {
+      audioUpdate();
+      rotateCamera();
       requestAnimationFrame(animate);
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let i = 0; i < particlesArray.length; i++) {
-        particlesArray[i].update();
-        particlesArray[i].draw();
-      }
-      connect();
-    }
-
-    window.addEventListener("resize", function () {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      mouse.radius = (canvas.height / 80) * (canvas.width / 80);
-      init();
-    });
-
-    window.addEventListener("mouseout", function () {
-      mouse.x = undefined;
-      mouse.y = undefined;
-    });
-
-    init();
+      this.renderer.render(this.scene, this.camera);
+    };
 
     animate();
+  }
+
+  public setMainGroupScaleZ(scale: number) {
+    const min = 0.04;
+    const max = 0.06;
+    scale = min + (max - min) * scale;
+    this.mainGroup.scale.y = scale;
+  }
+}
+
+const CanvasBG = () => {
+  const canvasRef = React.useRef<HTMLCanvasElement>(null);
+
+  const [audio, setAudio] = React.useState<HTMLAudioElement | null>(null);
+  const [render, setRender] = React.useState<Render | null>(null);
+
+  const main = async () => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const render = new Render(canvas);
+    await render.loadScene();
+
+    //const audio = new Audio("./audio/ambient.mp3");
+    //audio.loop = true;
+
+    // visualize the audio
+    //const audioContext = new AudioContext();
+    //const analyser = audioContext.createAnalyser();
+    //const source = audioContext.createMediaElementSource(audio);
+
+    //source.connect(analyser);
+    //analyser.connect(audioContext.destination);
+
+    // set the render
+    setRender(render);
+    render.render();
+
+    //audio.play();
+
+    // set the volume
+    //audio.volume = 1;
+  };
+
+  React.useEffect(() => {
+    console.log("canvas mounted");
+    main();
+    return () => {
+      // cleanup
+    };
   }, []);
 
   return (
-    <canvas
-      id="canvas"
-      style={{ position: "fixed", top: 0, left: 0, zIndex: -1 }}
-    ></canvas>
+    <>
+      <canvas
+        ref={canvasRef}
+        style={{ position: "fixed", top: 0, left: 0, zIndex: -1 }}
+      ></canvas>
+    </>
   );
 };
 

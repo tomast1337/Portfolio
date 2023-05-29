@@ -1,9 +1,10 @@
 import * as React from "react";
 
-export const SVGLogo = (props: { color?: string }): React.ReactElement => {
-  const { color } = props;
+export const SVGLogo = (): React.ReactElement => {
   const style = {
-    fill: color || "black",
+    fill: "rgba(0,0,0,1)",
+    stroke: "rgba(100,100,100,.1)",
+    strokeWidth: 0.5,
   };
 
   return (

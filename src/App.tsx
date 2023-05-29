@@ -24,53 +24,11 @@ const App = () => {
             element={
               <PageBody>
                 <ResumoPage />
-              </PageBody>
-            }
-          />
-          <Route
-            path="/Contato"
-            element={
-              <PageBody>
                 <ContatoPage />
-              </PageBody>
-            }
-          />
-          <Route
-            path="/Experiencia"
-            element={
-              <PageBody>
                 <ExperienciaPage />
-              </PageBody>
-            }
-          />
-          <Route
-            path="/Formacao"
-            element={
-              <PageBody>
                 <FormaçãoPage />
-              </PageBody>
-            }
-          />
-          <Route
-            path="/Projetos"
-            element={
-              <PageBody>
                 <ProjetosPage />
-              </PageBody>
-            }
-          />
-          <Route
-            path="/ShoutOuts"
-            element={
-              <PageBody>
                 <ShoutOuts />
-              </PageBody>
-            }
-          />
-          <Route
-            path="/Curriculo"
-            element={
-              <PageBody>
                 <CurriculoPage />
               </PageBody>
             }

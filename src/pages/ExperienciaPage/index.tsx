@@ -41,7 +41,7 @@ const ExperienciaPage = () => {
     {
       cargo: "Desenvolvedor Full Stack meio período",
       empresa: "Beta Bit",
-      período: "Novembro de 2022 - Atual",
+      período: "Novembro de 2022 - Abril de 2023",
       descrição:
         "Desenvolvimento de aplicações web usando as seguintes tecnologias:",
       competências: [
@@ -95,15 +95,12 @@ const ExperienciaPage = () => {
   const ExperienciaElem = (props: { experiencia: Experiencia }) => {
     return (
       <>
-        <div style={{
-            width: "90%",
-            margin: "auto",
-        }}>
+        <div>
           <SubSubHeader>
             {props.experiencia.cargo} - {props.experiencia.empresa}
           </SubSubHeader>
           <Paragraph>{props.experiencia.descrição}</Paragraph>
-          <UnOrderedList fontSize="1em">
+          <UnOrderedList>
             {props.experiencia.competências.map((competência, index) => {
               return <li key={index}>{competência}</li>;
             })}
