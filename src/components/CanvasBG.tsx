@@ -64,7 +64,6 @@ class Render {
         //list the materials
         object.traverse((child) => {
           if (child instanceof THREE.Mesh) {
-            console.log(child.material);
             // remove the texture filter to avoid blurring
             const material = child.material as THREE.MeshPhongMaterial;
             material.map!.minFilter = THREE.LinearFilter;
@@ -84,10 +83,10 @@ class Render {
         // remove the texture filter to avoid blurring
       },
       (event: ProgressEvent) => {
-        console.log(`Loading: ${event.loaded} / ${event.total}`);
+        //console.log(`Loading: ${event.loaded} / ${event.total}`);
       },
       (event: ErrorEvent) => {
-        console.log(`Error: ${event.message}`);
+        //console.log(`Error: ${event.message}`);
       }
     );
   }
@@ -188,7 +187,7 @@ const CanvasBG = () => {
   };
 
   React.useEffect(() => {
-    console.log("canvas mounted");
+    //console.log("canvas mounted");
     main();
     return () => {
       // cleanup

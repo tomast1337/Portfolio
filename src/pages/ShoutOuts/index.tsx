@@ -1,15 +1,15 @@
 import * as React from "react";
 import {
-  Card,
-  CardContainer,
-  CardLeft,
-  CardRight,
-  Header,
-  Page,
-  Paragraph,
+    Card,
+    CardContainer,
+    CardLeft,
+    CardRight,
+    CustomImage,
+    Header,
+    Page,
+    Paragraph,
 } from "../../components/Commom";
 
-import styled, { css } from "styled-components";
 interface shoutOut {
   nome: string;
   link: string;
@@ -66,15 +66,6 @@ const ShoutOutsPage = () => {
   React.useEffect(() => {
     document.title = "ShoutOuts - Nicolas Vycas Nery";
   });
-
-  const Image = styled.img`
-    width: 200px;
-    height: auto;
-    border-radius: 10px;
-    display: inline;
-    margin: 0 auto;
-  `;
-
   return (
     <Page>
       <Header>Shout-outs</Header>
@@ -89,7 +80,12 @@ const ShoutOutsPage = () => {
             return (
               <Card key={index}>
                 <CardLeft>
-                  <Image src={shoutOut.foto} alt={shoutOut.nome} />
+                  <CustomImage style={{
+                    width: "200px",
+                    height: "auto",
+                    display: "inline",
+                    margin: "0 auto",
+                  }} src={shoutOut.foto} alt={shoutOut.nome} />
                 </CardLeft>
                 <CardRight>
                   <Paragraph>{shoutOut.nome}</Paragraph>

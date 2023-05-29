@@ -1,11 +1,10 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
-import { AppContext } from "../../context/AppContext";
 import {
   CenteredImage,
+  CustomImage,
   Header,
-  Paragraph,
   Page,
+  Paragraph,
 } from "../../components/Commom";
 
 const ResumoPage = () => {
@@ -16,31 +15,48 @@ const ResumoPage = () => {
   return (
     <Page>
       <Header>Resumo</Header>
-      <CenteredImage src="/imgs/eu.jpeg" alt="Eu" />
+      <CustomImage 
+      style={{
+        //backdropFilter: "invert(1) grayscale(1) contrast(5) brightness(1.2)",
+      }}
+      src="/imgs/eu.jpeg" alt="Eu" />
       <Paragraph>
-        Sou Nicolas, sou programador há 8 anos e estudo formalmente o
-        desenvolvimento de software desde 2016. Estudei TI no ensino médio
-        técnico da FAETEC, com foco em desenvolvimento de software Java,
-        linguagem na qual tenho mais prática e experiência. Atualmente, estou
-        cursando Ciência da Computação no CEFET/RJ.
+        Eu sou o Nicolas, um programador com 8 anos de estudos na área. Comecei
+        a estudar formalmente desenvolvimento de software em 2016, enquanto
+        frequentava o ensino médio técnico da <strong>FAETEC</strong>, onde me
+        concentrei no desenvolvimento em Java. Desde então, continuo a
+        desenvolver minhas habilidades e conhecimentos por meio de estudos
+        autônomos e dos meus estudos atuais em Ciência da Computação no{" "}
+        <strong>CEFET/RJ</strong>.
       </Paragraph>
       <Paragraph>
-        Tenho interesse em desenvolvimento fullstack. Não existe uma stack ou um
-        negócio desinteressante, o que importa é a solução que vou entregar para
-        o problema.
+        Tenho um interesse especial no desenvolvimento fullstack, pois aprecio
+        estar envolvido em todas as etapas de um projeto, desde o front-end até
+        o back-end.
       </Paragraph>
       <Paragraph>
         Sou entusiasta de tecnologias FOSS e usuário de Arch Linux desde 2019.
         Também uso Linux desde 2016.
       </Paragraph>
       <Paragraph>
-        Atualmente, sou estagiário no{" "}
-        <strong>Tribunal de contas da União</strong> na área de Cientista de
-        Dados, onde trabalho com Python, PowerBI, SQL e outras tecnologias.
-        Também sou desenvolvedor fullstack meio período na{" "}
-        <a href="https://www.linkedin.com/company/betabit-dev/">BetaBit</a>,
-        onde trabalho com React, NestJS, NodeJS, Typescript, PostgreSQL, AWS e
-        outras tecnologias.
+        No momento, ocupo o cargo de estagiário no{" "}
+        <strong>Tribunal de Contas da União (TCU)</strong>, trabalhando na área
+        de dados. Minhas responsabilidades envolvem a utilização de{" "}
+        <strong>Python</strong>, <strong>PowerBI</strong>, <strong>SQL</strong>{" "}
+        e outras tecnologias. No entanto, meu objetivo atual é fazer uma
+        transição para uma função de desenvolvimento de software, que era minha
+        ambição de carreira original há 8 anos.
+      </Paragraph>
+      <Paragraph>
+        Além da minha experiência no TCU, atuei como desenvolvedor fullstack na{" "}
+        <strong>
+          <a href="https://www.linkedin.com/company/betabit-dev/">BetaBit</a>
+        </strong>{" "}
+        em meio período. Durante esse período, trabalhei com uma variedade de
+        tecnologias, incluindo React,
+        <strong>Python</strong>,<strong>NestJS</strong>,<strong>NodeJS</strong>,
+        <strong>Typescript</strong>,<strong>PostgreSQL</strong>,
+        <strong>AWS</strong>, entre outras.
       </Paragraph>
       <Paragraph>
         Sou fluente em inglês e estou atualmente estudando holandês.

@@ -1,11 +1,11 @@
 import * as React from "react";
 import {
-  Header,
-  Page,
-  Paragraph,
-  Ruler,
-  SubSubHeader,
-  UnOrderedList,
+    Header,
+    Page,
+    Paragraph,
+    Ruler,
+    SubSubHeader,
+    UnOrderedList,
 } from "../../components/Commom";
 const ExperienciaPage = () => {
   React.useEffect(() => {
@@ -22,11 +22,12 @@ const ExperienciaPage = () => {
 
   const profissional = [
     {
-      cargo: "Estagiário de Data Science",
+      cargo:
+        "Estágio Ciência de Dados Python | Pandas | Matplotlib | Seaborn | Numpy | Excel",
       empresa: "Tribunal de Contas da União",
       período: "Agosto de 2021 - Atual",
-      descrição:
-        "Prestando assistência em data mining e gestão de dados estruturados usando as seguintes ferramentas/tecnologias:",
+      descrição: `Auxiliar mineração de dados e gestão de dados estruturados, utilizando Microsoft Excel, Power Bi e Python.
+      Auxilio na criação de programas/script Python utilizando as seguinte ferramentas/ tecnologias:`,
       competências: [
         "Jupyter",
         "Pandas",
@@ -42,15 +43,23 @@ const ExperienciaPage = () => {
       cargo: "Desenvolvedor Full Stack meio período",
       empresa: "Beta Bit",
       período: "Novembro de 2022 - Abril de 2023",
-      descrição:
-        "Desenvolvimento de aplicações web usando as seguintes tecnologias:",
+      descrição: `Como Desenvolvedor de Software Full Stack de meio período, estive responsável por desenvolver aplicações web usando as tecnologias mais modernas, seguindo o metodologia ágil.
+        No frontend, uso React, Next.js e Tailwindcss para criar interfaces ricas e intuitivas, tornando as aplicações web mais atraentes e usáveis.
+        No backend, uso Nest.js, TypeORM e PostgreSQL para criar aplicações web escaláveis e robustas. Também uso Python e FastAPI para criar APIs RESTful.
+        Além disso, uso ferramentas como Git para versionar meu código. E Docker para criar ambientes de desenvolvimento e produção isolados.`,
       competências: [
         "React",
-        "NextJs",
-        "Node",
-        "NestJs",
-        "Express",
-        "TypeScript",
+        "Next.js",
+        "Tailwindcss",
+        "Nest.js",
+        "TypeORM",
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Git",
+        "Docker",
+        "Agile",
+        "Firebase",
       ],
     },
     {

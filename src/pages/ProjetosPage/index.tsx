@@ -1,16 +1,16 @@
 import * as React from "react";
+import styled from "styled-components";
 import {
-  Card,
-  CardContainer,
-  CardLeft,
-  CardRight,
-  Header,
-  Page,
-  Ruler,
+    Card,
+    CardContainer,
+    CardLeft,
+    CardRight,
+    CustomImage,
+    Header,
+    Page,
+    Ruler,
 } from "../../components/Commom";
-import styled, { css, ThemeContext } from "styled-components";
 import { colors, fonts } from "../../styles/colors";
-import { AppThemeContextType } from "../../context/AppContext";
 type Projeto = {
   nome: string;
   descricao: React.ReactElement<any, any>;
@@ -18,72 +18,62 @@ type Projeto = {
   link: string;
 };
 
+const Description = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0.25rem 0;
+    display: block;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 3rem;
+    font-weight: 300;
+    transition: 0.2s;
+    font-family: ${fonts.fontBarcode};
+    color: ${colors.dark1};
+    &:hover {
+      color: ${colors.dark2};
+    }
+    &:active {
+      color: ${colors.dark4};
+    }
+  }
+
+  font-size: 0.8rem;
+  p {
+    font-weight: 400;
+    margin: 0.5rem 0;
+  }
+
+  span {
+    color: ${colors.dark4};
+  }
+`;
+
 const ProjetoCard = (props: { projeto: Projeto }) => {
-  const { isDarkMode } = React.useContext(ThemeContext) as AppThemeContextType;
-  const Image = styled.img`
-    width: auto;
-    height: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    border-radius: 10px;
-    display: inline;
-    margin: 0 auto;
-  `;
-
-  const Description = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    h2 {
-      font-size: 2rem;
-      font-weight: 600;
-      margin: 0.25rem 0;
-      display: block;
-    }
-
-    a {
-      text-decoration: none;
-      font-size: 3rem;
-      font-weight: 300;
-      transition: 0.2s;
-      font-family: ${fonts.fontBarcode};
-      color: ${(props: any) => {
-        if (isDarkMode) {
-          return colors.dark1;
-        } else {
-          return colors.light1;
-        }
-      }};
-      &:hover {
-        color: ${isDarkMode ? colors.dark4 : colors.light4};
-      }
-      &:active {
-        color: ${isDarkMode ? colors.dark1 : colors.light1};
-      }
-    }
-
-    p {
-      font-size: 1.2rem;
-      font-weight: 400;
-      margin: 0.5rem 0;
-    }
-
-    span {
-      color: ${isDarkMode ? colors.dark4 : colors.light4};
-    }
-  `;
-
   const projeto: Projeto = props.projeto;
   return (
     <Card>
       <CardLeft>
-        <Image src={projeto.imagem} alt={projeto.nome} />
+        <CustomImage
+          style={{
+            width: "200px",
+            height: "100%",
+          }}
+          src={projeto.imagem}
+          alt={projeto.nome}
+        />
       </CardLeft>
       <CardRight>
         <Description>
           <h2>{projeto.nome}</h2>
-          <p>{projeto.descricao}</p>
+          {projeto.descricao}
           <a href={projeto.link}>{"Ver Projeto"}</a>
         </Description>
       </CardRight>
