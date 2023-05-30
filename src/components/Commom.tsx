@@ -196,7 +196,7 @@ export const CustomImage = (
           /*destination height*/ canvasHeight / parts
         );
         // wait , the later the part the faster it loads
-        await delay(Math.random() * parts + 1 / (i + 1));
+        await delay(Math.random() * parts + 1 / (i + 1) * 50);
       }
       setWasDrawn(true);
     }

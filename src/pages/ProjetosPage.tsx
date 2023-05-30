@@ -1,14 +1,14 @@
 import * as React from "react";
 import styled from "styled-components";
 import {
-    Card,
-    CardContainer,
-    CardLeft,
-    CardRight,
-    CustomImage,
-    Header,
-    Page,
-    Ruler,
+  Card,
+  CardContainer,
+  CardLeft,
+  CardRight,
+  CustomImage,
+  Header,
+  Page,
+  Ruler,
 } from "../components/Commom";
 import { colors, fonts } from "../styles/colors";
 type Projeto = {
