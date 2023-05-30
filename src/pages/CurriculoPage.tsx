@@ -248,13 +248,9 @@ export default () => {
     } else {
       setDados(English);
     }
-    document.title =
-      language === "pt"
-        ? "Currículo - Nicolas Vycas Nery"
-        : "Curriculum - Nicolas Vycas Nery";
   }, [language]);
   return (
-    <Page>
+    <>
       <Header>{language === "pt" ? "Currículo" : "Curriculum"}</Header>
       <ControlsDiv>
         <button onClick={Print}>
@@ -271,6 +267,6 @@ export default () => {
         {/* Back button */}
       </ControlsDiv>
       <Curriculo language={language} dados={Dados} />
-    </Page>
+    </>
   );
 };

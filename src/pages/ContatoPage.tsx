@@ -71,10 +71,6 @@ const ContatoPage = () => {
     },
   ];
 
-  React.useEffect(() => {
-    document.title = "Contato - Nicolas Vycas Nery";
-  });
-
   const UlStyle = styled.ul`
     display: flex;
     flex-direction: row;

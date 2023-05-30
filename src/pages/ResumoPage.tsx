@@ -1,16 +1,12 @@
 import * as React from "react";
 import {
-  CenteredImage,
-  CustomImage,
-  Header,
-  Page,
-  Paragraph,
+    CustomImage,
+    Header,
+    Page,
+    Paragraph
 } from "../components/Commom";
 
 const ResumoPage = () => {
-  React.useEffect(() => {
-    document.title = "Resumo - Nicolas Vycas Nery";
-  });
 
   return (
     <Page>

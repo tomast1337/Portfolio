@@ -1,6 +1,7 @@
 import * as React from "react";
 import { CurriculoType, ExperienciaType, FormacaoType } from "../data/types";
 import styled from "styled-components";
+import { useAppContext } from "../context/AppContext";
 
 const CurrículoBody = styled.div`
   background-color: white;
@@ -46,13 +47,6 @@ const CurrículoHeader = styled.div`
 `;
 
 const CurrículoContent = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
-  align-content: flex-start;
-
   height: 100%;
   width: 90%;
   margin: 0 auto;
@@ -63,14 +57,15 @@ const CurrículoContent = styled.div`
 `;
 
 const CurrículoSection = styled.div`
-  width: 42%;
+  width: 100%;
+  margin: 0 auto;
   margin-bottom: 1rem;
   border-radius: 1rem;
   padding: 1rem;
 
   h2 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 1rem;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
       sans-serif;
     border-bottom: 1px solid $dark1;
@@ -89,7 +84,7 @@ const CurrículoSection = styled.div`
     margin: 0 0 0.5rem 0;
     width: 90%;
     white-space: pre-line;
-    font-size: 1.12rem;
+    font-size: 0.8rem;
     font-family: "Roboto", sans-serif;
   }
 
@@ -162,7 +157,7 @@ export const Curriculo = ({
   dados,
   language,
 }: {
-    dados: CurriculoType;
+  dados: CurriculoType;
   language: "pt" | "en";
 }) => {
   return (
@@ -218,21 +213,22 @@ export const Curriculo = ({
                 ? "Experiência Voluntária"
                 : "Voluntary Experience"}
             </h2>
-            {dados["Experiência Voluntária"].map(
-              (item: ExperienciaType, index: number) => {
-                return (
-                  <CurrículoExperiencia key={index}>
-                    <h3>{item["Nome"]}</h3>
-                    <h3>{item["Empresa"]}</h3>
-                    <p>{item["Descrição"]}</p>
-                    <p>
-                      {item["Data Início"]} - {item["Data Fim"]}
-                    </p>
-                  </CurrículoExperiencia>
-                );
-              }
-            )}
           </CurrículoSection>
+          {dados["Experiência Voluntária"].map(
+            (item: ExperienciaType, index: number) => {
+              return (
+                <CurrículoExperiencia key={index}>
+                  <h3>{item["Nome"]}</h3>
+                  <h3>{item["Empresa"]}</h3>
+                  <p>{item["Descrição"]}</p>
+                  <p>
+                    {item["Data Início"]} - {item["Data Fim"]}
+                  </p>
+                </CurrículoExperiencia>
+              );
+            }
+          )}
+
           <CurrículoSection>
             <h2>{language === "pt" ? "Idiomas" : "Languages"}</h2>
             {dados["Idiomas"].map((item: string, index: number) => {
@@ -259,7 +255,7 @@ export const Curriculo = ({
             <h3>{language === "pt" ? "Linguas mais usada no github" : ""}</h3>
             <div>
               <img
-                width="100%"
+                width="30%"
                 src="https://github-readme-stats.vercel.app/api/top-langs/?username=tomast1337&layout=compact&theme=graywhite&langs_count=10&hide_border=true"
               />
             </div>

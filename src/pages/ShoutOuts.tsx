@@ -63,9 +63,6 @@ const ShoutOutsPage = () => {
     },
   ];
 
-  React.useEffect(() => {
-    document.title = "ShoutOuts - Nicolas Vycas Nery";
-  });
   return (
     <Page>
       <Header>Shout-outs</Header>
@@ -82,7 +79,7 @@ const ShoutOutsPage = () => {
                 <CardLeft>
                   <CustomImage style={{
                     width: "200px",
-                    height: "auto",
+                    height: "200px",
                     display: "inline",
                     margin: "0 auto",
                   }} src={shoutOut.foto} alt={shoutOut.nome} />

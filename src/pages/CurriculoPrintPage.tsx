@@ -38,6 +38,12 @@ export default () => {
   React.useEffect(() => {
     getQueryParams();
     setWindowTitle();
+    const { setHasLoaded } = useAppContext();
+
+    // enable page scroll
+    setHasLoaded(true);
+    // request print
+    window.print();
   }, []);
 
   React.useEffect(() => {

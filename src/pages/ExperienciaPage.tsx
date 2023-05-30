@@ -8,10 +8,6 @@ import {
     UnOrderedList,
 } from "../components/Commom";
 const ExperienciaPage = () => {
-  React.useEffect(() => {
-    document.title = "Experiencia - Nicolas Vycas Nery";
-  });
-
   type Experiencia = {
     cargo: string;
     empresa: string;

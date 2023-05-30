@@ -1,16 +1,13 @@
 import * as React from "react";
 import {
-  Header,
-  Page,
-  Ruler,
-  SubHeader,
-  UnOrderedList,
+    Header,
+    Page,
+    Ruler,
+    SubHeader,
+    UnOrderedList,
 } from "../components/Commom";
 
 const FormaçãoPage = () => {
-  React.useEffect(() => {
-    document.title = "Formação - Nicolas Vycas Nery";
-  });
   return (
     <Page>
       <Header>Formação</Header>

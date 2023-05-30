@@ -222,9 +222,6 @@ const ProjetosPage = () => {
     },
   ];
 
-  React.useEffect(() => {
-    document.title = "Projetos - Nicolas Vycas Nery";
-  });
   return (
     <>
       <Page>

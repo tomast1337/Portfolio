@@ -13,6 +13,9 @@ import ResumoPage from "./pages/ResumoPage";
 import ShoutOuts from "./pages/ShoutOuts";
 
 const App = () => {
+  React.useEffect(() => {
+    document.title = "Portfolio - Nicolas Vycas Nery";
+  });
   return (
     <HashRouter>
       <Routes>
@@ -27,8 +30,8 @@ const App = () => {
                 <ExperienciaPage />
                 <FormaçãoPage />
                 <ProjetosPage />
-                <ShoutOuts />
                 <CurriculoPage />
+                <ShoutOuts />
               </PageBody>
             </>
           }
