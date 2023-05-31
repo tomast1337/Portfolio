@@ -26,7 +26,6 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
   const [hasLoaded, setHasLoaded] = React.useState(false);
   const [loadPercent, setLoadPercent] = React.useState(0);
   React.useEffect(() => {
-    console.log("hasLoaded", hasLoaded);
     if (hasLoaded) {
       document.body.style.overflow = "auto";
     } else {

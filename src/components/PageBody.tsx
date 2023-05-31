@@ -1,24 +1,26 @@
 import * as React from "react";
-import Container from "../components/Container";
+import styled from "styled-components";
 import Navbar from "../components/Navbar";
-import { ThemeContext } from "styled-components";
-import styled, { css } from "styled-components";
-import CanvasBG from "./CanvasBG";
+
+//import CanvasBG from "./CanvasBG";
+const CanvasBG = React.lazy(() => import("./CanvasBG"));
 
 const CentreOuterCSS = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  `;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
 const PageBody = (props: { children: React.ReactNode }) => {
   return (
     <>
-      <CanvasBG />
+      <React.Suspense fallback={<div></div>}>
+        <CanvasBG />
+      </React.Suspense>
       <CentreOuterCSS>
-      <Navbar />
-          {props.children}
+        <Navbar />
+        {props.children}
       </CentreOuterCSS>
     </>
   );

@@ -1,64 +1,79 @@
 import * as React from "react";
-import * as THREE from "three";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 import { useAppContext } from "../context/AppContext";
+import {
+  AmbientLight,
+  BackSide,
+  Color,
+  DirectionalLight,
+  Group,
+  Mesh,
+  MeshBasicMaterial,
+  MeshPhongMaterial,
+  NearestFilter,
+  PerspectiveCamera,
+  Scene,
+  SphereGeometry,
+  TextureLoader,
+  WebGLRenderer,
+} from "three";
 class Render {
-  private scene: THREE.Scene;
-  private camera: THREE.PerspectiveCamera;
-  private renderer: THREE.WebGLRenderer;
+  private scene: Scene;
+  private camera: PerspectiveCamera;
+  private renderer: WebGLRenderer;
   private canvas: HTMLCanvasElement;
 
-  private mainGroup: THREE.Group;
+  private mainGroup: Group;
 
   constructor(canvas: HTMLCanvasElement) {
     this.canvas = canvas;
-    this.scene = new THREE.Scene();
-    this.camera = new THREE.PerspectiveCamera(
+    this.scene = new Scene();
+    this.camera = new PerspectiveCamera(
       75,
       window.innerWidth / window.innerHeight,
       0.1,
       1000
     );
-    this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas });
+    this.renderer = new WebGLRenderer({ canvas: this.canvas });
     this.onWindowResize();
     this.registerEventListeners();
-    this.mainGroup = new THREE.Group();
+    this.mainGroup = new Group();
   }
 
   public async loadScene(
     updateLoadPercent: (min: number, max: number, current: number) => void
   ) {
-    this.scene.background = new THREE.Color("0x45b3e0");
+    this.scene.background = new Color("0x45b3e0");
 
-    //const axishelp = new THREE.AxesHelper(5);
+    //const axishelp = new AxesHelper(5);
     //this.scene.add(axishelp);
 
     // load the sky texture /imgs/textures/skydome.png
-    const t = await new THREE.TextureLoader().loadAsync(
+    const t = await new TextureLoader().loadAsync(
       "./imgs/textures/skydome.png"
     );
     // add a blue sphere sky dome
-    const geometry = new THREE.SphereGeometry(5, 16, 16);
-    const material = new THREE.MeshBasicMaterial({
+    const geometry = new SphereGeometry(5, 16, 16);
+    const material = new MeshBasicMaterial({
       map: t,
-      side: THREE.BackSide,
+      side: BackSide,
     });
-    const sphere = new THREE.Mesh(geometry, material);
+    const sphere = new Mesh(geometry, material);
     this.scene.add(sphere);
 
     // add sunlight
-    const light = new THREE.DirectionalLight(0xffda99, 1);
+    const light = new DirectionalLight(0xffda99, 1);
     light.position.set(0, 1, 1);
     this.scene.add(light);
 
     // global light
-    const ambientLight = new THREE.AmbientLight(0x45b3e0, 0.5);
+    const ambientLight = new AmbientLight(0x45b3e0, 0.5);
     this.scene.add(ambientLight);
 
     const loader = new FBXLoader();
     loader.load(
       "./models/sao_paulo.fbx",
-      (object: THREE.Group) => {
+      (object: Group) => {
         this.mainGroup = object;
         object.position.set(0, 0, 0);
         object.scale.set(0.02, 0.02, 0.02);
@@ -66,11 +81,11 @@ class Render {
         //object.receiveShadow = true;
         //list the materials
         object.traverse((child) => {
-          if (child instanceof THREE.Mesh) {
+          if (child instanceof Mesh) {
             // remove the texture filter to avoid blurring
-            const material = child.material as THREE.MeshPhongMaterial;
-            material.map!.minFilter = THREE.NearestFilter;
-            material.map!.magFilter = THREE.NearestFilter;
+            const material = child.material as MeshPhongMaterial;
+            material.map!.minFilter = NearestFilter;
+            material.map!.magFilter = NearestFilter;
             material.map!.anisotropy = 0;
 
             // add a shadow
@@ -78,8 +93,8 @@ class Render {
             child.receiveShadow = true;
 
             // add a wireframe
-            //const wireframe = new THREE.WireframeGeometry(child.geometry);
-            //const line = new THREE.LineSegments(wireframe);
+            //const wireframe = new WireframeGeometry(child.geometry);
+            //const line = new LineSegments(wireframe);
             //child.add(line);
           }
         });

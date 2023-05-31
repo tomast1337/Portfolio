@@ -17,7 +17,7 @@ const LoadingAnimation = styled.div`
   }
 `;
 
-export const Loading = () => {
+const Loading = () => {
   const { hasLoaded, loadPercent } = useAppContext();
   React.useEffect(() => {
     // scroll to top
@@ -60,3 +60,5 @@ export const Loading = () => {
     </div>
   );
 };
+
+export default Loading;

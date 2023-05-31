@@ -7,7 +7,7 @@ import CurriculoPage from "./pages/CurriculoPage";
 import CurriculoPrintPage from "./pages/CurriculoPrintPage";
 import ExperienciaPage from "./pages/ExperienciaPage";
 import FormaçãoPage from "./pages/FormaçãoPage";
-import { Loading } from "./pages/Loading";
+import Loading from "./pages/Loading";
 import ProjetosPage from "./pages/ProjetosPage";
 import ResumoPage from "./pages/ResumoPage";
 import ShoutOuts from "./pages/ShoutOuts";

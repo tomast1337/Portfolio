@@ -2,14 +2,14 @@
     "compilerOptions": {
         "baseUrl": "./src",
         "jsx": "react",
-        "moduleResolution": "Node",
+        "moduleResolution": "esnext",
         "paths": {
             "~*": [
-                "./*"
+                "./"
             ]
         },
         "strict": true,
-        "target": "ES2015"
+        //"target": "ES2015"
     },
     "include": [
         "src/**/*"
