@@ -24,8 +24,12 @@ export default class Render {
   private camera: PerspectiveCamera;
   private renderer: WebGLRenderer;
   private canvas: HTMLCanvasElement;
-
   private mainGroup: Group;
+
+  private readonly skyColor = 0x45b3e0;
+  private readonly fogColor = 0xcff1ff;
+  private readonly lightColor = 0xffda99;
+  private readonly blackColor = 0x000000;
 
   constructor(canvas: HTMLCanvasElement) {
     this.canvas = canvas;
@@ -49,7 +53,7 @@ export default class Render {
   public async loadScene(
     updateLoadPercent: (min: number, max: number, current: number) => void
   ) {
-    this.scene.background = new Color("0x45b3e0");
+    this.scene.background = new Color(this.skyColor);
 
     const t = await new TextureLoader().loadAsync(
       "./imgs/textures/skydome.png"
@@ -65,7 +69,7 @@ export default class Render {
     this.scene.add(sphere);
 
     // add sunlight
-    const light = new DirectionalLight(0xffda99, 1);
+    const light = new DirectionalLight(this.lightColor, 1);
     light.position.set(0, 1, 1);
     light.castShadow = true;
     light.shadow.mapSize.width = 1024;
@@ -77,11 +81,11 @@ export default class Render {
     this.scene.add(light);
 
     // global light
-    const ambientLight = new AmbientLight(0x45b3e0, 0.5);
+    const ambientLight = new AmbientLight(this.skyColor, 0.5);
     this.scene.add(ambientLight);
 
     // add fog
-    this.scene.fog = new Fog(0xcff1ff, 0.1, 8);
+    this.scene.fog = new Fog(this.fogColor, 0.1, 8);
 
     const loader = new FBXLoader();
     loader.load(
@@ -97,8 +101,7 @@ export default class Render {
             // material shading
             material.reflectivity = 0;
             material.emissiveIntensity = 0;
-            material.specular = new Color(0x000000);
-            
+            material.specular = new Color(this.blackColor);
 
             // texture filtering
             material.map!.minFilter = NearestFilter;
@@ -156,9 +159,6 @@ export default class Render {
       const lookY = Math.abs(Math.cos(now / moveScale));
       const lookZ = Math.sin(now / moveScale) * 5;
       this.camera.lookAt(lookX, lookY, lookZ);
-
-      // move the sky dome to the camera position
-      //this.camera.lookAt(0, 0, Math.sin(now / moveScale) * 2);
     };
 
     const audioUpdate = () => {
