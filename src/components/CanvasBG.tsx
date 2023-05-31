@@ -69,7 +69,9 @@ class Render {
           if (child instanceof THREE.Mesh) {
             // remove the texture filter to avoid blurring
             const material = child.material as THREE.MeshPhongMaterial;
-            material.map!.minFilter = THREE.LinearFilter;
+            material.map!.minFilter = THREE.NearestFilter;
+            material.map!.magFilter = THREE.NearestFilter;
+            material.map!.anisotropy = 0;
 
             // add a shadow
             child.castShadow = true;
@@ -159,10 +161,9 @@ class Render {
 
 const CanvasBG = () => {
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
-  const { hasLoaded, setHasLoaded , updateLoadPercent } = useAppContext();
+  const { hasLoaded, setHasLoaded, updateLoadPercent } = useAppContext();
   const [audio, setAudio] = React.useState<HTMLAudioElement | null>(null);
   const [render, setRender] = React.useState<Render | null>(null);
-
   const main = async () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -202,7 +203,13 @@ const CanvasBG = () => {
     <>
       <canvas
         ref={canvasRef}
-        style={{ position: "fixed", top: 0, left: 0, zIndex: -1 }}
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          zIndex: -1,
+          filter: `saturate(2) brightness(1.2)`,
+        }}
       ></canvas>
     </>
   );
