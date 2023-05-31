@@ -94,6 +94,13 @@ export default class Render {
           if (child instanceof Mesh) {
             // remove the texture filter to avoid blurring
             const material = child.material as MeshPhongMaterial;
+            // material shading
+            material.reflectivity = 0;
+            material.emissiveIntensity = 0;
+            material.specular = new Color(0x000000);
+            
+
+            // texture filtering
             material.map!.minFilter = NearestFilter;
             material.map!.magFilter = NearestFilter;
             material.map!.anisotropy = 0;
