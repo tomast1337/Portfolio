@@ -30,7 +30,9 @@ export const Loading = () => {
         textAlign: "center",
         width: "100vw",
         height: "100vh",
-        display: hasLoaded ? "none" : "block",
+        display: hasLoaded ? "none" : "flex",
+        flexDirection: "column",
+        justifyContent: "center",
         background: "#000",
         alignItems: "center",
         margin: "0 0",
@@ -55,20 +57,6 @@ export const Loading = () => {
         Loading... {Math.round(loadPercent * 100)}%
       </h1>
       <LoadingAnimation />
-      <img
-        src="./imgs/textures/texture1.gif"
-        alt="logo"
-        style={{
-          width: "50%",
-          height: "auto",
-          aspectRatio: "1/1",
-          margin: "0 auto",
-          display: "block",
-          position: "relative",
-          top: "50%",
-          transform: "translateY(-50%)",
-        }}
-      />
     </div>
   );
 };
