@@ -1,37 +1,36 @@
 import * as React from "react";
 import {
-    Header,
-    Page,
-    Ruler,
-    SubHeader,
-    UnOrderedList,
+  Header,
+  Page,
+  Ruler,
+  SubHeader,
+  UnOrderedList,
 } from "../components/Commom";
 
 const FormaçãoPage = () => {
   return (
     <Page>
-      <Header>Formação</Header>
-      <SubHeader>Ensino Superior</SubHeader>
+      <Header>Education</Header>
+      <SubHeader>Graduation</SubHeader>
       <UnOrderedList>
         <li>
-          <strong>Em andamento</strong>
+          <strong>Graduating </strong>
         </li>
-        <li>(Bacharelado em Ciência da Computação) no CEFET/RJ</li>
-        <li>Centro Federal de Educação Tecnológica</li>
+        <li>(Bachelor of Computer Science) at CEFET/RJ</li>
+        <li>Federal Center for Technological Education</li>
         <li>
           <strong>(2020 – 2023)</strong>
         </li>
       </UnOrderedList>
-      <Ruler />
-      <SubHeader>Ensino Médio Técnico</SubHeader>
+      <SubHeader>Technical High School</SubHeader>
       <UnOrderedList>
         <li>
-          <strong>Completo</strong>
+          <strong>Completed</strong>
         </li>
-        <li>(ensino técnico em informática) na FAETEC</li>
-        <li>Escola Técnica Estatual República</li>
+
+        <li>(technical high school in informatics) at FAETEC</li>
+        <li>State Technical School Republic</li>
         <li>
-          {" "}
           <strong>(2016 – 2018)</strong>
         </li>
       </UnOrderedList>

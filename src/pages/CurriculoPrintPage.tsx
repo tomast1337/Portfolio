@@ -23,7 +23,7 @@ export default () => {
         setDados(English);
       }
     } else {
-      setLanguage("pt");
+      setLanguage("en");
       setDados(Portuguese);
     }
   };

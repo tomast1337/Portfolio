@@ -92,7 +92,7 @@ const ContatoPage = () => {
 
   return (
     <Page>
-      <Header>Contato</Header>
+      <Header>Contact</Header>
       <UlStyle>
         {links.map((link, index) => {
           return (

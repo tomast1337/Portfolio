@@ -1,11 +1,11 @@
 import * as React from "react";
 import {
-    Header,
-    Page,
-    Paragraph,
-    Ruler,
-    SubSubHeader,
-    UnOrderedList,
+  Header,
+  Page,
+  Paragraph,
+  Ruler,
+  SubSubHeader,
+  UnOrderedList,
 } from "../components/Commom";
 const ExperienciaPage = () => {
   type Experiencia = {
@@ -19,11 +19,11 @@ const ExperienciaPage = () => {
   const profissional = [
     {
       cargo:
-        "Estágio Ciência de Dados Python | Pandas | Matplotlib | Seaborn | Numpy | Excel",
+        "Data Science Internship Python | Pandas | Matplotlib | Seaborn | Numpy | Excel",
       empresa: "Tribunal de Contas da União",
-      período: "Agosto de 2021 - Atual",
-      descrição: `Auxiliar mineração de dados e gestão de dados estruturados, utilizando Microsoft Excel, Power Bi e Python.
-      Auxilio na criação de programas/script Python utilizando as seguinte ferramentas/ tecnologias:`,
+      período: "Aug 2021 - Present",
+      descrição: `Data mining and management of structured data, using Microsoft Excel, Power Bi and Python.
+      Assistance in the creation of Python programs / script using the following tools / technologies:`,
       competências: [
         "Jupyter",
         "Pandas",
@@ -36,13 +36,17 @@ const ExperienciaPage = () => {
       ],
     },
     {
-      cargo: "Desenvolvedor Full Stack meio período",
-      empresa: "Beta Bit",
-      período: "Novembro de 2022 - Abril de 2023",
-      descrição: `Como Desenvolvedor de Software Full Stack de meio período, estive responsável por desenvolver aplicações web usando as tecnologias mais modernas, seguindo o metodologia ágil.
-        No frontend, uso React, Next.js e Tailwindcss para criar interfaces ricas e intuitivas, tornando as aplicações web mais atraentes e usáveis.
-        No backend, uso Nest.js, TypeORM e PostgreSQL para criar aplicações web escaláveis e robustas. Também uso Python e FastAPI para criar APIs RESTful.
-        Além disso, uso ferramentas como Git para versionar meu código. E Docker para criar ambientes de desenvolvimento e produção isolados.`,
+      cargo:
+        "Full Stack Software Developer TypeScript | ReactJs | NextJs | NestJs",
+      empresa: "Beta Bit Dev",
+      período: "Nov 2022 - Apr 2023 · 6 mos",
+      descrição: `As a part-time Full Stack Software Developer, I was responsible for developing web applications using the latest technologies, following agile methodology.
+
+      On the frontend, I use React, Next.js, and Tailwindcss to create rich and intuitive interfaces, making web applications more attractive and user-friendly.
+      
+      On the backend, I use Nest.js, TypeORM, and PostgreSQL to create scalable and robust web applications. I also use Python and FastAPI to create RESTful APIs.
+      
+      Additionally, I use tools such as Git to version my code and Docker to create isolated development and production environments.`,
       competências: [
         "React",
         "Next.js",
@@ -59,21 +63,21 @@ const ExperienciaPage = () => {
       ],
     },
     {
-      cargo: "Iniciação Científica",
+      cargo: "Undergraduate Research, Unity | Python | C#",
       empresa: "CEFET/RJ",
-      período: "Novembro de 2022 - Atual",
+      período: "Nov 2022 - Present",
       descrição:
-        "Auxiliando na criação de um jogo com foco em interface para deficientes visuais usando as seguintes tecnologias:",
+        "Assisting in the creation of a game with a focus on interface for visually impaired individuals using the following technologies:",
       competências: ["Unity", "Python", "C#"],
     },
   ] as Experiencia[];
   const voluntario = [
     {
-      cargo: "Monitor da disciplina Estrutura de Dados Monitor",
+      cargo: "Class Assistant - Data Structures Course C++ | C",
       empresa: "CEFET/RJ",
-      período: "Março de 2022 - Outubro de 2022",
+      período: "Mar 2022 - Oct 2022 · 8 mos",
       descrição:
-        "Prestando assistência nas linguagens C e C++, trabalhando com o professor para responder aos alunos questões e auxiliando no desenvolvimento dos seguintes tópicos:",
+        "I assisted the class in addressing student's doubts in the course. I use the C and C++ languages and provide assistance with the development of the following topics:",
       competências: [
         "Estruturas lineares sequenciais (Array)",
         "Algoritmos de ordenação",
@@ -83,11 +87,11 @@ const ExperienciaPage = () => {
       ],
     },
     {
-      cargo: "Trainee no Ramo Estudantil IEEE CEFET/RJ",
+      cargo: "Trainee at Ramo Estudantil IEEE CEFET/RJ",
       empresa: "Ramo Estudantil IEEE CEFET/RJ",
-      período: "Novembro de 2022 - Janeiro de 2023",
+      período: "Nov 2022 - Jan 2023 · 3 mos",
       descrição:
-        "Construí um bot para o discord usando a api do discord que gera avisos de datas de aniversários de membros do servidor, usando as seguintes tecnologias:",
+        "I built a bot for discord using the discord api that generates birthday date warnings for server members, using the following technologies:",
       competências: [
         "Python",
         "OpenAI gpt-3 api",
@@ -120,14 +124,14 @@ const ExperienciaPage = () => {
     <>
       <Page>
         <div>
-          <Header>Experiência Profissional</Header>
+          <Header>Professional Experience </Header>
           {profissional.map((experiencia, index) => (
             <ExperienciaElem key={index} experiencia={experiencia} />
           ))}
         </div>
         <Ruler />
         <div>
-          <Header>Experiência Voluntária</Header>
+          <Header>Volunteer Experience </Header>
           {voluntario.map((experiencia, index) => (
             <ExperienciaElem key={index} experiencia={experiencia} />
           ))}

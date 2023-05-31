@@ -229,7 +229,7 @@ const ControlsDiv = styled.div`
 `;
 
 export default () => {
-  const [language, setLanguage] = React.useState<LaguagesType>("pt");
+  const [language, setLanguage] = React.useState<LaguagesType>("en");
 
   const [Dados, setDados] = React.useState<CurriculoType>(
     Portuguese as CurriculoType
