@@ -5,11 +5,13 @@ import {
   BackSide,
   Color,
   DirectionalLight,
+  Fog,
   Group,
   Mesh,
   MeshBasicMaterial,
   MeshPhongMaterial,
   NearestFilter,
+  PCFSoftShadowMap,
   PerspectiveCamera,
   Scene,
   SphereGeometry,
@@ -35,6 +37,10 @@ export default class Render {
       1000
     );
     this.renderer = new WebGLRenderer({ canvas: this.canvas });
+
+    this.renderer.shadowMap.enabled = true;
+    this.renderer.shadowMap.type = PCFSoftShadowMap;
+
     this.onWindowResize();
     this.registerEventListeners();
     this.mainGroup = new Group();
@@ -45,10 +51,6 @@ export default class Render {
   ) {
     this.scene.background = new Color("0x45b3e0");
 
-    //const axishelp = new AxesHelper(5);
-    //this.scene.add(axishelp);
-
-    // load the sky texture /imgs/textures/skydome.png
     const t = await new TextureLoader().loadAsync(
       "./imgs/textures/skydome.png"
     );
@@ -64,11 +66,22 @@ export default class Render {
     // add sunlight
     const light = new DirectionalLight(0xffda99, 1);
     light.position.set(0, 1, 1);
+    light.castShadow = true;
+    light.shadow.mapSize.width = 1024;
+    light.shadow.mapSize.height = 1024;
+    light.shadow.camera.near = 0.5;
+    light.shadow.camera.far = 500;
+    light.shadow.bias = -0.001;
+
+
     this.scene.add(light);
 
     // global light
     const ambientLight = new AmbientLight(0x45b3e0, 0.5);
     this.scene.add(ambientLight);
+
+    // add fog
+    this.scene.fog = new Fog(0xfce6bd, 0.1, 10);
 
     const loader = new FBXLoader();
     loader.load(
@@ -77,9 +90,6 @@ export default class Render {
         this.mainGroup = object;
         object.position.set(0, 0, 0);
         object.scale.set(0.02, 0.02, 0.02);
-        //object.castShadow = true;
-        //object.receiveShadow = true;
-        //list the materials
         object.traverse((child) => {
           if (child instanceof Mesh) {
             // remove the texture filter to avoid blurring
@@ -87,7 +97,7 @@ export default class Render {
             material.map!.minFilter = NearestFilter;
             material.map!.magFilter = NearestFilter;
             material.map!.anisotropy = 0;
-
+            material.fog = true;
             // add a shadow
             child.castShadow = true;
             child.receiveShadow = true;
@@ -138,14 +148,6 @@ export default class Render {
     };
 
     const audioUpdate = () => {
-      // update the this.setMainGroupScaleZ() based on the audio
-      //const bufferLength = analyser.frequencyBinCount;
-      //const dataArray = new Uint8Array(bufferLength);
-      //analyser.getByteFrequencyData(dataArray);
-      //const lowEndAverage =
-      //  dataArray.slice(0, 5).reduce((a, b) => a + b, 0) / 5;
-      //const scale = lowEndAverage / 255;
-      //this.setMainGroupScaleZ(scale);
       const now = Date.now();
       const scale =
         Math.random() * 0.01 +
@@ -153,7 +155,6 @@ export default class Render {
         Math.sin(3 + now / 1000) * 1 +
         Math.sin(4 + now / 10000) * 0;
       this.setMainGroupScaleZ(Math.abs(scale));
-      //get curret time
     };
 
     const animate = () => {
