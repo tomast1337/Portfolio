@@ -34,7 +34,7 @@ export default class Render {
       75,
       window.innerWidth / window.innerHeight,
       0.1,
-      1000
+      20
     );
     this.renderer = new WebGLRenderer({ canvas: this.canvas });
 
@@ -59,6 +59,7 @@ export default class Render {
     const material = new MeshBasicMaterial({
       map: t,
       side: BackSide,
+      fog: false,
     });
     const sphere = new Mesh(geometry, material);
     this.scene.add(sphere);
@@ -71,8 +72,7 @@ export default class Render {
     light.shadow.mapSize.height = 1024;
     light.shadow.camera.near = 0.5;
     light.shadow.camera.far = 500;
-    light.shadow.bias = -0.001;
-
+    //light.shadow.bias = -0.001;
 
     this.scene.add(light);
 
@@ -81,7 +81,7 @@ export default class Render {
     this.scene.add(ambientLight);
 
     // add fog
-    this.scene.fog = new Fog(0xfce6bd, 0.1, 10);
+    this.scene.fog = new Fog(0xcff1ff, 0.1, 8);
 
     const loader = new FBXLoader();
     loader.load(
@@ -98,14 +98,9 @@ export default class Render {
             material.map!.magFilter = NearestFilter;
             material.map!.anisotropy = 0;
             material.fog = true;
-            // add a shadow
+            // enable shadows
             child.castShadow = true;
             child.receiveShadow = true;
-
-            // add a wireframe
-            //const wireframe = new WireframeGeometry(child.geometry);
-            //const line = new LineSegments(wireframe);
-            //child.add(line);
           }
         });
         // add the object to the scene
@@ -141,10 +136,22 @@ export default class Render {
   public render() {
     const rotateCamera = () => {
       const now = Date.now();
-      this.camera.position.x = Math.sin(now / 10000) * 2;
-      this.camera.position.z = Math.cos(now / 10000) * 2;
-      this.camera.position.y = 1;
-      this.camera.lookAt(0, 0, Math.sin(now / 10000) * 2);
+      const moveScale = 10000;
+      const maxY = 1.5;
+      const minY = 1;
+
+      this.camera.position.x = Math.sin(now / moveScale) * 2;
+      this.camera.position.z = Math.cos(now / moveScale) * 2;
+      this.camera.position.y =
+        minY + (maxY - minY) * Math.abs(Math.sin(now / moveScale));
+
+      const lookX = Math.sin(now / moveScale) * 5;
+      const lookY = Math.abs(Math.cos(now / moveScale));
+      const lookZ = Math.sin(now / moveScale) * 5;
+      this.camera.lookAt(lookX, lookY, lookZ);
+
+      // move the sky dome to the camera position
+      //this.camera.lookAt(0, 0, Math.sin(now / moveScale) * 2);
     };
 
     const audioUpdate = () => {
@@ -153,7 +160,7 @@ export default class Render {
         Math.random() * 0.01 +
         Math.sin(5 + now / 100) * 0.1 +
         Math.sin(3 + now / 1000) * 1 +
-        Math.sin(4 + now / 10000) * 0;
+        Math.sin(4 + now / 10000) * 1;
       this.setMainGroupScaleZ(Math.abs(scale));
     };
 
