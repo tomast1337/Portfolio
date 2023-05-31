@@ -7,7 +7,7 @@ import {
   UnOrderedList,
 } from "../components/Commom";
 
-const FormaçãoPage = () => {
+export default () => {
   return (
     <Page>
       <Header>Education</Header>
@@ -37,5 +37,3 @@ const FormaçãoPage = () => {
     </Page>
   );
 };
-
-export default FormaçãoPage;

@@ -1,13 +1,13 @@
 import * as React from "react";
 import {
-  Header,
-  Page,
-  Paragraph,
-  Ruler,
-  SubSubHeader,
-  UnOrderedList,
+    Header,
+    Page,
+    Paragraph,
+    Ruler,
+    SubSubHeader,
+    UnOrderedList,
 } from "../components/Commom";
-const ExperienciaPage = () => {
+export default () => {
   type Experiencia = {
     cargo: string;
     empresa: string;
@@ -140,5 +140,3 @@ const ExperienciaPage = () => {
     </>
   );
 };
-
-export default ExperienciaPage;

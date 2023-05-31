@@ -20,7 +20,7 @@ const ContatoElement = (props: { contato: Contato }) => {
   );
 };
 
-const ContatoPage = () => {
+export default () => {
   const links: Contato[] = [
     {
       name: "Github",
@@ -105,5 +105,3 @@ const ContatoPage = () => {
     </Page>
   );
 };
-
-export default ContatoPage;

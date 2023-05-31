@@ -81,10 +81,10 @@ const ProjetoCard = (props: { projeto: Projeto }) => {
   );
 };
 
-const ProjetosPage = () => {
+export default () => {
   const projetos: Projeto[] = [
     {
-      nome:"Minecraft data structure visualization",
+      nome: "Minecraft data structure visualization",
       descricao: (
         <p>
           A <span>Spigot</span> plugin in <span>Java</span> that generates data
@@ -95,7 +95,7 @@ const ProjetosPage = () => {
       link: "https://github.com/tomast1337/Minecraft-Visualizacao-Estrutura-de-Dados",
     },
     {
-      nome:"WebScrapper Rio Vagas",
+      nome: "WebScrapper Rio Vagas",
       descricao: (
         <p>
           An <span>WebScrapper</span> made with <span>Python</span> and{" "}
@@ -107,7 +107,7 @@ const ProjetosPage = () => {
       link: "https://github.com/tomast1337/Rio-Vagas-Bot",
     },
     {
-      nome:"CSGO Sticker Finder",
+      nome: "CSGO Sticker Finder",
       descricao: (
         <p>
           An <span>ReactJs</span> app made with <span>Typescript</span> and
@@ -120,7 +120,7 @@ const ProjetosPage = () => {
       link: "https://sticker-picker.vercel.app/",
     },
     {
-      nome:"More Sponges Minecraft mod",
+      nome: "More Sponges Minecraft mod",
       descricao: (
         <p>
           Minecraft mod in mede with <span>Java</span> that adds more sponges to
@@ -131,7 +131,7 @@ const ProjetosPage = () => {
       link: "https://github.com/tomast1337/More-Sponges-Mod",
     },
     {
-      nome:"This project",
+      nome: "This project",
       descricao: (
         <p>
           This portfolio website made with <span>ReactJs</span> and{" "}
@@ -143,7 +143,7 @@ const ProjetosPage = () => {
     },
     {
       //nome: "Pizzaria On",
-      nome:"",
+      nome: "",
       descricao: (
         <p>
           Fullstack project made with <span>ReactJs+Redux</span>,{" "}
@@ -177,7 +177,7 @@ const ProjetosPage = () => {
           and <span>MySQL</span>.
         </p>
       ),
-      nome:"Clothing Store Control System",
+      nome: "Clothing Store Control System",
       imagem:
         "https://github.com/tomast1337/exercism/blob/main/java/2015-2018/projeto%20vanessa%20e%20nicolas/class%20der.png?raw=true",
       link: "https://github.com/tomast1337/exercism/tree/main/java/2015-2018/projeto%20vanessa%20e%20nicolas",
@@ -222,5 +222,3 @@ const ProjetosPage = () => {
     </>
   );
 };
-
-export default ProjetosPage;

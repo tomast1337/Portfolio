@@ -4,6 +4,7 @@ import { Curriculo } from "../components/Curriculo";
 import English from "../data/curriculoEN";
 import Portuguese from "../data/curriculoPT";
 import { CurriculoType, LaguagesType } from "../data/types";
+import { useAppContext } from "../context/AppContext";
 
 export default () => {
   const [language, setLanguage] = React.useState<LaguagesType>("pt");

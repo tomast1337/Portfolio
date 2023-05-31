@@ -1,13 +1,13 @@
 import * as React from "react";
 import {
-    Card,
-    CardContainer,
-    CardLeft,
-    CardRight,
-    CustomImage,
-    Header,
-    Page,
-    Paragraph,
+  Card,
+  CardContainer,
+  CardLeft,
+  CardRight,
+  CustomImage,
+  Header,
+  Page,
+  Paragraph,
 } from "../components/Commom";
 
 interface shoutOut {
@@ -17,7 +17,7 @@ interface shoutOut {
   foto: string;
 }
 
-const ShoutOutsPage = () => {
+export default () => {
   const shoutOuts: shoutOut[] = [
     {
       nome: "Davi Campanaro",
@@ -77,12 +77,16 @@ const ShoutOutsPage = () => {
             return (
               <Card key={index}>
                 <CardLeft>
-                  <CustomImage style={{
-                    width: "200px",
-                    height: "200px",
-                    display: "inline",
-                    margin: "0 auto",
-                  }} src={shoutOut.foto} alt={shoutOut.nome} />
+                  <CustomImage
+                    style={{
+                      width: "200px",
+                      height: "200px",
+                      display: "inline",
+                      margin: "0 auto",
+                    }}
+                    src={shoutOut.foto}
+                    alt={shoutOut.nome}
+                  />
                 </CardLeft>
                 <CardRight>
                   <Paragraph>{shoutOut.nome}</Paragraph>
@@ -100,5 +104,3 @@ const ShoutOutsPage = () => {
     </Page>
   );
 };
-
-export default ShoutOutsPage;

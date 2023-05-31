@@ -1,16 +1,14 @@
 import * as React from "react";
 import { CustomImage, Header, Page, Paragraph } from "../components/Commom";
 
-const ResumoPage = () => {
+export default () => {
   return (
     <Page>
       <Header>Summary</Header>
       <CustomImage
-        style={
-          {
-            backdropFilter: "invert(1) grayscale(1) contrast(5) brightness(1.2)",
-          }
-        }
+        style={{
+          backdropFilter: "invert(1) grayscale(1) contrast(5) brightness(1.2)",
+        }}
         src="/imgs/eu.jpeg"
         alt="Eu"
       />
@@ -61,5 +59,3 @@ const ResumoPage = () => {
     </Page>
   );
 };
-
-export default ResumoPage;

@@ -2,19 +2,19 @@ import * as React from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
 
 import PageBody from "./components/PageBody";
-import ContatoPage from "./pages/ContatoPage";
-import CurriculoPage from "./pages/CurriculoPage";
-import CurriculoPrintPage from "./pages/CurriculoPrintPage";
-import ExperienciaPage from "./pages/ExperienciaPage";
-import FormaçãoPage from "./pages/FormaçãoPage";
 import Loading from "./pages/Loading";
-import ProjetosPage from "./pages/ProjetosPage";
-import ResumoPage from "./pages/ResumoPage";
 import ShoutOuts from "./pages/ShoutOuts";
+import SummaryPage from "./pages/SummaryPage";
+import ContactPage from "./pages/ContactPage";
+import ExperiencePage from "./pages/ExperiencePage";
+import EducationPage from "./pages/EducationPage";
+import ProjectsPage from "./pages/ProjectsPage";
+import ResumePrintPage from "./pages/ResumePrintPage";
+import ResumePage from "./pages/ResumePage";
 
 const App = () => {
   React.useEffect(() => {
-    document.title = "Portfolio - Nicolas Vycas Nery";
+    document.title = "Nicolas's Portfolio";
   });
   return (
     <HashRouter>
@@ -25,18 +25,18 @@ const App = () => {
             <>
               <Loading />
               <PageBody>
-                <ResumoPage />
-                <ContatoPage />
-                <ExperienciaPage />
-                <FormaçãoPage />
-                <ProjetosPage />
-                <CurriculoPage />
+                <SummaryPage />
+                <ContactPage />
+                <ExperiencePage />
+                <EducationPage />
+                <ProjectsPage />
+                <ResumePage />
                 <ShoutOuts />
               </PageBody>
             </>
           }
         />
-        <Route path="/Curriculo-print" element={<CurriculoPrintPage />} />
+        <Route path="/Curriculo-print" element={<ResumePrintPage />} />
         <Route
           path="*"
           element={
