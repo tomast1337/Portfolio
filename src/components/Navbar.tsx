@@ -1,11 +1,8 @@
 import * as React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import styled, { css, ThemeContext } from "styled-components";
-import { colors, forDesktop, fonts } from "../styles/colors";
-import { SVGLogo } from "./SVGLogo";
-import { SmallBounce, TextAnimation } from "../styles/animations";
+import styled, { css } from "styled-components";
+import { colors, forDesktop } from "../styles/colors";
 import { Ruler } from "./Commom";
-import { AppContextType } from "../context/AppContext";
+import { SVGLogo } from "./SVGLogo";
 
 const NavbarBody = styled.div`
   justify-content: left;
@@ -13,14 +10,16 @@ const NavbarBody = styled.div`
   height: fit-content;
   height: fit-content;
   transition: all 1s ease-in-out;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
 `;
 
 const NavbarBrand = styled.div`
   path {
     fill: $dark1;
-    box-shadow: 1px 1px 1px 1px
-      ${colors.dark1};
-    animation: ${TextAnimation} 1.5s;
+    box-shadow: 1px 1px 1px 1px ${colors.light1};
+    backdrop-filter: invert(1) grayscale(1) contrast(5) brightness(1.2);
   }
 
   svg {
@@ -29,24 +28,21 @@ const NavbarBrand = styled.div`
 
     ${forDesktop(
       css`
-        width: 40rem;
+        width: 30rem;
       `
     )}
   }
 `;
-
 
 const Navbar = () => {
   return (
     <>
       <NavbarBody>
         <NavbarBrand>
-          <SVGLogo
-            color={"#e07245"}
-          />
+          <SVGLogo />
         </NavbarBrand>
+        <Ruler />
       </NavbarBody>
-      <Ruler />
     </>
   );
 };

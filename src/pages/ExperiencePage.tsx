@@ -1,11 +1,12 @@
 import * as React from "react";
 import {
-    Header,
-    Page,
-    Paragraph,
-    Ruler,
-    SubSubHeader,
-    UnOrderedList,
+  Header,
+  Page,
+  Paragraph,
+  Ruler,
+  SubHeader,
+  SubSubHeader,
+  UnOrderedList,
 } from "../components/Commom";
 export default () => {
   type Experiencia = {
@@ -104,18 +105,17 @@ export default () => {
   const ExperienciaElem = (props: { experiencia: Experiencia }) => {
     return (
       <>
-        <div>
-          <SubSubHeader>
-            {props.experiencia.cargo} - {props.experiencia.empresa}
-          </SubSubHeader>
-          <Paragraph>{props.experiencia.descrição}</Paragraph>
-          <UnOrderedList>
-            {props.experiencia.competências.map((competência, index) => {
-              return <li key={index}>{competência}</li>;
-            })}
-          </UnOrderedList>
-          <SubSubHeader>{props.experiencia.período}</SubSubHeader>
-        </div>
+        <SubHeader>
+          {props.experiencia.cargo} - {props.experiencia.empresa}
+        </SubHeader>
+        <Paragraph>{props.experiencia.descrição}</Paragraph>
+        <UnOrderedList>
+          {props.experiencia.competências.map((competência, index) => {
+            return <li key={index}>{competência}</li>;
+          })}
+        </UnOrderedList>
+        <SubHeader>{props.experiencia.período}</SubHeader>
+        <Ruler />
       </>
     );
   };

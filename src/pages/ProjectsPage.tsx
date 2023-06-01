@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import {
   Card,
   CardContainer,
@@ -9,8 +9,9 @@ import {
   Header,
   Page,
   Ruler,
+  SubSubHeader,
 } from "../components/Commom";
-import { colors, fonts } from "../styles/colors";
+import { colors, fonts, forDesktop } from "../styles/colors";
 type Projeto = {
   nome: string;
   descricao: React.ReactElement<any, any>;
@@ -24,7 +25,7 @@ const Description = styled.div`
   justify-content: center;
   align-items: center;
   h2 {
-    font-size: 2rem;
+    font-size: 5rem;
     font-weight: 600;
     margin: 0.25rem 0;
     display: block;
@@ -32,7 +33,7 @@ const Description = styled.div`
 
   a {
     text-decoration: none;
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 300;
     transition: 0.2s;
     font-family: ${fonts.fontBarcode};
@@ -45,15 +46,28 @@ const Description = styled.div`
     }
   }
 
-  font-size: 0.8rem;
   p {
+    font-size: 1.5rem;
     font-weight: 400;
     margin: 0.5rem 0;
   }
 
   span {
-    color: ${colors.dark4};
+    color: ${colors.dark2};
   }
+  ${forDesktop(
+    css`
+      a {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 0.8rem;
+      }
+      h2 {
+        font-size: 1rem;
+      }
+    `
+  )}
 `;
 
 const ProjetoCard = (props: { projeto: Projeto }) => {
@@ -72,7 +86,7 @@ const ProjetoCard = (props: { projeto: Projeto }) => {
       </CardLeft>
       <CardRight>
         <Description>
-          <h2>{projeto.nome}</h2>
+          <SubSubHeader>{projeto.nome}</SubSubHeader>
           {projeto.descricao}
           <a href={projeto.link}>{"Ver Projeto"}</a>
         </Description>

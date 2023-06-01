@@ -45,7 +45,7 @@ export const Header = styled.h1`
 `;
 
 export const SubHeader = styled.h2`
-  font-size: 2em;
+  font-size: 1.6em;
   text-align: left;
   font-weight: bold;
   text-decoration: underline;
@@ -63,10 +63,7 @@ export const SubSubHeader = styled.h3`
   font-weight: bold;
   text-decoration: underline;
   padding-left: 1em;
-  color: ${colors.dark1};
   font-family: ${fonts.fontText};
-  background-color: ${colors.light1};
-  backdrop-filter: invert(1) grayscale(1) contrast(5) brightness(1.2);
   width: fit-content;
 `;
 
@@ -81,18 +78,18 @@ export const Paragraph = styled.p`
   font-family: ${fonts.fontText};
   ${forDesktop(
     css`
-      font-size: 1.5rem;
+      font-size: 1rem;
     `
   )}
 
   a {
-    color: ${colors.dark1};
+    color: ${colors.dark2};
     text-decoration: underline;
     font-weight: bold;
   }
 
   span {
-    color: ${colors.light3};
+    color: ${colors.dark2};
     font-weight: 500;
   }
 `;
@@ -196,7 +193,7 @@ export const CustomImage = (
           /*destination height*/ canvasHeight / parts
         );
         // wait , the later the part the faster it loads
-        await delay(Math.random() * parts + 1 / (i + 1) * 50);
+        await delay((Math.random() * parts + (1 / (i + 1)) * 70) + 50);
       }
       setWasDrawn(true);
     }
@@ -217,21 +214,12 @@ export const CustomImage = (
       const partWidth = image.width / partsX;
       for (let i = 0; i < partsY; i++) {
         for (let j = 0; j < partsX; j++) {
-          // get part color
-          console.log(
-            /* source x*/ j * partWidth,
-            /* source y*/ i * partHeight,
-            /* source width*/ partWidth,
-            /* source height*/ partHeight
-          );
-
           const imageData = hiddenCtx.getImageData(
             /* source x*/ j * partWidth,
             /* source y*/ i * partHeight,
             /* source width*/ partWidth,
             /* source height*/ partHeight
           );
-
           const data = imageData.data;
           const color = `rgb(
             ${data?.[0] || 0},${data?.[1] || 0},${data?.[2] || 0})`;
@@ -247,7 +235,6 @@ export const CustomImage = (
 
   React.useEffect(() => {
     drawImage();
-    
   }, [isOnScreen, imageLoaded]);
 
   return (
@@ -302,10 +289,14 @@ export const UnOrderedList = styled.ul`
 `;
 
 export const Ruler = styled.hr`
-  border-top: 0.5px solid ${colors.dark1};
-  box-shadow: 1px 1px 1px 1px ${colors.dark1};
-  margin: auto;
-  width: 90%;
+  width: 100%;
+  border: 1px solid ${colors.dark1};
+  background-color: ${colors.light1};
+  backdrop-filter: invert(1) grayscale(1) contrast(5) brightness(1.2);
+  margin: 0;
+  padding: 0;
+  height: 1px;
+  border: 0;
 `;
 
 export const CardContainer = styled.div`
@@ -326,10 +317,13 @@ export const CardContainer = styled.div`
 `;
 
 export const Card = styled.div`
-  width: 400px;
+  width: 90%;
+  ${forDesktop(css`
+    width: 400px;
+  `)}
   height: fit-content;
   background-color: ${colors.light1};
-  backdrop-filter: invert(1) grayscale(1) contrast(5) brightness(1.2);
+  backdrop-filter: invert(1) grayscale(1) contrast(5) brightness(8) blur(10px);
   border: 5px solid ${colors.light1};
   outline: 5px solid ${colors.dark2};
   box-shadow: 2px 2px 4px 2px ${colors.light1};

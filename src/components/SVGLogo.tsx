@@ -1,11 +1,7 @@
 import * as React from "react";
 
 export const SVGLogo = (): React.ReactElement => {
-  const style = {
-    fill: "rgba(0,0,0,1)",
-    stroke: "rgba(100,100,100,.1)",
-    strokeWidth: 0.5,
-  };
+  const style = {};
 
   return (
     <svg
