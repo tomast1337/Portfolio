@@ -40,7 +40,15 @@ export default class Render {
       0.1,
       20
     );
-    this.renderer = new WebGLRenderer({ canvas: this.canvas });
+    this.renderer = new WebGLRenderer({ 
+        canvas: this.canvas,
+        antialias: false,
+        precision: "lowp",
+    });
+
+    this.renderer.setPixelRatio(
+        window.devicePixelRatio ? window.devicePixelRatio / 4 : .25
+    );
 
     this.renderer.shadowMap.enabled = true;
     this.renderer.shadowMap.type = PCFSoftShadowMap;
