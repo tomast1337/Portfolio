@@ -48,7 +48,7 @@ export default class Render {
     });
     // get how good the device is
     this.renderer.setPixelRatio(
-        .25
+        .2
     );
 
     this.renderer.shadowMap.enabled = true;
