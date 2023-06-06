@@ -51,6 +51,7 @@ const CanvasBG = () => {
           left: 0,
           zIndex: -1,
           filter: `saturate(2) brightness(1.2)`,
+          imageRendering: "pixelated",
         }}
       ></canvas>
     </>
