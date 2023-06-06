@@ -44,10 +44,11 @@ export default class Render {
         canvas: this.canvas,
         antialias: false,
         precision: "lowp",
+        powerPreference: "low-power",
     });
-
+    // get how good the device is
     this.renderer.setPixelRatio(
-        window.devicePixelRatio ? window.devicePixelRatio / 4 : .25
+        .25
     );
 
     this.renderer.shadowMap.enabled = true;
