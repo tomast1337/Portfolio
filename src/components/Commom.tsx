@@ -1,10 +1,10 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { colors, fonts, forDesktop } from "../styles/colors";
 
 export const Page = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div
+    <article
       style={{
         backgroundImage: "rgba(0,0,0,0.5)",
         backgroundSize: "100%",
@@ -26,7 +26,7 @@ export const Page = ({ children }: { children: React.ReactNode }) => {
       >
         {children}
       </div>
-    </div>
+    </article>
   );
 };
 
@@ -41,7 +41,7 @@ export const Header = styled.h1`
   background-repeat: repeat;
   background-position: center;
   width: fit-content;
-  padding: 0.25em;
+  padding: 0.25em 2em;
 `;
 
 export const SubHeader = styled.h2`
@@ -67,14 +67,8 @@ export const SubSubHeader = styled.h3`
   width: fit-content;
 `;
 
-export const Paragraph = styled.p`
-  font-size: 0.9em;
-  text-align: justify;
-  text-justify: inter-word;
-  padding: 0.5em;
-  color: ${colors.dark1};
-  background-color: ${colors.light1};
-  backdrop-filter: invert(1) grayscale(1) contrast(50) brightness(50) blur(10px);
+const CustomP = styled.p`
+  ]z-index: 1;
   font-family: ${fonts.fontText};
   ${forDesktop(
     css`
@@ -93,6 +87,68 @@ export const Paragraph = styled.p`
     font-weight: 500;
   }
 `;
+
+const wobble = keyframes`
+0% {
+    transform:  translate(0px, 0px);
+}
+25% {
+    transform: translate(random(20) * 1px , random(20) * 1px)
+}
+50% {
+    transform:  translate(0px , 0px)
+}
+75% {
+    transform: translate(random(20) * 1px , random(20) * 1px)
+}
+100% {
+    transform: translate(0px, 0px);
+}`;
+
+const ImgCharm = styled.img`
+  position: absolute;
+  width: 8em;
+  height: auto;
+  image-rendering: pixelated;
+  z-index: -5;
+  pointer-events: none;
+  animation-name: ${wobble};
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+`;
+export const Paragraph = (
+  props: React.HTMLAttributes<HTMLParagraphElement>
+) => {
+  const possibleSprites = [
+    "/imgs/textures/Sprite-0001.png",
+    "/imgs/textures/Sprite-0002.png",
+    "/imgs/textures/Sprite-0003.png",
+  ];
+
+  return (
+    <div
+      style={{
+        backdropFilter: `invert(1) grayscale(1) contrast(50) brightness(50) blur(10px)`,
+      }}
+    >
+      <div
+        style={{
+          fontSize: `0.9em`,
+          textAlign: `justify`,
+          textJustify: `inter-word`,
+          padding: `0.1px 0.5em`,
+          color: `${colors.dark1}`,
+          backgroundColor: `${colors.light1}`,
+
+          margin: `0 0 64px 0`,
+        }}
+      >
+        <CustomP {...props} />
+      </div>
+    </div>
+  );
+};
 
 // images
 export const CustomImage = (
@@ -175,8 +231,8 @@ export const CustomImage = (
       const canvasHeight = canvasRef.current.height;
 
       // fake segmented loading
-      // split image in 10 parts
-      const parts = Math.floor(Math.random() * 90) + 10; // 10 to 100
+      // split image in 10 to 50 parts
+      const parts = Math.floor(Math.random() * 40) + 10; // 
       const partHeight = image.height / parts;
       const partWidth = image.width;
       for (let i = 0; i < parts; i++) {
@@ -193,7 +249,7 @@ export const CustomImage = (
           /*destination height*/ canvasHeight / parts
         );
         // wait , the later the part the faster it loads
-        await delay((Math.random() * parts + (1 / (i + 1)) * 70) + 50);
+        await delay(Math.random() * parts + (1 / (i + 1)) * 70 + 50);
       }
       setWasDrawn(true);
     }

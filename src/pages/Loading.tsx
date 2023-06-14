@@ -25,7 +25,7 @@ export default () => {
   }, []);
 
   return (
-    <div
+    <main
       style={{
         textAlign: "center",
         width: "100vw",
@@ -57,6 +57,6 @@ export default () => {
         Loading... {Math.round(loadPercent * 100)}%
       </h1>
       <LoadingAnimation />
-    </div>
+    </main>
   );
 };

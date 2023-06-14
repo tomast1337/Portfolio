@@ -123,19 +123,19 @@ export default () => {
   return (
     <>
       <Page>
-        <div>
+        <section>
           <Header>Professional Experience </Header>
           {profissional.map((experiencia, index) => (
             <ExperienciaElem key={index} experiencia={experiencia} />
           ))}
-        </div>
+        </section>
         <Ruler />
-        <div>
+        <section>
           <Header>Volunteer Experience </Header>
           {voluntario.map((experiencia, index) => (
             <ExperienciaElem key={index} experiencia={experiencia} />
           ))}
-        </div>
+        </section>
       </Page>
     </>
   );

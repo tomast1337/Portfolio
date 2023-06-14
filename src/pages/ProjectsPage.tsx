@@ -78,7 +78,8 @@ const ProjetoCard = (props: { projeto: Projeto }) => {
         <CustomImage
           style={{
             width: "200px",
-            height: "100%",
+            height: "200px",
+            objectFit: "cover",
           }}
           src={projeto.imagem}
           alt={projeto.nome}

@@ -25,6 +25,7 @@ export default class Render {
   private renderer: WebGLRenderer;
   private canvas: HTMLCanvasElement;
   private mainGroup: Group;
+  private seed = Math.random() * 2 - 1; // random number between -1 and 1
 
   private readonly skyColor = 0x45b3e0;
   private readonly fogColor = 0xcff1ff;
@@ -40,16 +41,14 @@ export default class Render {
       0.1,
       20
     );
-    this.renderer = new WebGLRenderer({ 
-        canvas: this.canvas,
-        antialias: false,
-        precision: "lowp",
-        powerPreference: "low-power",
+    this.renderer = new WebGLRenderer({
+      canvas: this.canvas,
+      antialias: false,
+      precision: "lowp",
+      powerPreference: "low-power",
     });
     // get how good the device is
-    this.renderer.setPixelRatio(
-        .2
-    );
+    this.renderer.setPixelRatio(0.2);
 
     this.renderer.shadowMap.enabled = true;
     this.renderer.shadowMap.type = PCFSoftShadowMap;
@@ -158,9 +157,9 @@ export default class Render {
       const moveScale = 10000;
       const maxY = 1.5;
       const minY = 1;
-
-      this.camera.position.x = Math.sin(now / moveScale) * 2;
-      this.camera.position.z = Math.cos(now / moveScale) * 2;
+      const seed = this.seed > 0 ? 1 : -1;
+      this.camera.position.x = seed * Math.sin(now / moveScale) * 2;
+      this.camera.position.z = seed * Math.cos(now / moveScale) * 2;
       this.camera.position.y =
         minY + (maxY - minY) * Math.abs(Math.sin(now / moveScale));
 
@@ -171,12 +170,12 @@ export default class Render {
     };
 
     const audioUpdate = () => {
-      const now = Date.now();
-      const scale =
-        Math.random() * 0.01 +
-        Math.sin(5 + now / 100) * 0.1 +
-        Math.sin(3 + now / 1000) * 1 +
-        Math.sin(4 + now / 10000) * 1;
+      //const now = Date.now();
+      const scale = 1.8;
+        //Math.random() * 0.01 +
+        //Math.sin(5 + now / 100) * 0.1 +
+        //Math.sin(3 + now / 1000) * 1 +
+        //Math.sin(4 + now / 10000) * 1;
       this.setMainGroupScaleZ(Math.abs(scale));
     };
 
