@@ -1,11 +1,9 @@
-import * as React from "react";
 import {
   Header,
   Page,
   Paragraph,
   Ruler,
   SubHeader,
-  SubSubHeader,
   UnOrderedList,
 } from "../components/Commom";
 export default () => {

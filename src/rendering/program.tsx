@@ -56,7 +56,7 @@ function main(
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-function post(context: Context, cursor: Cursor, buffer: Buffer) {
+function post(_context: Context, _cursor: Cursor, _buffer: Buffer) {
   //drawInfo(context, cursor, buffer, {
   //  color: "white",
   //  backgroundColor: "royalblue",
