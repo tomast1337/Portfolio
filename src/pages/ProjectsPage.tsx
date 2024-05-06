@@ -1,5 +1,4 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
 import {
   Card,
   CardContainer,
@@ -8,67 +7,29 @@ import {
   CustomImage,
   Header,
   Page,
-  Ruler,
   SubSubHeader,
 } from "../components/Commom";
-import { colors, fonts, forDesktop } from "../styles/colors";
 type Projeto = {
   nome: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   descricao: React.ReactElement<any, any>;
   imagem: string;
   link: string;
 };
 
-const Description = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  h2 {
-    font-size: 5rem;
-    font-weight: 600;
-    margin: 0.25rem 0;
-    display: block;
-  }
-
-  a {
-    text-decoration: none;
-    font-size: 4rem;
-    font-weight: 300;
-    transition: 0.2s;
-    font-family: ${fonts.fontBarcode};
-    color: ${colors.dark1};
-    &:hover {
-      color: ${colors.dark2};
-    }
-    &:active {
-      color: ${colors.dark4};
-    }
-  }
-
-  p {
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin: 0.5rem 0;
-  }
-
-  span {
-    color: ${colors.dark2};
-  }
-  ${forDesktop(
-    css`
-      a {
-        font-size: 2rem;
-      }
-      p {
-        font-size: 0.8rem;
-      }
-      h2 {
-        font-size: 1rem;
-      }
-    `
-  )}
-`;
+const Description = (props: React.HTMLAttributes<HTMLDivElement>) => (
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      padding: "1rem",
+      ...props.style,
+    }}
+    {...props}
+  />
+);
 
 const ProjetoCard = (props: { projeto: Projeto }) => {
   const projeto: Projeto = props.projeto;

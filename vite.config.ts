@@ -1,9 +1,11 @@
-import { optimizeDeps } from "vite";
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
 
-module.exports = {
+export default defineConfig({
   root: "./",
   build: {
     outDir: "nicolasvycas.github.io",
   },
+  plugins: [react()],
   publicDir: "assets",
-};
+});

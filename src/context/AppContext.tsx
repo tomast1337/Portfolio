@@ -1,5 +1,4 @@
 import * as React from "react";
-import { fontUrl } from "../styles/colors";
 
 export type AppContextType = {
   hasLoaded: boolean;
@@ -52,8 +51,6 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
         updateLoadPercent,
       }}
     >
-      <link rel="preconnect" href="https://fonts.gstatic.com" />
-      <link href={fontUrl} rel="stylesheet" />
       {children}
     </AppContext.Provider>
   );

@@ -1,7 +1,5 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
 import { Header, Page } from "../components/Commom";
-import { forDesktop } from "../styles/colors";
 
 interface Contato {
   name: string;
@@ -71,29 +69,10 @@ export default () => {
     },
   ];
 
-  const UlStyle = styled.ul`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 50%;
-    margin: 0 auto;
-    list-style-type: none;
-    svg {
-      ${forDesktop(
-        css`
-          width: 6rem;
-        `
-      )}
-      width: 4rem;
-      height: auto;
-    }
-  `;
-
   return (
     <Page>
       <Header>Contact</Header>
-      <UlStyle>
+      <ul>
         {links.map((link, index) => {
           return (
             <li key={index}>
@@ -101,7 +80,7 @@ export default () => {
             </li>
           );
         })}
-      </UlStyle>
+      </ul>
     </Page>
   );
 };

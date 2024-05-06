@@ -1,11 +1,4 @@
-import * as React from "react";
-import {
-  Header,
-  Page,
-  Ruler,
-  SubHeader,
-  UnOrderedList,
-} from "../components/Commom";
+import { Header, Page, SubHeader, UnOrderedList } from "../components/Commom";
 
 export default () => {
   return (
@@ -19,19 +12,7 @@ export default () => {
         <li>(Bachelor of Computer Science) at CEFET/RJ</li>
         <li>Federal Center for Technological Education</li>
         <li>
-          <strong>(2020 – 2023)</strong>
-        </li>
-      </UnOrderedList>
-      <SubHeader>Technical High School</SubHeader>
-      <UnOrderedList>
-        <li>
-          <strong>Completed</strong>
-        </li>
-
-        <li>(technical high school in informatics) at FAETEC</li>
-        <li>State Technical School Republic</li>
-        <li>
-          <strong>(2016 – 2018)</strong>
+          <strong>(2020 – 2024)</strong>
         </li>
       </UnOrderedList>
     </Page>

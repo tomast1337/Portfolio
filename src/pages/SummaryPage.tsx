@@ -56,15 +56,6 @@ export default () => {
         If you want to get in touch with me, my preference is for{" "}
         <a href="https://www.linkedin.com/in/nicolas-vycas/">LinkedIn</a>.
       </Paragraph>
-
-      {/*
-      <Header>Presentation Video</Header>
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/1Bw2dTY3SsQ"
-      />
-      */}
     </Page>
   );
 };
