@@ -14,6 +14,22 @@ export default () => {
         <li>
           <strong>(2020 – 2024)</strong>
         </li>
+        <li>
+          <strong>(Rio de Janeiro, RJ, Brazil)</strong>
+        </li>
+      </UnOrderedList>
+      <SubHeader>Certificate Programs</SubHeader>
+      <UnOrderedList>
+        <li>
+          <strong>Certificate Program in Informatics</strong>
+        </li>
+        <li>FAETEC</li>
+        <li>
+          <strong>(2016 – 2018)</strong>
+        </li>
+        <li>
+          <strong>(Rio de Janeiro, RJ, Brazil)</strong>
+        </li>
       </UnOrderedList>
     </Page>
   );

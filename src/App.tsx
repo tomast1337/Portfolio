@@ -49,7 +49,6 @@ function App(): React.ReactElement {
       />
       <div
         style={{
-          position: "absolute",
           top: 0,
           left: 0,
           padding: "10px",
@@ -57,8 +56,6 @@ function App(): React.ReactElement {
         }}
       >
         <SummaryPage />
-        <ExperiencePage />
-        <EducationPage />
       </div>
     </>
   );

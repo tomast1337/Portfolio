@@ -1,26 +1,23 @@
 import * as React from "react";
-import { colors, fonts } from "../styles/colors";
+import { colors } from "../styles/colors";
 
 export const Page = ({ children }: { children: React.ReactNode }) => {
   return (
     <article
       style={{
-        backgroundImage: "rgba(0,0,0,0.5)",
-        backgroundSize: "100%",
-        backgroundRepeat: "repeat",
-        backgroundPosition: "center",
-        width: "100vw",
+        maxWidth: "900px",
+        backgroundColor: `${colors.light1}`,
         marginLeft: "auto",
         marginRight: "auto",
-        marginTop: "0",
-        marginBottom: "5em",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        padding: "1em",
       }}
     >
       <div
         style={{
           maxWidth: "900px",
-          width: "100%",
-          margin: "0 auto",
         }}
       >
         {children}
@@ -38,7 +35,6 @@ export const Header = (props: React.HTMLAttributes<HTMLHeadingElement>) => {
         fontWeight: "bold",
         textTransform: "uppercase",
         color: `${colors.dark1}`,
-        fontFamily: `${fonts.fontTitle}`,
         backgroundColor: `${colors.light1}`,
         backdropFilter: `invert(1) grayscale(1) contrast(5) brightness(1.2)`,
         width: "fit-content",
@@ -60,7 +56,6 @@ export const SubHeader = (props: React.HTMLAttributes<HTMLHeadingElement>) => {
         textDecoration: "underline",
         padding: "1em",
         color: `${colors.dark1}`,
-        fontFamily: `${fonts.fontText}`,
         backgroundColor: `${colors.light1}`,
         backdropFilter: `invert(1) grayscale(1) contrast(5) brightness(1.2)`,
         width: "fit-content",
@@ -82,7 +77,6 @@ export const SubSubHeader = (
         textDecoration: "underline",
         padding: "1em",
         color: `${colors.dark1}`,
-        fontFamily: `${fonts.fontText}`,
         backgroundColor: `${colors.light1}`,
         backdropFilter: `invert(1) grayscale(1) contrast(5) brightness(1.2)`,
         width: "fit-content",
@@ -100,11 +94,6 @@ const CustomP = (props: React.HTMLAttributes<HTMLParagraphElement>) => {
         textAlign: "justify",
         textJustify: "inter-word",
         padding: "0.5em",
-        color: `${colors.dark1}`,
-        fontFamily: `${fonts.fontText}`,
-        backgroundColor: `${colors.light1}`,
-        backdropFilter: `invert(1) grayscale(1) contrast(5) brightness(1.2)`,
-        margin: "0 0 64px 0",
       }}
       {...props}
     />
@@ -115,21 +104,11 @@ export const Paragraph = (
   props: React.HTMLAttributes<HTMLParagraphElement>
 ) => {
   return (
-    <div
-      style={{
-        backdropFilter: `invert(1) grayscale(1) contrast(50) brightness(50) blur(10px)`,
-      }}
-    >
+    <div>
       <div
         style={{
-          fontSize: `0.9em`,
-          textAlign: `justify`,
-          textJustify: `inter-word`,
-          padding: `0.1px 0.5em`,
           color: `${colors.dark1}`,
           backgroundColor: `${colors.light1}`,
-
-          margin: `0 0 64px 0`,
         }}
       >
         <CustomP {...props} />
@@ -234,7 +213,6 @@ export const Card = (props: React.HTMLAttributes<HTMLDivElement>) => {
         boxShadow: `2px 2px 4px 2px ${colors.light1}`,
         minWidth: "300px",
         color: `${colors.dark1}`,
-        fontFamily: `${fonts.fontText}`,
         ...props.style,
       }}
       {...props}
