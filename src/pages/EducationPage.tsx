@@ -10,8 +10,7 @@ export default () => {
           <strong>Graduating </strong>
         </p>
         <p>
-          <strong>Bachelor of Computer Science</strong>
-          at
+          <strong>Bachelor of Computer Science</strong> at{" "}
           <a>CEFET/RJ (Federal Center for Technological Education)</a>
         </p>
         <p>(2020 – current)</p>
@@ -21,8 +20,7 @@ export default () => {
 
       <Paragraph>
         <p>
-          <strong>Certificate Program in Informatics</strong>
-          at
+          <strong>Certificate Program in Informatics</strong> at{" "}
           <strong>FAETEC</strong>
         </p>
 

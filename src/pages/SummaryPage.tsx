@@ -15,12 +15,12 @@ export default () => {
         alt="Nicolas Vycas"
       />
       <Paragraph>
-        Hi! I'm Nicolas, a full-stack developer from Rio de Janeiro, Brazil. I'm
+        Hi! I'm Nicolas, a Full Stack developer from Rio de Janeiro, Brazil. I'm
         currently studying Computer Science at CEFET/RJ, and graduating this
         year.
       </Paragraph>
       <Paragraph>
-        If you want to get in touch with me, my preference is for{" "}
+        If you want to get in touch with me, my preference is through my{" "}
         <a
           target="_blank"
           rel="noreferrer"

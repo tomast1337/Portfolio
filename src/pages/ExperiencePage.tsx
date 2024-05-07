@@ -53,6 +53,13 @@ export default () => {
             </a>
             <p>Aug 2021 - Aug 2023</p>
           </Paragraph>
+          <Paragraph>
+            <strong>Class assistant</strong> at{" "}
+            <a target="_blank" rel="noreferrer" href="https://www.cefet-rj.br/">
+              CEFET-RJ
+            </a>
+            <p>Mar 2021 - Aug 2022</p>
+          </Paragraph>
         </section>
         <Ruler />
         <section>
@@ -65,16 +72,6 @@ export default () => {
           </Paragraph>
         </section>
         <Ruler />
-        <section>
-          <SubHeader>Volunteer Experience </SubHeader>
-          <Paragraph>
-            <strong>Class assistant</strong> at{" "}
-            <a target="_blank" rel="noreferrer" href="https://www.cefet-rj.br/">
-              CEFET-RJ
-            </a>
-            <p>Mar 2021 - Aug 2022</p>
-          </Paragraph>
-        </section>
       </Page>
     </>
   );

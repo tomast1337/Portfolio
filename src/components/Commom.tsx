@@ -105,6 +105,7 @@ export const Paragraph = (
         style={{
           color: `${colors.dark1}`,
           backgroundColor: `${colors.light1}`,
+          whiteSpace: "pre",
         }}
       >
         <CustomP {...props} />

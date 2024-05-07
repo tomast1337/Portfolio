@@ -32,6 +32,8 @@ function App(): React.ReactElement {
     }
   }, []);
 
+  const [showPage, setShowPage] = React.useState(true);
+
   return (
     <>
       <div
@@ -48,12 +50,32 @@ function App(): React.ReactElement {
           left: 0,
         }}
       />
+      <div>
+        <button
+          style={{
+            position: "fixed",
+            top: 0,
+            right: 0,
+            padding: "10px",
+            color: "white",
+            backgroundColor: showPage ? "black" : "red",
+            border: "none",
+            cursor: "pointer",
+          }}
+          onClick={() => setShowPage(!showPage)}
+        >
+          {showPage ? "Hide" : "Show"} Page
+        </button>
+      </div>
       <div
         style={{
           top: 0,
           left: 0,
           padding: "10px",
           color: "white",
+          overflowX: "hidden",
+          maxWidth: "100%",
+          display: showPage ? "block" : "none",
         }}
       >
         <SummaryPage />

@@ -11,16 +11,21 @@ import { sdCircle } from "play.core/src/modules/sdf";
 
 const density = " .:-=+*#%@";
 const colors = [
-  "red",
-  "red",
-  "red",
-  "red",
   "#FFF",
   "#CCC",
   "#AAA",
   "#888",
-  "#666",
-  "#444",
+  "#222",
+  "red",
+  "red",
+  "#000",
+  "red",
+  "red",
+  "#222",
+  "#888",
+  "#AAA",
+  "#CCC",
+  "#FFF",
 ];
 const backgroundColors = ["#000", "#111", "#222"];
 
@@ -37,11 +42,11 @@ function main(
   const a = context.metrics.aspect;
 
   const offset = {
-    x: context.cols / 2,
-    y: context.rows / 2,
+    x: context.cols / 6,
+    y: context.rows / 6,
   };
 
-  offset.x += Math.sin(t * 0.7) * context.cols * 0.2;
+  offset.x += Math.sin(t * 0.5) * context.cols * 0.2;
   offset.y += Math.cos(t * 0.5) * context.rows * 0.2;
 
   let st = {
