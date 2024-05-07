@@ -14,10 +14,10 @@ const settings: Settings = {
   cols: 0,
   rows: 0,
   once: false,
-  fps: 30,
+  fps: 60,
   renderer: "text",
   allowSelect: false,
-  restoreState: false,
+  restoreState: true,
   backgroundColor: "#000000",
 };
 
@@ -40,6 +40,7 @@ function App(): React.ReactElement {
           width: "100vw",
           height: "100vh",
           overflow: "hidden",
+          whiteSpace: "pre",
           zIndex: -1,
           // stick to viewport
           position: "fixed",
@@ -56,6 +57,8 @@ function App(): React.ReactElement {
         }}
       >
         <SummaryPage />
+        <EducationPage />
+        <ExperiencePage />
       </div>
     </>
   );

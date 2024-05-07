@@ -1,36 +1,33 @@
-import { Header, Page, SubHeader, UnOrderedList } from "../components/Commom";
+import { Page, Paragraph, SubHeader, SubSubHeader } from "../components/Commom";
 
 export default () => {
   return (
     <Page>
-      <Header>Education</Header>
-      <SubHeader>Graduation</SubHeader>
-      <UnOrderedList>
-        <li>
+      <SubHeader>Education</SubHeader>
+      <SubSubHeader>Graduation</SubSubHeader>
+      <Paragraph>
+        <p>
           <strong>Graduating </strong>
-        </li>
-        <li>(Bachelor of Computer Science) at CEFET/RJ</li>
-        <li>Federal Center for Technological Education</li>
-        <li>
-          <strong>(2020 – 2024)</strong>
-        </li>
-        <li>
-          <strong>(Rio de Janeiro, RJ, Brazil)</strong>
-        </li>
-      </UnOrderedList>
-      <SubHeader>Certificate Programs</SubHeader>
-      <UnOrderedList>
-        <li>
+        </p>
+        <p>
+          <strong>Bachelor of Computer Science</strong>
+          at
+          <a>CEFET/RJ (Federal Center for Technological Education)</a>
+        </p>
+        <p>(2020 – current)</p>
+      </Paragraph>
+
+      <SubSubHeader>Certificate Programs</SubSubHeader>
+
+      <Paragraph>
+        <p>
           <strong>Certificate Program in Informatics</strong>
-        </li>
-        <li>FAETEC</li>
-        <li>
-          <strong>(2016 – 2018)</strong>
-        </li>
-        <li>
-          <strong>(Rio de Janeiro, RJ, Brazil)</strong>
-        </li>
-      </UnOrderedList>
+          at
+          <strong>FAETEC</strong>
+        </p>
+
+        <p>(2016 – 2018)</p>
+      </Paragraph>
     </Page>
   );
 };

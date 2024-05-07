@@ -13,6 +13,7 @@ export const Page = ({ children }: { children: React.ReactNode }) => {
         flexDirection: "column",
         justifyContent: "center",
         padding: "1em",
+        marginBottom: "5em",
       }}
     >
       <div
@@ -53,8 +54,6 @@ export const SubHeader = (props: React.HTMLAttributes<HTMLHeadingElement>) => {
         fontSize: "1.6em",
         textAlign: "left",
         fontWeight: "bold",
-        textDecoration: "underline",
-        padding: "1em",
         color: `${colors.dark1}`,
         backgroundColor: `${colors.light1}`,
         backdropFilter: `invert(1) grayscale(1) contrast(5) brightness(1.2)`,
@@ -71,14 +70,11 @@ export const SubSubHeader = (
   return (
     <h3
       style={{
-        fontSize: "1.5em",
+        fontSize: "1.2em",
         textAlign: "left",
         fontWeight: "bold",
         textDecoration: "underline",
-        padding: "1em",
         color: `${colors.dark1}`,
-        backgroundColor: `${colors.light1}`,
-        backdropFilter: `invert(1) grayscale(1) contrast(5) brightness(1.2)`,
         width: "fit-content",
       }}
       {...props}
@@ -124,12 +120,13 @@ export const CustomImage = (
     <div
       style={{
         padding: "0",
-        height: "fit-content",
-        width: "fit-content",
-        margin: "0 0",
+        marginLeft: "auto",
+        marginRight: "auto",
+        display: "block",
       }}
     >
       <img
+        loading="lazy"
         style={{
           display: "block",
           margin: "auto",
