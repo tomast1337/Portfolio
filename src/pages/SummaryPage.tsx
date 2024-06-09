@@ -11,7 +11,7 @@ export default () => {
           padding: "0",
           width: "300px",
         }}
-        src="/imgs/eu.jpeg"
+        src="/imgs/eu.png"
         alt="Nicolas Vycas"
       />
       <Paragraph>

@@ -35,7 +35,7 @@ function App(): React.ReactElement {
   const [showPage, setShowPage] = React.useState(true);
 
   return (
-    <>
+    <main>
       <div
         ref={canvas}
         style={{
@@ -49,6 +49,12 @@ function App(): React.ReactElement {
           top: 0,
           left: 0,
         }}
+      />
+      <div
+        style={{
+          zIndex: -2,
+        }}
+        className="bg"
       />
       <div>
         <button
@@ -82,7 +88,7 @@ function App(): React.ReactElement {
         <EducationPage />
         <ExperiencePage />
       </div>
-    </>
+    </main>
   );
 }
 
